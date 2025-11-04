@@ -72,18 +72,18 @@ function attachBookingFormHandler() {
 async function getEventsOnly(clubId) {
     const url = `http://localhost:3000/events?clubId=${clubId}`;
     const events = await (await fetch(url)).json();
-    
+
     return `
         <h2>Events</h2>
         ${events
-          .toSorted((a, b) => a.date > b.date ? 1 : -1)
-          .map(({ date, name, description }) => `
+            .toSorted((a, b) => a.date > b.date ? 1 : -1)
+            .map(({ date, name, description }) => `
             <article class="event">
               <h3>${name} ${date}</h3>
               <p>${description}</p>
             </article>
           `)
-          .join('')
+            .join('')
         }
     `;
 }
@@ -145,5 +145,5 @@ export default async function standupComedy() {
     // Attach event handler after DOM is updated
     setTimeout(attachBookingFormHandler, 100);
 
-    return eventsContent + comedyImage + bookingForm;
+    return comedyImage + eventsContent + bookingForm;
 }
