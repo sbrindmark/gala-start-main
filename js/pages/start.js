@@ -14,7 +14,9 @@ export default async function start() {
       <div id="all-events-container">
         <h2>Alla kommande events på Gala</h2>
         <p>Gala är en samlingsplats för olika musikklubbar.</p>
+        <div class ="wrapper">
         ${eventHtml}
+        </div>
       </div>
     </section>
   `;
