@@ -1,28 +1,29 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Neon Pulse – House & Techno Club</title>
-  <meta name="description" content="Neon Pulse är en house och techno-klubb i Gala Emporium. Upptäck kommande evenemang och förboka biljetter.">
-  
+  <meta name="description" content="Neon Pulse är en house och techno-klubb i Gala Emporium. Upptäck kommande evenemang och förboka biljetter." />
+
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700&family=Antonio:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700&family=Antonio:wght@700&display=swap" rel="stylesheet" />
 
   <!-- CSS -->
-  <link rel="stylesheet" href="../css/utils/style.css">
-  <link rel="stylesheet" href="../css/neon-pulse.css">
+  <link rel="stylesheet" href="css/utils/style.css" />
+<link rel="stylesheet" href="../css/pages/house-techno-club.css" />
+
 </head>
 
-<body>
+<body class="house-techno-klubben">
   <!-- =========================
-       HUVUDNAVIGATION
+       NAVIGATION
        ========================= -->
   <header>
     <nav class="nav">
-      <a href="../index.html" class="nav-logo">Gala Emporium</a>
+      <a href="index.html" class="nav-logo">Gala Emporium</a>
       <ul class="nav-links">
-        <li><a href="../index.html#clubs">Klubbar</a></li>
+        <li><a href="index.html#clubs">Klubbar</a></li>
         <li><a href="#events">Evenemang</a></li>
         <li><a href="#booking">Boka</a></li>
       </ul>
@@ -30,11 +31,10 @@
   </header>
 
   <!-- =========================
-       MAIN INNEHÅLL
+       MAIN CONTENT
        ========================= -->
   <main id="club">
-    
-    <!-- Hero Section -->
+    <!-- Hero -->
     <section class="hero" aria-labelledby="club-title">
       <div class="hero__overlay"></div>
       <div class="hero__content">
@@ -44,23 +44,10 @@
       </div>
     </section>
 
-    <!-- Om klubben -->
-    <section class="about" aria-labelledby="about-title">
-      <h2 id="about-title">Om klubben</h2>
-      <p>
-        Neon Pulse är hjärtat av Gala Emporium – där mörker möter ljus, bas möter rytm. 
-        Upplev live DJs, dans, visuals och vibbar du inte glömmer.
-      </p>
-    </section>
+    <!-- Klubbinformation & events laddas dynamiskt av JS -->
+    <section id="dynamic-content"></section>
 
-    <!-- Kommande Evenemang -->
-    <section id="events" aria-labelledby="events-title">
-      <h2 id="events-title">Kommande evenemang</h2>
-      <div id="eventsStatus" class="sr-status" aria-live="polite"></div>
-      <div id="events-list" class="event-grid" role="list"></div>
-    </section>
-
-    <!-- Förbokning -->
+    <!-- Booking -->
     <section id="booking" aria-labelledby="booking-title">
       <h2 id="booking-title">Förboka</h2>
       <form id="bookingForm" novalidate>
@@ -94,7 +81,7 @@
       <h2 id="promo-title">Se vår promo-video</h2>
       <div class="video-wrapper">
         <iframe 
-          src="https://www.youtube.com/embed/5qap5aO4i9A" 
+          src="https://www.youtube.com/embed/5qap5aO4i9A"
           title="Neon Pulse promo"
           frameborder="0"
           allowfullscreen
@@ -102,7 +89,6 @@
         </iframe>
       </div>
     </section>
-
   </main>
 
   <!-- =========================
@@ -113,9 +99,12 @@
   </footer>
 
   <!-- Audio Intro -->
-  <audio id="introAudio" src="../audio/neon-intro.mp3" preload="auto"></audio>
+  <audio id="introAudio" src="audio/neon-intro.mp3" preload="auto"></audio>
 
-  <!-- Script -->
-  <script src="../js/neon-pulse.js" defer></script>
+  <!-- JS -->
+  <script type="module">
+    import houseTechnoClub from "./js/pages/house-techno-club.js";
+    houseTechnoClub();
+  </script>
 </body>
 </html>

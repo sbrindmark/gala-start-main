@@ -45,6 +45,13 @@
       "name": "House & Techno Night",
       "description": "En elektrisk natt med djupa house-beats och hypnotisk techno. Dansgolvet vibrerar till rytmen hela natten!",
       "clubId": "k23o"
+    },
+    {
+      "id": "2",
+      "date": "2025-11-29 23:00",
+      "name": "Neon Afterhours",
+      "description": "Minimal house från gryning till morgon.",
+      "clubId": "k23o"
     }
   ],
 
