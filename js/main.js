@@ -29,6 +29,16 @@ function createMenu() {
 }
 
 function createHeader() {
+  const currentPage = location.hash.slice(1);
+
+  if (currentPage === 'standup-comedy') {
+    return `
+      <h1>🎭 Standup Comedy Club</h1>
+      <p>Skratta tills du får ont i magen! Våra komiker levererar de bästa skämten och mest underhållande berättelserna varje vecka.</p>
+      <nav>${createMenu()}</nav>
+    `;
+  }
+
   return `
     <h1>🎭 Gala Emporium</h1>
     <p>Upplev levande framträdanden i världsklass</p>
@@ -41,6 +51,8 @@ async function loadPageContent() {
   if (location.hash === '') { location.replace('#start'); }
   // add a class on body so that we can style differnt pages differently
   document.body.setAttribute('class', location.hash.slice(1));
+  // update header for the current page
+  document.querySelector('header').innerHTML = createHeader();
   // get the correct function to run depending on location.hash
   const functionToRun = menu[location.hash.slice(1)].function;
   // run the function and expect it return a html string

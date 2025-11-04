@@ -69,8 +69,34 @@ function attachBookingFormHandler() {
     }
 }
 
+async function getEventsOnly(clubId) {
+    const url = `http://localhost:3000/events?clubId=${clubId}`;
+    const events = await (await fetch(url)).json();
+    
+    return `
+        <h2>Events</h2>
+        ${events
+          .toSorted((a, b) => a.date > b.date ? 1 : -1)
+          .map(({ date, name, description }) => `
+            <article class="event">
+              <h3>${name} ${date}</h3>
+              <p>${description}</p>
+            </article>
+          `)
+          .join('')
+        }
+    `;
+}
+
 export default async function standupComedy() {
-    const clubContent = await clubInfoAndEvents('c8m3');
+    const eventsContent = await getEventsOnly('c8m3');
+
+    const comedyImage = `
+        <div class="comedy-image-section">
+            <img src="images/comedy.jpg" alt="Standup Comedy Show" class="comedy-image">
+            <p class="image-caption">🎭 Välkommen till vår fantastiska standup comedy-scen!</p>
+        </div>
+    `;
 
     const bookingForm = `
         <div class="booking-section">
@@ -113,10 +139,11 @@ export default async function standupComedy() {
             
             <div id="booking-confirmation"></div>
         </div>
+        
     `;
 
     // Attach event handler after DOM is updated
     setTimeout(attachBookingFormHandler, 100);
 
-    return clubContent + bookingForm;
+    return eventsContent + comedyImage + bookingForm;
 }
