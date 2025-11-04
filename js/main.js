@@ -12,11 +12,16 @@ const menu = {
   "standup-comedy": { label: 'Standup Comedy', function: standupComedy }
 };
 
+// Menu for header - only shows Start
+const headerMenu = {
+  "start": { label: 'Start', function: start }
+};
+
 function createMenu() {
   // Object.entries -> convert object to array
   // then map to create a-tags (links)
   // then join everything into one big string
-  return Object.entries(menu)
+  return Object.entries(headerMenu)
     .map(([urlHash, { label }]) => `
       <a href="#${urlHash}">${label}</a>
     `)
