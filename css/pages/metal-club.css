@@ -45,6 +45,11 @@ body.metal-klubben {
     transform: translateY(0);
   }
 
+  /*Gör bakgrunden vid header mörk istället för lila-gradient */
+  header {
+    background: #181718;
+  }
+
   header h1 {
     font-family: "Metal Mania", system-ui;
     font-weight: 400;
@@ -110,5 +115,12 @@ body.metal-klubben {
   article.event p {
     line-height: 1.7;
     font-size: 15px;
+  }
+
+
+
+  /* Döljer ikonen vid "Gala emporium*/
+  .header-icon {
+    display: none;
   }
 }

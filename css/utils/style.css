@@ -66,10 +66,6 @@ header {
   background: linear-gradient(90deg, #4a148c, #880e4f);
 }
 
-body.metal-klubben header {
-  background: #181718;
-}
-
 .club-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
