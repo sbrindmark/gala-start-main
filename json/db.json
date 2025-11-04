@@ -9,6 +9,11 @@
       "id": "fg5i",
       "name": "Metal-klubben",
       "description": "Ylande metal som får dig att vilja erövra världen! Varje vecka med Tom som konferencier."
+    },
+    {
+      "id": "c8m3",
+      "name": "Standup Comedy Club",
+      "description": "Skratta tills du får ont i magen! Våra komiker levererar de bästa skämten och mest underhållande berättelserna varje vecka."
     }
   ],
   "events": [
@@ -32,6 +37,27 @@
       "name": "Fusion-jazzarna Corea's Disciples",
       "description": "Cool fusion-jazz med en massa dim-ackord.",
       "clubId": "a37c"
+    },
+    {
+      "id": "89d1",
+      "date": "2025-11-07 20:00",
+      "name": "Laughter Night med Magnus & Lisa",
+      "description": "Två av Sveriges roligaste komiker tar scenen! Magnus berättar om livet som pappa medan Lisa delar sina observationer om modern dating.",
+      "clubId": "c8m3"
+    },
+    {
+      "id": "92e4",
+      "date": "2025-11-08 19:30",
+      "name": "Open Mic Comedy",
+      "description": "Kom och testa dina egna skämt! Open stage för blivande komiker. 5 minuter per person, anmäl dig vid entrén.",
+      "clubId": "c8m3"
+    },
+    {
+      "id": "74f7",
+      "date": "2025-11-10 21:00",
+      "name": "Internationell Comedy Night",
+      "description": "Komiker från hela världen! Engelska skämt, svenska punchlines och internationell humor som får alla att skratta.",
+      "clubId": "c8m3"
     }
   ]
 }
