@@ -123,4 +123,11 @@ body.metal-klubben {
   .header-icon {
     display: none;
   }
+
+  /* Rutan för att skapa event*/
+  .create-event {
+    display: flex;
+    flex-direction: column;
+  }
+
 }
