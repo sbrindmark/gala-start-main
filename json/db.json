@@ -9,8 +9,14 @@
       "id": "fg5i",
       "name": "Metal-klubben",
       "description": "Ylande metal som får dig att vilja erövra världen! Varje vecka med Tom som konferencier."
+    },
+    {
+      "id": "k23o",
+      "name": "House-Techno-klubben",
+      "description": "Elektronisk musik hela natten! Pulserande beats och hypnotisk techno i en futuristisk miljö."
     }
   ],
+
   "events": [
     {
       "id": "43ac",
@@ -27,11 +33,20 @@
       "clubId": "fg5i"
     },
     {
-      "id": "43ac",
+      "id": "99bd",
       "date": "2025-11-01 19:00",
       "name": "Fusion-jazzarna Corea's Disciples",
       "description": "Cool fusion-jazz med en massa dim-ackord.",
       "clubId": "a37c"
+    },
+    {
+      "id": "k23e",
+      "date": "2025-11-15 22:00",
+      "name": "House & Techno Night",
+      "description": "En elektrisk natt med djupa house-beats och hypnotisk techno. Dansgolvet vibrerar till rytmen hela natten!",
+      "clubId": "k23o"
     }
-  ]
+  ],
+
+  "bookings": []
 }

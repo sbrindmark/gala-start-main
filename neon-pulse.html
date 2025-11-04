@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neon Pulse – House & Techno Club</title>
+  <meta name="description" content="Neon Pulse är en house och techno-klubb i Gala Emporium. Upptäck kommande evenemang och förboka biljetter.">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700&family=Antonio:wght@700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/utils/style.css">
+  <link rel="stylesheet" href="../css/neon-pulse.css">
+</head>
+
+<body>
+  <!-- =========================
+       HUVUDNAVIGATION
+       ========================= -->
+  <header>
+    <nav class="nav">
+      <a href="../index.html" class="nav-logo">Gala Emporium</a>
+      <ul class="nav-links">
+        <li><a href="../index.html#clubs">Klubbar</a></li>
+        <li><a href="#events">Evenemang</a></li>
+        <li><a href="#booking">Boka</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- =========================
+       MAIN INNEHÅLL
+       ========================= -->
+  <main id="club">
+    
+    <!-- Hero Section -->
+    <section class="hero" aria-labelledby="club-title">
+      <div class="hero__overlay"></div>
+      <div class="hero__content">
+        <h1 id="club-title">Neon Pulse</h1>
+        <p class="tagline">Deep house & techno nights. Pure energy, clean sound.</p>
+        <a class="skip-link" href="#events">Hoppa till evenemang</a>
+      </div>
+    </section>
+
+    <!-- Om klubben -->
+    <section class="about" aria-labelledby="about-title">
+      <h2 id="about-title">Om klubben</h2>
+      <p>
+        Neon Pulse är hjärtat av Gala Emporium – där mörker möter ljus, bas möter rytm. 
+        Upplev live DJs, dans, visuals och vibbar du inte glömmer.
+      </p>
+    </section>
+
+    <!-- Kommande Evenemang -->
+    <section id="events" aria-labelledby="events-title">
+      <h2 id="events-title">Kommande evenemang</h2>
+      <div id="eventsStatus" class="sr-status" aria-live="polite"></div>
+      <div id="events-list" class="event-grid" role="list"></div>
+    </section>
+
+    <!-- Förbokning -->
+    <section id="booking" aria-labelledby="booking-title">
+      <h2 id="booking-title">Förboka</h2>
+      <form id="bookingForm" novalidate>
+        <div class="field">
+          <label for="bkName">Namn</label>
+          <input id="bkName" name="name" type="text" required minlength="2" maxlength="60" autocomplete="name" />
+        </div>
+
+        <div class="field">
+          <label for="bkEmail">E-post</label>
+          <input id="bkEmail" name="email" type="email" required autocomplete="email" />
+        </div>
+
+        <div class="field">
+          <label for="bkEvent">Evenemang</label>
+          <select id="bkEvent" name="eventId" required></select>
+        </div>
+
+        <div class="field">
+          <label for="bkQty">Antal biljetter</label>
+          <input id="bkQty" name="quantity" type="number" min="1" max="10" step="1" required />
+        </div>
+
+        <button type="submit" class="btn">Skicka bokning</button>
+        <div id="bookingStatus" class="sr-status" aria-live="polite"></div>
+      </form>
+    </section>
+
+    <!-- Promo Video -->
+    <section class="promo" aria-labelledby="promo-title">
+      <h2 id="promo-title">Se vår promo-video</h2>
+      <div class="video-wrapper">
+        <iframe 
+          src="https://www.youtube.com/embed/5qap5aO4i9A" 
+          title="Neon Pulse promo"
+          frameborder="0"
+          allowfullscreen
+          allow="autoplay; encrypted-media">
+        </iframe>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================
+       FOOTER
+       ========================= -->
+  <footer class="footer">
+    <p>© <span id="year"></span> Neon Pulse — All rights reserved.</p>
+  </footer>
+
+  <!-- Audio Intro -->
+  <audio id="introAudio" src="../audio/neon-intro.mp3" preload="auto"></audio>
+
+  <!-- Script -->
+  <script src="../js/neon-pulse.js" defer></script>
+</body>
+</html>
