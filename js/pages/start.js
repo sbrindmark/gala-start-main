@@ -1,7 +1,14 @@
 import clubInfoAndEvents from "../utils/club-info-and-events.js";
 
 export default async function start() {
-  const eventHtml = await clubInfoAndEvents();
+  let eventHtml = '';
+  try {
+    eventHtml = await clubInfoAndEvents();
+  } catch (error) {
+    console.error('Error loading events:', error);
+    eventHtml = '<p>Kunde inte ladda events. Kontrollera att servern körs.</p>';
+  }
+
   return `
     <section class="clubs">
       <h2>Våra Klubbar</h2>

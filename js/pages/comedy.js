@@ -147,3 +147,7 @@ export default async function standupComedy() {
 
     return comedyImage + eventsContent + bookingForm;
 }
+
+<footer>
+    <p>© 2025 Gala Emporium</p>
+</footer>

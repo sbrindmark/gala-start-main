@@ -61,11 +61,14 @@ async function loadPageContent() {
   document.querySelector('main').innerHTML = html;
 }
 
-// call loadPageContent once on page load
-loadPageContent();
+// Initialize when DOM is ready
+document.addEventListener('DOMContentLoaded', () => {
+  // create the header first
+  document.querySelector('header').innerHTML = createHeader();
 
-// and then on every hash change of the url/location
-window.onhashchange = loadPageContent;
+  // then load page content
+  loadPageContent();
 
-// create the header and display it
-document.querySelector('header').innerHTML = createHeader();
+  // and then on every hash change of the url/location
+  window.onhashchange = loadPageContent;
+});
