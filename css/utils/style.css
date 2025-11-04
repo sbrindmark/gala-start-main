@@ -8,6 +8,10 @@ body {
   margin: 20px
 }
 
+nav a {
+  color: white;
+}
+
 .pet {
   border: 1px solid #ddd;
   border-radius: 10px;
