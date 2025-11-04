@@ -1,10 +1,53 @@
-@import './utils/setup-box-sizing.css';
-@import './pages/start-page.css';
-@import './pages/jazz-club.css';
-@import './pages/metal-club.css';
+@import '../utils/setup-box-sizing.css';
+@import '../pages/start-page.css';
+@import '../pages/jazz-club.css';
+@import '../pages/metal-club.css';
+@import '../pages/house-techno-club.css';
 
 body {
   margin: 20px
+}
+
+#all-events-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: calc(100vh - 100px);
+}
+
+header nav {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  padding: 10px 0;
+  justify-content: center;
+}
+
+header nav a {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 5px;
+  background-color: #333;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+header nav a:hover {
+  background-color: #555;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+header nav a:active {
+  transform: translateY(0);
+}
+
+nav a {
+  color: white;
 }
 
 .pet {
@@ -52,7 +95,7 @@ header {
   background: #1a237e;
 }
 
-.dance {
+.metal {
   background: #00695c;
 }
 
@@ -67,4 +110,66 @@ header {
 
 .club:hover {
   transform: scale(1.05);
+}
+
+/* Centrerar events på förstasidan */
+#all-events-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: calc(100vh - 100px);
+}
+
+/* Wrapper = rutan som innehållet ligger i*/
+
+/* Design på rutan där eventsen ligger i*/
+.wrapper {
+  background: rgba(0, 0, 0, 0.7);
+  border: 2px solid rgba(255, 255, 255, .2);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+  color: white;
+  border-radius: 10px;
+  padding: 30px 40px;
+  margin: 10px;
+  max-width: 800px;
+  line-height: 1.6;
+}
+
+.wrapper h1,
+.wrapper h2,
+.wrapper h3 {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+.wrapper p {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 15px;
+}
+
+/* Article.event = events som hämtas från db.json */
+
+article.event {
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  margin: 15px 0;
+  padding: 20px;
+  border-radius: 8px;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+article.event h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+article.event p {
+  line-height: 1.7;
+  font-size: 15px;
 }
