@@ -24,6 +24,14 @@ function createMenu() {
     .join('');
 }
 
+function createHeader() {
+  return `
+    <h1>🎭 Gala Emporium</h1>
+    <p>Upplev levande framträdanden i världsklass</p>
+    <nav>${createMenu()}</nav>
+  `;
+}
+
 async function loadPageContent() {
   // if no hash redirect to #start
   if (location.hash === '') { location.replace('#start'); }
@@ -43,5 +51,5 @@ loadPageContent();
 // and then on every hash change of the url/location
 window.onhashchange = loadPageContent;
 
-// create the menu and display it
-document.querySelector('header nav').innerHTML = createMenu();
+// create the header and display it
+document.querySelector('header').innerHTML = createHeader();
