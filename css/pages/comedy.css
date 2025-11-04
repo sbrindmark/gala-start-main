@@ -1,11 +1,18 @@
 /* 🎭 RAW COMEDY CLUB THEME (Red & Black) */
 
 body.standup-comedy {
-    background-color: #0a0a0a;
+    background:
+        linear-gradient(rgba(10, 10, 10, 0.85), rgba(10, 10, 10, 0.85)),
+        url('../../images/lightshow.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
     color: #f4f4f4;
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
+    min-height: 100vh;
 }
 
 /* 🔥 HEADER SOM EVENT BOX */
