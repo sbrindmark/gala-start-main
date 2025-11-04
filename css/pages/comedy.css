@@ -366,3 +366,189 @@ body.standup-comedy a:hover::after {
 .comedy-button:active {
     transform: translateY(0px);
 }
+
+/* Booking Section Styling */
+.booking-section {
+    background: rgba(255, 255, 255, 0.95);
+    color: #2c1810;
+    border-radius: 20px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+    border: 3px solid #ff6b35;
+    position: relative;
+    overflow: hidden;
+}
+
+.booking-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 8px;
+    background: linear-gradient(90deg, #ff6b35, #f7931e, #ffd23f, #ff6b35);
+    background-size: 200% 100%;
+    animation: rainbow 3s linear infinite;
+}
+
+.booking-section h2 {
+    color: #d73502;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.booking-form {
+    display: grid;
+    gap: 1.5rem;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-weight: bold;
+    color: #8b0000;
+    font-size: 1.1rem;
+}
+
+.form-group input,
+.form-group select {
+    padding: 12px 16px;
+    border: 2px solid #ff6b35;
+    border-radius: 10px;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.9);
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #d73502;
+    box-shadow: 0 4px 15px rgba(215, 53, 2, 0.3);
+    transform: translateY(-2px);
+}
+
+.form-group input:hover,
+.form-group select:hover {
+    border-color: #f7931e;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Booking Confirmation Styling */
+.booking-success {
+    background: linear-gradient(135deg, #32cd32, #90ee90);
+    color: #0d4a0d;
+    padding: 2rem;
+    border-radius: 15px;
+    margin-top: 2rem;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(50, 205, 50, 0.3);
+    animation: success-bounce 0.6s ease-out;
+}
+
+@keyframes success-bounce {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.booking-success h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.booking-details {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 1rem;
+    border-radius: 10px;
+    margin: 1rem 0;
+    border-left: 5px solid #32cd32;
+}
+
+.booking-details p {
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+}
+
+.booking-note {
+    font-style: italic;
+    font-weight: bold;
+    color: #0d4a0d;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+}
+
+.booking-error {
+    background: linear-gradient(135deg, #ff4444, #ff8888);
+    color: #800000;
+    padding: 2rem;
+    border-radius: 15px;
+    margin-top: 2rem;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(255, 68, 68, 0.3);
+    animation: error-shake 0.6s ease-out;
+}
+
+@keyframes error-shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-5px);
+    }
+
+    75% {
+        transform: translateX(5px);
+    }
+}
+
+.booking-error h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Responsive Design for Booking Form */
+@media (max-width: 768px) {
+    .booking-section {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+
+    .booking-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .booking-form {
+        gap: 1rem;
+    }
+
+    .form-group input,
+    .form-group select {
+        padding: 10px 12px;
+        font-size: 0.9rem;
+    }
+}
