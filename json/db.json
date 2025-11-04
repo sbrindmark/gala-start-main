@@ -16,7 +16,6 @@
       "description": "Elektronisk musik hela natten! Pulserande beats och hypnotisk techno i en futuristisk miljö."
     }
   ],
-
   "events": [
     {
       "id": "43ac",
@@ -54,6 +53,11 @@
       "clubId": "k23o"
     }
   ],
-
-  "bookings": []
+  "bookings": [
+    {
+      "id": "2e20",
+      "title": "Test från Thunder Client",
+      "author": "Agge"
+    }
+  ]
 }

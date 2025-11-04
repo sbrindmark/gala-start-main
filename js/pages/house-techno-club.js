@@ -52,7 +52,7 @@ export default async function houseTechnoClub() {
 
       try {
         // Skicka data till JSON-servern (bookings)
-        const res = await fetch("http://localhost:3000/bookings", {
+        const res = await fetch("http://localhost:3002/bookings", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(payload),
