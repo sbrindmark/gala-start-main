@@ -9,7 +9,8 @@ import houseTechnoClub from './pages/house-techno-club.js';
 const menu = {
   "start": { label: 'Start', function: start },
   "jazz-klubben": { label: 'Jazz-klubben', function: jazzClub },
-  "metal-klubben": { label: 'Metal-klubben', function: metalClub }
+  "metal-klubben": { label: 'Metal-klubben', function: metalClub },
+  "house-techno-klubben": { label: 'House-techno-klubben', function: houseTechnoClub }
 };
 
 function createMenu() {
