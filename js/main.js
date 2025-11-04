@@ -47,26 +47,39 @@ function createHeader() {
 }
 
 async function loadPageContent() {
-  // if no hash redirect to #start
-  if (location.hash === '') { location.replace('#start'); }
-  // add a class on body so that we can style differnt pages differently
-  document.body.setAttribute('class', location.hash.slice(1));
-  // update header for the current page
-  document.querySelector('header').innerHTML = createHeader();
-  // get the correct function to run depending on location.hash
-  const functionToRun = menu[location.hash.slice(1)].function;
-  // run the function and expect it return a html string
-  const html = await functionToRun();
-  // replace the contents of the main element
-  document.querySelector('main').innerHTML = html;
+  try {
+    // if no hash redirect to #start
+    if (location.hash === '') { location.replace('#start'); }
+    // add a class on body so that we can style differnt pages differently
+    document.body.setAttribute('class', location.hash.slice(1));
+    
+    // Update header for current page
+    document.querySelector('header').innerHTML = createHeader();
+    
+    // get the correct function to run depending on location.hash
+    const page = location.hash.slice(1);
+    if (!menu[page]) {
+      console.error('Page not found:', page);
+      location.replace('#start');
+      return;
+    }
+    const functionToRun = menu[page].function;
+    // run the function and expect it return a html string
+    const html = await functionToRun();
+    // replace the contents of the main element
+    document.querySelector('main').innerHTML = html;
+  } catch (error) {
+    console.error('Error loading page:', error);
+    document.querySelector('main').innerHTML = '<p>Det uppstod ett fel vid laddning av sidan.</p>';
+  }
 }
 
 // Initialize when DOM is ready
-document.addEventListener('DOMContentLoaded', () => {
-  // create the header first
+document.addEventListener('DOMContentLoaded', function () {
+  // create the header and display it
   document.querySelector('header').innerHTML = createHeader();
 
-  // then load page content
+  // call loadPageContent once on page load
   loadPageContent();
 
   // and then on every hash change of the url/location

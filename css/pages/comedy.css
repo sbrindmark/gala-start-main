@@ -1,620 +1,197 @@
-/* Standup Comedy Club Styling */
+/* 🎭 RAW COMEDY CLUB THEME (Red & Black) */
 
 body.standup-comedy {
-    background: linear-gradient(135deg, #ff6b35, #f7931e, #ffd23f);
-    color: #2c1810;
-    font-family: 'Comic Sans MS', cursive, system-ui, sans-serif;
-    min-height: 100vh;
-    position: relative;
-    overflow-x: hidden;
+    background-color: #0a0a0a;
+    color: #f4f4f4;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-/* Comedy spotlight effect */
-body.standup-comedy::before {
-    content: '';
-    position: fixed;
-    top: -50%;
-    left: 50%;
-    width: 200px;
-    height: 200px;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
-    border-radius: 50%;
-    transform: translateX(-50%);
-    pointer-events: none;
+/* 🔥 HEADER SOM EVENT BOX */
+body.standup-comedy header {
+    background-color: #141414;
+    border-left: 6px solid #ff2e2e;
+    border-right: 6px solid #ff2e2e;
+    border-radius: 0 0 15px 15px;
+    margin: 0 auto 40px;
+    padding: 60px 30px;
+    max-width: 900px;
+    text-align: center;
+    box-shadow: 0 0 40px rgba(255, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+body.standup-comedy header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at top center, rgba(255, 0, 0, 0.15), transparent 70%);
     z-index: 0;
 }
 
-/* Main content area */
-.comedy-content {
+body.standup-comedy header h1 {
+    color: #ff2e2e;
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(255, 46, 46, 0.5);
     position: relative;
     z-index: 1;
-    padding: 2rem;
 }
 
-/* Header styling */
-body.standup-comedy header {
-    background: linear-gradient(45deg, #d73502, #ff6b35);
-    padding: 3rem 2rem;
-    border-radius: 0 0 50px 50px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-    margin-bottom: 2rem;
-}
-
-body.standup-comedy h1 {
-    font-size: 3.5rem;
-    font-weight: bold;
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
-    margin: 0;
-    transform: rotate(-2deg);
-    animation: wobble 2s ease-in-out infinite;
-}
-
-@keyframes wobble {
-
-    0%,
-    100% {
-        transform: rotate(-2deg);
-    }
-
-    50% {
-        transform: rotate(2deg);
-    }
-}
-
-/* Navigation and links */
-body.standup-comedy a {
-    color: #8b0000;
-    text-decoration: none;
-    font-weight: bold;
-    transition: all 0.3s ease;
+body.standup-comedy header p {
+    font-size: 1.2rem;
+    color: #ddd;
     position: relative;
-}
-
-body.standup-comedy a:hover {
-    color: #ff0000;
-    transform: scale(1.1);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-body.standup-comedy a::after {
-    content: '😂';
-    position: absolute;
-    right: -25px;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-body.standup-comedy a:hover::after {
-    opacity: 1;
-}
-
-/* Comedy stage area */
-.comedy-stage {
-    background: linear-gradient(to bottom, #8b4513, #4a2511);
-    border-radius: 20px;
-    padding: 2rem;
-    margin: 2rem 0;
-    box-shadow: inset 0 5px 15px rgba(0, 0, 0, 0.5);
-    position: relative;
-}
-
-.comedy-stage::before {
-    content: '🎭';
-    position: absolute;
-    top: -15px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 2rem;
-    background: #ff6b35;
-    padding: 10px;
-    border-radius: 50%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-/* Microphone stand */
-.mic-stand {
-    position: absolute;
-    right: 20px;
-    top: 20px;
-    font-size: 3rem;
-    opacity: 0.7;
-    animation: sway 3s ease-in-out infinite;
-}
-
-@keyframes sway {
-
-    0%,
-    100% {
-        transform: rotate(0deg);
-    }
-
-    50% {
-        transform: rotate(5deg);
-    }
-}
-
-/* Comedy event cards */
-.comedy-events {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin: 2rem 0;
-}
-
-.comedy-event {
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 15px;
-    padding: 1.5rem;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 3px solid transparent;
-    background-clip: padding-box;
-    position: relative;
-    overflow: hidden;
-}
-
-.comedy-event::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 5px;
-    background: linear-gradient(90deg, #ff6b35, #f7931e, #ffd23f, #ff6b35);
-    background-size: 200% 100%;
-    animation: rainbow 3s linear infinite;
-}
-
-@keyframes rainbow {
-    0% {
-        background-position: 0% 50%;
-    }
-
-    100% {
-        background-position: 200% 50%;
-    }
-}
-
-.comedy-event:hover {
-    transform: translateY(-10px) rotate(1deg);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-}
-
-.comedy-event h3 {
-    color: #d73502;
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-/* Comedian profiles */
-.comedian {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin: 1rem 0;
-    padding: 1rem;
-    background: rgba(255, 255, 255, 0.8);
-    border-radius: 10px;
-    border-left: 5px solid #ff6b35;
-}
-
-.comedian-emoji {
-    font-size: 3rem;
-    animation: bounce 2s infinite;
-}
-
-@keyframes bounce {
-
-    0%,
-    20%,
-    50%,
-    80%,
-    100% {
-        transform: translateY(0);
-    }
-
-    40% {
-        transform: translateY(-10px);
-    }
-
-    60% {
-        transform: translateY(-5px);
-    }
-}
-
-/* Joke bubbles */
-.joke-bubble {
-    background: #fff;
-    color: #2c1810;
-    padding: 1rem 1.5rem;
-    border-radius: 20px;
-    margin: 1rem 0;
-    position: relative;
-    font-style: italic;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    animation: float 4s ease-in-out infinite;
-}
-
-@keyframes float {
-
-    0%,
-    100% {
-        transform: translateY(0px);
-    }
-
-    50% {
-        transform: translateY(-10px);
-    }
-}
-
-.joke-bubble::before {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 30px;
-    width: 0;
-    height: 0;
-    border: 10px solid transparent;
-    border-top-color: #fff;
-}
-
-/* Laughter meter */
-.laughter-meter {
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 15px;
-    padding: 1.5rem;
-    margin: 2rem 0;
-    text-align: center;
-}
-
-.laughter-bar {
-    width: 100%;
-    height: 20px;
-    background: #ddd;
-    border-radius: 10px;
-    overflow: hidden;
-    position: relative;
-}
-
-.laughter-fill {
-    height: 100%;
-    background: linear-gradient(90deg, #32cd32, #ffd700, #ff6b35);
-    border-radius: 10px;
-    animation: laugh-fill 3s ease-in-out infinite;
-    width: 85%;
-    position: relative;
-}
-
-@keyframes laugh-fill {
-
-    0%,
-    100% {
-        width: 75%;
-    }
-
-    50% {
-        width: 95%;
-    }
-}
-
-.laughter-emojis {
-    position: absolute;
-    top: -30px;
-    right: 10px;
-    font-size: 1.5rem;
-}
-
-/* Responsive design */
-@media (max-width: 768px) {
-    body.standup-comedy h1 {
-        font-size: 2.5rem;
-    }
-
-    .comedy-events {
-        grid-template-columns: 1fr;
-    }
-
-    .comedian {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .mic-stand {
-        display: none;
-    }
-}
-
-/* Fun animations for page elements */
-.standup-comedy .animated-emoji {
-    display: inline-block;
-    animation: spin 4s linear infinite;
-}
-
-@keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-/* Special effects for buttons */
-.comedy-button {
-    background: linear-gradient(45deg, #ff6b35, #f7931e);
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    border-radius: 25px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-.comedy-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-    background: linear-gradient(45deg, #f7931e, #ff6b35);
-}
-
-.comedy-button:active {
-    transform: translateY(0px);
-}
-
-/* Booking Section Styling */
-.booking-section {
-    background: rgba(255, 255, 255, 0.95);
-    color: #2c1810;
-    border-radius: 20px;
-    padding: 2rem;
-    margin: 2rem 0;
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
-    border: 3px solid #ff6b35;
-    position: relative;
-    overflow: hidden;
-}
-
-.booking-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 8px;
-    background: linear-gradient(90deg, #ff6b35, #f7931e, #ffd23f, #ff6b35);
-    background-size: 200% 100%;
-    animation: rainbow 3s linear infinite;
-}
-
-.booking-section h2 {
-    color: #d73502;
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.booking-form {
-    display: grid;
-    gap: 1.5rem;
-    max-width: 500px;
+    z-index: 1;
+    max-width: 700px;
     margin: 0 auto;
 }
 
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.form-group label {
-    font-weight: bold;
-    color: #8b0000;
-    font-size: 1.1rem;
-}
-
-.form-group input,
-.form-group select {
-    padding: 12px 16px;
-    border: 2px solid #ff6b35;
-    border-radius: 10px;
-    font-size: 1rem;
-    background: rgba(255, 255, 255, 0.9);
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.form-group input:focus,
-.form-group select:focus {
-    outline: none;
-    border-color: #d73502;
-    box-shadow: 0 4px 15px rgba(215, 53, 2, 0.3);
-    transform: translateY(-2px);
-}
-
-.form-group input:hover,
-.form-group select:hover {
-    border-color: #f7931e;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-/* Booking Confirmation Styling */
-.booking-success {
-    background: linear-gradient(135deg, #32cd32, #90ee90);
-    color: #0d4a0d;
-    padding: 2rem;
-    border-radius: 15px;
-    margin-top: 2rem;
+/* 🔻 Event Cards */
+main h2 {
+    color: #ff2e2e;
     text-align: center;
-    box-shadow: 0 8px 25px rgba(50, 205, 50, 0.3);
-    animation: success-bounce 0.6s ease-out;
-}
-
-@keyframes success-bounce {
-    0% {
-        transform: scale(0.8);
-        opacity: 0;
-    }
-
-    50% {
-        transform: scale(1.05);
-    }
-
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-
-.booking-success h3 {
     font-size: 2rem;
-    margin-bottom: 1rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+    margin-bottom: 30px;
 }
 
-.booking-details {
-    background: rgba(255, 255, 255, 0.8);
-    padding: 1rem;
+.event {
+    background-color: #181818;
+    border-left: 4px solid #ff2e2e;
     border-radius: 10px;
-    margin: 1rem 0;
-    border-left: 5px solid #32cd32;
+    padding: 20px;
+    margin: 15px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.2);
 }
 
-.booking-details p {
-    margin: 0.5rem 0;
-    font-size: 1.1rem;
+.event:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 25px rgba(255, 46, 46, 0.6);
 }
 
-.booking-note {
-    font-style: italic;
-    font-weight: bold;
-    color: #0d4a0d;
-    margin-top: 1rem;
-    font-size: 1.2rem;
+.event h3 {
+    color: #ff2e2e;
+    margin-bottom: 10px;
 }
 
-.booking-error {
-    background: linear-gradient(135deg, #ff4444, #ff8888);
-    color: #800000;
-    padding: 2rem;
-    border-radius: 15px;
-    margin-top: 2rem;
+.event p {
+    color: #ddd;
+}
+
+/* 📅 Grid Layout */
+main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 0 40px 60px;
+}
+
+/* 🎫 Booking Section */
+.booking-section {
+    grid-column: 1 / -1;
+    background-color: #151515;
+    border-radius: 12px;
+    padding: 30px;
+    margin: 40px auto;
+    max-width: 500px;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
+}
+
+.booking-section h2 {
     text-align: center;
-    box-shadow: 0 8px 25px rgba(255, 68, 68, 0.3);
-    animation: error-shake 0.6s ease-out;
+    color: #ff2e2e;
+    margin-bottom: 25px;
 }
 
-@keyframes error-shake {
-
-    0%,
-    100% {
-        transform: translateX(0);
-    }
-
-    25% {
-        transform: translateX(-5px);
-    }
-
-    75% {
-        transform: translateX(5px);
-    }
+.form-group {
+    margin-bottom: 15px;
 }
 
-.booking-error h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+label {
+    display: block;
+    color: #f4f4f4;
+    margin-bottom: 5px;
 }
 
-/* Responsive Design for Booking Form */
-@media (max-width: 768px) {
-    .booking-section {
-        margin: 1rem;
-        padding: 1.5rem;
-    }
-
-    .booking-section h2 {
-        font-size: 1.5rem;
-    }
-
-    .booking-form {
-        gap: 1rem;
-    }
-
-    .form-group input,
-    .form-group select {
-        padding: 10px 12px;
-        font-size: 0.9rem;
-    }
+input,
+select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #444;
+    background-color: #222;
+    color: #fff;
 }
 
-/* Comedy Image Section */
+.comedy-button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #ff2e2e;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.comedy-button:hover {
+    background-color: #e01b1b;
+}
+
+/* 🖼️ Image Section */
 .comedy-image-section {
     text-align: center;
-    margin: 3rem 0;
-    padding: 2rem;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 20px;
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
-    border: 3px solid #ff6b35;
-    position: relative;
-    overflow: hidden;
-}
-
-.comedy-image-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 8px;
-    background: linear-gradient(90deg, #ff6b35, #f7931e, #ffd23f, #ff6b35);
-    background-size: 200% 100%;
-    animation: rainbow 3s linear infinite;
+    margin: 20px auto;
+    max-width: 400px;
+    padding: 15px;
+    background-color: #181818;
+    border-radius: 10px;
+    border-left: 4px solid #ff2e2e;
 }
 
 .comedy-image {
     max-width: 100%;
     height: auto;
-    max-height: 400px;
-    border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 4px solid #ff6b35;
-}
-
-.comedy-image:hover {
-    transform: scale(1.05) rotate(2deg);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
-    border-color: #d73502;
+    max-height: 200px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(255, 46, 46, 0.3);
 }
 
 .image-caption {
-    font-size: 1.3rem;
-    color: #d73502;
-    font-weight: bold;
-    margin-top: 1.5rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-    animation: bounce 2s infinite;
+    color: #ddd;
+    font-size: 0.9rem;
+    margin-top: 10px;
+    font-style: italic;
 }
 
-/* Responsive design for image */
-@media (max-width: 768px) {
-    .comedy-image-section {
-        margin: 2rem 1rem;
-        padding: 1.5rem;
-    }
+/* ✅ Confirmation Boxes */
+.booking-success,
+.booking-error {
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 8px;
+}
 
-    .comedy-image {
-        max-height: 300px;
-    }
+.booking-success {
+    background-color: #102010;
+    border: 1px solid #2ecc71;
+    color: #aaf0c0;
+}
 
-    .image-caption {
-        font-size: 1.1rem;
-    }
+.booking-error {
+    background-color: #201010;
+    border: 1px solid #ff4d4d;
+    color: #ffb3b3;
 }

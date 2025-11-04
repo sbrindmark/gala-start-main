@@ -53,7 +53,7 @@ function attachBookingFormHandler() {
                             <p><strong>Event datum:</strong> ${result.booking.eventDate}</p>
                             <p><strong>Antal gäster:</strong> ${result.booking.guests}</p>
                         </div>
-                        <p class="booking-note">Spara ditt bokningsnummer och visa det vid entrén! 🎪</p>
+                        <p class="booking-note">Spara ditt bokningsnummer och visa det vid entrén!🎪</p>
                     </div>
                 `;
                 form.reset();
@@ -147,7 +147,3 @@ export default async function standupComedy() {
 
     return comedyImage + eventsContent + bookingForm;
 }
-
-<footer>
-    <p>© 2025 Gala Emporium</p>
-</footer>
