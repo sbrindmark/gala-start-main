@@ -1,6 +1,6 @@
 /* Standup Comedy Club Styling */
 
-body.comedy-klubben {
+body.standup-comedy {
     background: linear-gradient(135deg, #ff6b35, #f7931e, #ffd23f);
     color: #2c1810;
     font-family: 'Comic Sans MS', cursive, system-ui, sans-serif;
@@ -10,7 +10,7 @@ body.comedy-klubben {
 }
 
 /* Comedy spotlight effect */
-body.comedy-klubben::before {
+body.standup-comedy::before {
     content: '';
     position: fixed;
     top: -50%;
@@ -32,7 +32,7 @@ body.comedy-klubben::before {
 }
 
 /* Header styling */
-body.comedy-klubben header {
+body.standup-comedy header {
     background: linear-gradient(45deg, #d73502, #ff6b35);
     padding: 3rem 2rem;
     border-radius: 0 0 50px 50px;
@@ -40,7 +40,7 @@ body.comedy-klubben header {
     margin-bottom: 2rem;
 }
 
-body.comedy-klubben h1 {
+body.standup-comedy h1 {
     font-size: 3.5rem;
     font-weight: bold;
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
@@ -62,7 +62,7 @@ body.comedy-klubben h1 {
 }
 
 /* Navigation and links */
-body.comedy-klubben a {
+body.standup-comedy a {
     color: #8b0000;
     text-decoration: none;
     font-weight: bold;
@@ -70,13 +70,13 @@ body.comedy-klubben a {
     position: relative;
 }
 
-body.comedy-klubben a:hover {
+body.standup-comedy a:hover {
     color: #ff0000;
     transform: scale(1.1);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-body.comedy-klubben a::after {
+body.standup-comedy a::after {
     content: '😂';
     position: absolute;
     right: -25px;
@@ -84,7 +84,7 @@ body.comedy-klubben a::after {
     transition: opacity 0.3s ease;
 }
 
-body.comedy-klubben a:hover::after {
+body.standup-comedy a:hover::after {
     opacity: 1;
 }
 
@@ -308,7 +308,7 @@ body.comedy-klubben a:hover::after {
 
 /* Responsive design */
 @media (max-width: 768px) {
-    body.comedy-klubben h1 {
+    body.standup-comedy h1 {
         font-size: 2.5rem;
     }
 
@@ -327,7 +327,7 @@ body.comedy-klubben a:hover::after {
 }
 
 /* Fun animations for page elements */
-.comedy-klubben .animated-emoji {
+.standup-comedy .animated-emoji {
     display: inline-block;
     animation: spin 4s linear infinite;
 }
