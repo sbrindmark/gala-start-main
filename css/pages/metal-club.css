@@ -1,5 +1,8 @@
 body.metal-klubben {
-  background-color: black;
+  background: url('../../images/metal.jpeg') no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  background-color: rgba(87, 30, 30, 0.774);
   color: white;
 
   a {

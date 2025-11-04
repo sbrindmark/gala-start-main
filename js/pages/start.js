@@ -7,7 +7,7 @@ export default async function start() {
       <h2>Våra Klubbar</h2>
       <div class="club-grid">
         <a href="#jazz-klubben" class="club jazz">Jazz Club</a>
-        <a href="#metal-klubben" class="club dance">Dance Club</a>
+        <a href="#metal-klubben" class="club metal">Metal Club</a>
         <a href="#comedy-klubben" class="club comedy">Stand-Up Comedy</a>
         <a href="#theatre-klubben" class="club theatre">Theatre Nights</a>
       </div>
