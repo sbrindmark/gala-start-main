@@ -2,11 +2,8 @@
 import clubInfoAndEvents from "../utils/club-info-and-events.js";
 
 export default async function houseTechnoClub() {
-  // Hämta huvudsektionen där innehållet ska visas
-  const main = document.querySelector("#dynamic-content");
-
-  // Ladda data för House-Techno-klubben (k23o) och skriv ut i DOM
-  main.innerHTML = await clubInfoAndEvents("k23o");
+  // Ladda data för House-Techno-klubben (k23o) och returnera HTML
+  const html = await clubInfoAndEvents("k23o");
 
   // =========================
   // 🎵 Ljud – spelas vid första klicket (användarinteraktion krävs)
@@ -52,7 +49,7 @@ export default async function houseTechnoClub() {
 
       try {
         // Skicka data till JSON-servern (bookings)
-        const res = await fetch("http://localhost:3002/bookings", {
+        const res = await fetch("http://localhost:3000/bookings", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(payload),
@@ -80,4 +77,6 @@ export default async function houseTechnoClub() {
 
   // Konsolmeddelande för kontroll
   console.log("House-Techno-klubben laddad ✔️");
+  
+  return html;
 }
