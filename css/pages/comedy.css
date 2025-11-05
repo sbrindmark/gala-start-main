@@ -81,6 +81,7 @@ body.standup-comedy main h1 {
 }
 
 /* Klubbbeskrivning från db.json */
+body.standup-comedy .comedy-wrapper>p:first-of-type,
 body.standup-comedy main>p {
     color: #ddd;
     text-align: center;

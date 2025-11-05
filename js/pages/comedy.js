@@ -1,5 +1,18 @@
 import clubInfoAndEvents from "../utils/club-info-and-events.js";
 
-export default async function standupComedy() {
-    return clubInfoAndEvents('c8m3');
+export default async function comedy() {
+    const eventsHtml = await clubInfoAndEvents('c8m3');
+
+    return `
+    <div class="wrapper comedy-wrapper">
+      ${eventsHtml}
+ 
+      <footer class="contact">
+        <h2>Kontakta oss</h2>
+        <p>Email: info@standupcomedy.se</p>
+        <p>Telefon: 08-555 12 678</p>
+      </footer>
+    </div>
+  `;
 }
+
