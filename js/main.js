@@ -2,6 +2,8 @@ import start from './pages/start.js';
 import jazzClub from './pages/jazz-club.js';
 import metalClub from './pages/metal-club.js';
 import standupComedy from './pages/comedy.js';
+import houseTechnoClub from './pages/house-techno-club.js';
+
 
 // Our menu: label to display in menu and 
 // function to run on menu choice
@@ -9,7 +11,8 @@ const menu = {
   "start": { label: 'Start', function: start },
   "jazz-klubben": { label: 'Jazz-klubben', function: jazzClub },
   "metal-klubben": { label: 'Metal-klubben', function: metalClub },
-  "standup-comedy": { label: 'Stand-Up Comedy', function: standupComedy }
+  "standup-comedy": { label: 'Stand-Up Comedy', function: standupComedy },
+  "house-techno-klubben": { label: 'House Techno', function: houseTechnoClub },
 };
 
 function createMenu() {
@@ -21,6 +24,14 @@ function createMenu() {
       <a href="#${urlHash}">${label}</a>
     `)
     .join('');
+}
+
+function createHeader() {
+  return `
+    <h1><span class="header-icon">🎭</span> Gala Emporium</h1>
+    <p>Upplev levande framträdanden i världsklass</p>
+    <nav>${createMenu()}</nav>
+  `;
 }
 
 async function loadPageContent() {
