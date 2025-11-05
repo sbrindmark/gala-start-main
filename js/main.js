@@ -26,7 +26,7 @@ function createMenu() {
 
 function createHeader() {
   return `
-    <h1>🎭 Gala Emporium</h1>
+    <h1><span class="header-icon">🎭</span> Gala Emporium</h1>
     <p>Upplev levande framträdanden i världsklass</p>
     <nav>${createMenu()}</nav>
   `;
