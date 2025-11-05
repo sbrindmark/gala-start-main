@@ -2,6 +2,7 @@ import start from './pages/start.js';
 import jazzClub from './pages/jazz-club.js';
 import metalClub from './pages/metal-club.js';
 import houseTechnoClub from './pages/house-techno-club.js';
+import hiphopClub from  './pages/hip-hop.js';
 
 
 // Our menu: label to display in menu and 
@@ -10,7 +11,8 @@ const menu = {
   "start": { label: 'Start', function: start },
   "jazz-klubben": { label: 'Jazz-klubben', function: jazzClub },
   "metal-klubben": { label: 'Metal-klubben', function: metalClub },
-  "house-techno-klubben": { label: 'House-techno-klubben', function: houseTechnoClub }
+  "house-techno-klubben": { label: 'House-techno-klubben', function: houseTechnoClub },
+  "hiphop-klubben": { label: 'hiphop', function: hiphopClub }
 };
 
 function createMenu() {

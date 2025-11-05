@@ -1,14 +1,11 @@
-// === Skapar hela HTML-strukturen dynamiskt ===
-document.write(`
-<!DOCTYPE html>
-<html lang="sv">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hip-Hop Klubben | Gala Emporium</title>
-  <link rel="stylesheet" href="Hip-hop.css">
-</head>
-<body class="hiphop-klubben">
+import clubInfoAndEvents from "../utils/club-info-and-events.js";
+
+export default async function jazzClub() {
+  const eventsHtml = await clubInfoAndEvents('a37c');
+
+  // HTML för jazzklubben
+  return `
+  <body class="hiphop-klubben">
     <header>
         <h1>🎧 Hip-Hop Klubben</h1>
         <nav>
@@ -41,10 +38,6 @@ document.write(`
         <p>&copy; 2025 Hip-Hop Klubben | Gala Emporium</p>
     </footer>
 </body>
-</html>
-`);
-
-// === JS-koden som normalt låg i Hip-hop.js ===
 document.addEventListener("DOMContentLoaded", () => {
     const events = [
         {
@@ -75,10 +68,8 @@ document.addEventListener("DOMContentLoaded", () => {
             card.className = "event-card";
             const imgSrc = ev.image || "images/default.jpg";
             card.innerHTML = `
-                <img src="${imgSrc}" alt="${ev.title}" style="width:100%; border-radius:6px;">
-                <h3>${ev.title}</h3>
-                <p><strong>${ev.date}</strong></p>
-                <p>${ev.description}</p>
+            
+            
             `;
             eventList.appendChild(card);
         });
@@ -86,3 +77,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     console.log("Hip-Hop Klubben-sidan är laddad!");
 });
+ 
+  `;
+}
+
+// === Skapar hela HTML-strukturen dynamiskt ===
+
