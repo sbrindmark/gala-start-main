@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Neon Pulse – House & Techno Club</title>
+  <meta name="description" content="Neon Pulse är en house och techno-klubb i Gala Emporium. Upptäck kommande evenemang och förboka biljetter." />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700&family=Antonio:wght@700&display=swap" rel="stylesheet" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/utils/style.css" />
+  <link rel="stylesheet" href="css/pages/house-techno-club.css" />
+</head>
+
+<body class="house-techno-klubben">
+  <!-- =========================
+       🧭 Navigation
+       ========================= -->
+  <header>
+    <nav class="nav">
+      <a href="index.html" class="nav-logo">Gala Emporium</a>
+      <ul class="nav-links">
+        <li><a href="index.html#clubs">Klubbar</a></li>
+        <li><a href="#events">Evenemang</a></li>
+        <li><a href="#booking">Boka</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- =========================
+       🌌 Huvudinnehåll (Main)
+       ========================= -->
+  <main id="club">
+    <!-- =========================
+         🌌 Hero – Neon Pulse intro
+         ========================= -->
+    <section class="hero" aria-labelledby="club-title">
+      <div class="hero__content">
+        <h1 id="club-title">NEON PULSE</h1>
+        <p>Välkommen till Neon Pulse – platsen för elektronisk dansmusik.</p>
+        <p>Upplev pulserande beats i en neonupplyst atmosfär.</p>
+      </div>
+    </section>
+
+    <!-- =========================
+         💫 Om klubben
+         ========================= -->
+    <section class="about" aria-labelledby="about-title">
+      <h2 id="about-title">Om klubben</h2>
+      <p>
+        Neon Pulse är hjärtat av Gala Emporium – där mörker möter ljus,
+        där varje takt känns i kroppen och varje beat leder dig djupare
+        in i natten. Vårt fokus är på house och techno i världsklass,
+        där både lokala och internationella DJs skapar oförglömliga nätter.
+      </p>
+      <p>
+        Här samlas människor från alla hörn för att uppleva musik, dans
+        och en atmosfär fylld av energi och ljus. Välkommen till en plats
+        där ljud, ljus och rytm blir ett.
+      </p>
+    </section>
+
+    <!-- =========================
+         🎫 Evenemang (kommer senare)
+         ========================= -->
+    <section id="dynamic-content"></section>
+  </main>
+
+  <!-- =========================
+       ⚡ Footer
+       ========================= -->
+  <footer class="footer">
+    <p>© <span id="year"></span> Neon Pulse — All rights reserved.</p>
+  </footer>
+
+  <!-- =========================
+       🔊 Audio – spelas vid klick
+       ========================= -->
+  <audio id="introAudio" src="audio/neon-intro.mp3" preload="auto"></audio>
+
+  <!-- =========================
+       💻 JavaScript (ES6-modul)
+       ========================= -->
+  <script type="module">
+    import houseTechnoClub from "./js/clubs/house-techno-club.js";
+    houseTechnoClub();
+  </script>
+</body>
+</html>
