@@ -14,6 +14,11 @@
       "id": "k23o",
       "name": "House Techno Klubben",
       "description": "Där rytmen aldrig slutar! House Techno Klubben bjuder på pulserande beats, hypnotiska synthar och en ljusshow som får natten att kännas oändlig. Perfekt för alla som älskar elektronisk musik och dansgolvets magi."
+    },
+    {
+      "id": "c8m3",
+      "name": "Standup Comedy Club",
+      "description": "Skratta tills du får ont i magen! Våra komiker levererar de bästa skämten och mest underhållande berättelserna varje vecka."
     }
   ],
 
@@ -32,8 +37,41 @@
       "description": "En open stage för death-metal-rockare, 30 minuter per band, upp till 6 band per kväll. Stjäl inte varandras effektpedaler!",
       "clubId": "fg5i"
     },
-
-   
+    {
+      "id": "57f4",
+      "date": "2025-11-15 22:00",
+      "name": "In Flames",
+      "description": "Svenskt klassiskt metal-band",
+      "clubId": "fg5i"
+    },
+    {
+      "id": "43ad",
+      "date": "2025-11-01 19:00",
+      "name": "Fusion-jazzarna Corea's Disciples",
+      "description": "Cool fusion-jazz med en massa dim-ackord.",
+      "clubId": "a37c"
+    },
+    {
+      "id": "89d1",
+      "date": "2025-11-07 20:00",
+      "name": "Laughter Night med Magnus & Lisa",
+      "description": "Två av Sveriges roligaste komiker tar scenen! Magnus berättar om livet som pappa medan Lisa delar sina observationer om modern dating.",
+      "clubId": "c8m3"
+    },
+    {
+      "id": "92e4",
+      "date": "2025-11-08 19:30",
+      "name": "Open Mic Comedy",
+      "description": "Kom och testa dina egna skämt! Open stage för blivande komiker. 5 minuter per person, anmäl dig vid entrén.",
+      "clubId": "c8m3"
+    },
+    {
+      "id": "74f7",
+      "date": "2025-11-10 21:00",
+      "name": "Internationell Comedy Night",
+      "description": "Komiker från hela världen! Engelska skämt, svenska punchlines och internationell humor som får alla att skratta.",
+      "clubId": "c8m3"
+    },
     {
       "id": "h01",
       "date": "2025-11-15 22:00",
@@ -76,5 +114,7 @@
       "description": "Säsongens avslutande event med LED-show, lasereffekter och DJs från Berlin och Amsterdam.",
       "clubId": "k23o"
     }
-  ]
+  ],
+
+  "bookings": []
 }
