@@ -1,6 +1,7 @@
 import start from './pages/start.js';
 import jazzClub from './pages/jazz-club.js';
 import metalClub from './pages/metal-club.js';
+import standupComedy from './pages/comedy.js';
 import houseTechnoClub from './pages/house-techno-club.js';
 
 
@@ -10,7 +11,8 @@ const menu = {
   "start": { label: 'Start', function: start },
   "jazz-klubben": { label: 'Jazz-klubben', function: jazzClub },
   "metal-klubben": { label: 'Metal-klubben', function: metalClub },
-  "house-techno-klubben": { label: 'House-techno-klubben', function: houseTechnoClub }
+  "standup-comedy": { label: 'Stand-Up Comedy', function: standupComedy },
+  "house-techno-klubben": { label: 'House Techno', function: houseTechnoClub },
 };
 
 function createMenu() {
@@ -51,5 +53,5 @@ loadPageContent();
 // and then on every hash change of the url/location
 window.onhashchange = loadPageContent;
 
-// create the header and display it
-document.querySelector('header').innerHTML = createHeader();
+// create the menu and display it
+document.querySelector('header nav').innerHTML = createMenu();

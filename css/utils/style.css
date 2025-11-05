@@ -1,3 +1,8 @@
+@import './setup-box-sizing.css';
+@import '../pages/start-page.css';
+@import '../pages/jazz-club.css';
+@import '../pages/metal-club.css';
+@import '../pages/comedy.css';
 @import '../utils/setup-box-sizing.css';
 @import '../pages/start-page.css';
 @import '../pages/jazz-club.css';
@@ -104,7 +109,7 @@ header {
 }
 
 .comedy {
-  background: #f57f17;
+  background: #c62828;
   color: #000;
 }
 
