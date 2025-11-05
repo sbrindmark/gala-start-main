@@ -1,3 +1,4 @@
+/* 🎭 COMEDY PAGE STYLING */
 body.standup-comedy {
     background:
         linear-gradient(rgba(10, 10, 10, 0.8), rgba(10, 10, 10, 0.8)),
@@ -9,4 +10,170 @@ body.standup-comedy {
     color: #f4f4f4;
     min-height: 100vh;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* 🎭 HEADER & NAVIGATION STYLING */
+body.standup-comedy header {
+    background: rgba(0, 0, 0, 0.9);
+    padding: 20px;
+    border-bottom: 3px solid #ff2e2e;
+    box-shadow: 0 5px 20px rgba(255, 46, 46, 0.3);
+}
+
+body.standup-comedy header h1 {
+    color: #ff2e2e;
+    text-align: center;
+    font-size: 2.5rem;
+    margin: 0 0 15px 0;
+    text-shadow: 0 0 15px rgba(255, 46, 46, 0.6);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+body.standup-comedy header p {
+    color: #ddd;
+    text-align: center;
+    font-size: 1.1rem;
+    margin: 0 0 20px 0;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body.standup-comedy nav {
+    text-align: center;
+}
+
+body.standup-comedy nav a {
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 25px;
+    margin: 0 10px;
+    background: rgba(255, 46, 46, 0.2);
+    border: 2px solid #ff2e2e;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+}
+
+body.standup-comedy nav a:hover {
+    background: #ff2e2e;
+    color: #000;
+    box-shadow: 0 5px 15px rgba(255, 46, 46, 0.5);
+    transform: translateY(-2px);
+}
+
+/* 🎭 STYLE DATABASE CONTENT */
+
+/* Klubbnamn från db.json */
+body.standup-comedy main h1 {
+    color: #ff2e2e;
+    text-align: center;
+    font-size: 3rem;
+    margin: 30px 0;
+    text-shadow: 0 0 20px rgba(255, 46, 46, 0.7);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Klubbbeskrivning från db.json */
+body.standup-comedy main>p {
+    color: #ddd;
+    text-align: center;
+    font-size: 1.3rem;
+    margin: 20px auto 40px;
+    max-width: 800px;
+    line-height: 1.6;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 4px solid #ff2e2e;
+}
+
+/* Events rubrik från db.json */
+body.standup-comedy main h2 {
+    color: #ff2e2e;
+    text-align: center;
+    font-size: 2.5rem;
+    margin: 40px 0 30px;
+    text-shadow: 0 0 15px rgba(255, 46, 46, 0.5);
+}
+
+/* Event-kort från db.json */
+body.standup-comedy .event {
+    background: rgba(20, 20, 20, 0.9);
+    border-left: 6px solid #ff2e2e;
+    border-radius: 12px;
+    padding: 25px;
+    margin: 20px 0;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(255, 0, 0, 0.3);
+}
+
+body.standup-comedy .event:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(255, 46, 46, 0.6);
+    border-left-width: 10px;
+}
+
+/* Event namn från db.json */
+body.standup-comedy .event h3 {
+    color: #ff2e2e;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    text-shadow: 0 0 8px rgba(255, 46, 46, 0.4);
+}
+
+/* Event beskrivning från db.json */
+body.standup-comedy .event p {
+    color: #ccc;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* 😂 SKRATT BILD PÅ HÖGER SIDA */
+body.standup-comedy::after {
+    content: '';
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 200px;
+    height: 300px;
+    background: url('../../images/skratt.jpg') center/cover;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(255, 46, 46, 0.4);
+    border: 3px solid #ff2e2e;
+    z-index: 10;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+body.standup-comedy::after:hover {
+    opacity: 1;
+}
+
+/* Anpassa main för att ge plats åt bilden */
+body.standup-comedy main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-right: 240px;
+}
+
+/* På mindre skärmar, dölj bilden */
+@media (max-width: 1200px) {
+    body.standup-comedy::after {
+        display: none;
+    }
+
+    body.standup-comedy main {
+        margin-right: auto;
+        max-width: 1000px;
+    }
 }
