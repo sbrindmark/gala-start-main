@@ -9,79 +9,38 @@ const menu = {
   "start": { label: 'Start', function: start },
   "jazz-klubben": { label: 'Jazz-klubben', function: jazzClub },
   "metal-klubben": { label: 'Metal-klubben', function: metalClub },
-  "standup-comedy": { label: 'Standup Comedy', function: standupComedy }
-};
-
-// Menu for header - only shows Start
-const headerMenu = {
-  "start": { label: 'Start', function: start }
+  "standup-comedy": { label: 'Stand-Up Comedy', function: standupComedy }
 };
 
 function createMenu() {
   // Object.entries -> convert object to array
   // then map to create a-tags (links)
   // then join everything into one big string
-  return Object.entries(headerMenu)
+  return Object.entries(menu)
     .map(([urlHash, { label }]) => `
       <a href="#${urlHash}">${label}</a>
     `)
     .join('');
 }
 
-function createHeader() {
-  const currentPage = location.hash.slice(1);
-
-  if (currentPage === 'standup-comedy') {
-    return `
-      <h1>🎭 Standup Comedy Club</h1>
-      <p>Skratta tills du får ont i magen! Våra komiker levererar de bästa skämten och mest underhållande berättelserna varje vecka.</p>
-      <nav>${createMenu()}</nav>
-    `;
-  }
-
-  return `
-    <h1>🎭 Gala Emporium</h1>
-    <p>Upplev levande framträdanden i världsklass</p>
-    <nav>${createMenu()}</nav>
-  `;
-}
-
 async function loadPageContent() {
-  try {
-    // if no hash redirect to #start
-    if (location.hash === '') { location.replace('#start'); }
-    // add a class on body so that we can style differnt pages differently
-    document.body.setAttribute('class', location.hash.slice(1));
-    
-    // Update header for current page
-    document.querySelector('header').innerHTML = createHeader();
-    
-    // get the correct function to run depending on location.hash
-    const page = location.hash.slice(1);
-    if (!menu[page]) {
-      console.error('Page not found:', page);
-      location.replace('#start');
-      return;
-    }
-    const functionToRun = menu[page].function;
-    // run the function and expect it return a html string
-    const html = await functionToRun();
-    // replace the contents of the main element
-    document.querySelector('main').innerHTML = html;
-  } catch (error) {
-    console.error('Error loading page:', error);
-    document.querySelector('main').innerHTML = '<p>Det uppstod ett fel vid laddning av sidan.</p>';
-  }
+  // if no hash redirect to #start
+  if (location.hash === '') { location.replace('#start'); }
+  // add a class on body so that we can style differnt pages differently
+  document.body.setAttribute('class', location.hash.slice(1));
+  // get the correct function to run depending on location.hash
+  const functionToRun = menu[location.hash.slice(1)].function;
+  // run the function and expect it return a html string
+  const html = await functionToRun();
+  // replace the contents of the main element
+  document.querySelector('main').innerHTML = html;
 }
 
-// Initialize when DOM is ready
-document.addEventListener('DOMContentLoaded', function () {
-  // create the header and display it
-  document.querySelector('header').innerHTML = createHeader();
+// call loadPageContent once on page load
+loadPageContent();
 
-  // call loadPageContent once on page load
-  loadPageContent();
+// and then on every hash change of the url/location
+window.onhashchange = loadPageContent;
 
-  // and then on every hash change of the url/location
-  window.onhashchange = loadPageContent;
-});
+// create the menu and display it
+document.querySelector('header nav').innerHTML = createMenu();
