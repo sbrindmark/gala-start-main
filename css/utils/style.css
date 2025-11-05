@@ -90,6 +90,10 @@ header {
   font-weight: bold;
   transition: 0.3s;
 }
+.house-techno {
+  background: #6a1b9a; 
+
+}
 
 .jazz {
   background: #1a237e;
@@ -103,6 +107,7 @@ header {
   background: #f57f17;
   color: #000;
 }
+
 
 .theatre {
   background: #4e342e;
