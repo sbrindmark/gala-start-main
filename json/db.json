@@ -9,11 +9,6 @@
       "id": "fg5i",
       "name": "Metal-klubben",
       "description": "Ylande metal som får dig att vilja erövra världen! Varje vecka med Tom som konferencier."
-    },
-    {
-      "id": "k23o",
-      "name": "House-Techno-klubben",
-      "description": "Elektronisk musik hela natten! Pulserande beats och hypnotisk techno i en futuristisk miljö."
     }
   ],
   "events": [
@@ -32,32 +27,11 @@
       "clubId": "fg5i"
     },
     {
-      "id": "99bd",
+      "id": "43ac",
       "date": "2025-11-01 19:00",
       "name": "Fusion-jazzarna Corea's Disciples",
       "description": "Cool fusion-jazz med en massa dim-ackord.",
       "clubId": "a37c"
-    },
-    {
-      "id": "k23e",
-      "date": "2025-11-15 22:00",
-      "name": "House & Techno Night",
-      "description": "En elektrisk natt med djupa house-beats och hypnotisk techno. Dansgolvet vibrerar till rytmen hela natten!",
-      "clubId": "k23o"
-    },
-    {
-      "id": "2",
-      "date": "2025-11-29 23:00",
-      "name": "Neon Afterhours",
-      "description": "Minimal house från gryning till morgon.",
-      "clubId": "k23o"
-    }
-  ],
-  "bookings": [
-    {
-      "id": "2e20",
-      "title": "Test från Thunder Client",
-      "author": "Agge"
     }
   ]
 }
