@@ -2,10 +2,10 @@ export default async function clubInfoAndEvents(clubId) {
   let name = '', description = '';
   // if there is a clubId -> fetch the info about the club
   // and calculate the correct url for fetching filtered events
-  let url = 'http://localhost:3002/events';
+  let url = 'http://localhost:3000/events';
   if (clubId) {
     const { name: clubName, description: clubDescription } =
-      await (await fetch('http://localhost:3002/clubs/' + clubId)).json();
+      await (await fetch('http://localhost:3000/clubs/' + clubId)).json();
     name = clubName;
     description = clubDescription;
     url += '?clubId=' + clubId;

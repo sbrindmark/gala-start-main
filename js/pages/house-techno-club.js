@@ -1,3 +1,4 @@
+// Importerar den gemensamma funktionen som hämtar klubbinfo och evenemang
 import clubInfoAndEvents from "../utils/club-info-and-events.js";
 
 export default async function houseTechnoClub() {
@@ -13,7 +14,7 @@ export default async function houseTechnoClub() {
       const audio = document.getElementById("introAudio");
       if (audio && audio.paused) {
         audio.volume = 0.4;
-        audio.play().catch(() => { }); // Förhindrar fel om ljudet blockeras
+        audio.play().catch(() => {}); // Förhindrar fel om ljudet blockeras
       }
     },
     { once: true }
@@ -76,6 +77,6 @@ export default async function houseTechnoClub() {
 
   // Konsolmeddelande för kontroll
   console.log("House-Techno-klubben laddad ✔️");
-
+  
   return html;
 }
