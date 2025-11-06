@@ -53,5 +53,5 @@ loadPageContent();
 // and then on every hash change of the url/location
 window.onhashchange = loadPageContent;
 
-// create the menu and display it
-document.querySelector('header nav').innerHTML = createMenu();
+// create the complete header and display it
+document.querySelector('header').innerHTML = createHeader();
