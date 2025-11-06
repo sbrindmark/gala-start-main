@@ -21,7 +21,6 @@
       "description": "Skratta tills du får ont i magen! Våra komiker levererar de bästa skämten och mest underhållande berättelserna varje vecka."
     }
   ],
-
   "events": [
     {
       "id": "43ac",
@@ -115,6 +114,126 @@
       "clubId": "k23o"
     }
   ],
-
-  "bookings": []
+  "bookings": [
+    {
+      "id": "40e0",
+      "eventId": "43ac",
+      "tickets": "2"
+    },
+    {
+      "id": "4e39",
+      "eventId": "43ac",
+      "tickets": "1"
+    },
+    {
+      "id": "c7ac",
+      "eventId": "43ac",
+      "tickets": "2"
+    },
+    {
+      "id": "f384",
+      "eventId": "89d1",
+      "tickets": "1"
+    },
+    {
+      "id": "3633",
+      "eventId": "43ac",
+      "tickets": "1"
+    },
+    {
+      "id": "aef1",
+      "eventId": "43ac",
+      "tickets": "1"
+    },
+    {
+      "id": "1121",
+      "eventId": "43ac",
+      "tickets": "1"
+    },
+    {
+      "id": "18a2",
+      "eventId": "43ac",
+      "tickets": "2"
+    },
+    {
+      "id": "a4f3",
+      "eventId": "43ac",
+      "tickets": "1"
+    },
+    {
+      "id": "d960",
+      "eventId": "43ac",
+      "tickets": "1"
+    },
+    {
+      "id": "9ca2",
+      "eventId": "43ac",
+      "tickets": "1"
+    },
+    {
+      "id": "0f04",
+      "eventId": "43ac",
+      "tickets": "1"
+    },
+    {
+      "id": "b91f",
+      "eventId": "43ac",
+      "tickets": "1"
+    },
+    {
+      "id": "8812",
+      "eventId": "43ac",
+      "tickets": "1"
+    },
+    {
+      "id": "3287",
+      "eventId": "57f3",
+      "tickets": "1"
+    },
+    {
+      "id": "65dd",
+      "eventId": "43ac",
+      "tickets": "1"
+    },
+    {
+      "id": "e891",
+      "eventId": "57f3",
+      "tickets": "1"
+    },
+    {
+      "id": "90ed",
+      "eventId": "43ac",
+      "tickets": "1"
+    },
+    {
+      "id": "1f22",
+      "eventId": "43ac",
+      "tickets": "1"
+    },
+    {
+      "id": "8020",
+      "eventId": "43ad",
+      "tickets": "1"
+    },
+    {
+      "id": "b257",
+      "eventId": "43ac",
+      "tickets": "1"
+    },
+    {
+      "id": "1aac",
+      "eventId": "43ac",
+      "tickets": "1"
+    },
+    {
+      "id": "aedf",
+      "eventId": "43ac",
+      "tickets": "1"
+    },
+    {
+      "id": "30d2",
+      "eventId": "43ac",
+      "tickets": "2"
+    }
+  ]
 }
