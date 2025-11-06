@@ -12,15 +12,25 @@ export default async function houseTechnoClub() {
     const body = document.body;
     body.className = "house-techno-klubben";
 
-    // 💫 Endast på denna sida – musrörelse påverkar bakgrunden subtilt
-    document.addEventListener("mousemove", (e) => {
-      if (!body.classList.contains("house-techno-klubben")) return;
+    // Skapa en namngiven funktion för mousemove
+    function houseTechnoMouseMove(e) {
+      // Kontrollera om vi fortfarande är på house-techno sidan
+      if (!body.classList.contains("house-techno-klubben")) {
+        // Ta bort event lyssnaren och återställ bakgrund
+        document.removeEventListener("mousemove", houseTechnoMouseMove);
+        body.style.background = ""; // Återställ till CSS-standard
+        return;
+      }
+
       const x = e.clientX / window.innerWidth;
       const y = e.clientY / window.innerHeight;
       body.style.background = `
         radial-gradient(circle at ${x * 100}% ${y * 100}%, #250046, #000)
       `;
-    });
+    }
+
+    // 💫 Endast på denna sida – musrörelse påverkar bakgrunden subtilt
+    document.addEventListener("mousemove", houseTechnoMouseMove);
   }, 100);
 
   // Returnerar HTML för klubbens innehåll + kontaktsektion
