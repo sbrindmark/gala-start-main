@@ -32,26 +32,37 @@ export default async function start() {
   }, 0);
 
   return `
-    <section class="clubs">
-      <h2>Alla Klubbar</h2>
+    <section id="alla-klubbar" class="clubs-section">
+  <div class="clubs-intro">
+    <h2>Välkommen till Gala Emporium</h2>
+    <p>Stadens puls av musik, skratt och energi. Utforska våra klubbar – från jazzens sväng och metallens kraft till nattens techno och stand-upens skratt. Här lever varje kväll, varje ton och varje applåd.</p>
+   </div>
+   
       <div class="club-grid">
+    <a href="#jazz-klubben" class="club jazz">
+     <img src="images/jazzmain.jpg" alt="Jazz Club" class="club-image">
+       <strong>Jazz-Klubben – Upplev svingen i jazzbaren</strong>
+     <p class="club-desc">Avslappnad stämning, levande toner och ren musikglädje.</p>
+    </a>
 
-        <a href="#jazz-klubben" class="club jazz">
-          <img src="images/jazzmain.jpg" alt="Jazz Club" class="club-image">
-          🎷 Experience The Swing Jazz Bar Club
-        </a>
-        <a href="#metal-klubben" class="club metal">
-          <img src="images/metal.jpeg" alt="Metal Club" class="club-image">
-          🤘 Experience The Raw Power Of Metal Club
-        </a>
-        <a href="#standup-comedy" class="club comedy">
-          <img src="images/Lo.jpg" alt="Stand-Up Comedy" class="club-image">
-          🎭 Experience The Best Stand-Up Comedy
-        </a>
-        <a href="#house-techno-klubben" class="club house-techno">
-          <img src="images/technoHouse.jpg" alt="House Techno Nights" class="club-image">
-          🎧 Experience The Vibrant House Techno Nights
-        </a>
+    <a href="#metal-klubben" class="club metal">
+     <img src="images/metal.jpeg" alt="Metal Club" class="club-image">
+   <strong>Metal-Klubben – Där metal lever</strong>
+    <p class="club-desc">Mörker, energi och gemenskap – metal på riktigt.</p>
+    </a>
+
+     <a href="#standup-comedy" class="club comedy">
+    <img src="images/Lo.jpg" alt="Stand-Up Comedy" class="club-image">
+   <strong>Stand-Up Comedy – Skratt utan gränser</strong>
+    <p class="club-desc">Upplev det bästa av stand-up med både stjärnor och nya talanger.</p>
+     </a>
+
+    <a href="#house-techno-klubben" class="club house-techno">
+   <img src="images/technoHouse.jpg" alt="House Techno Nights" class="club-image">
+   <strong>House Techno – Vibrerande nätter</strong>
+   <p class="club-desc">Där basen möter ljuset och dansgolvet aldrig sover.</p>
+    </a>
+
 
       </div>
       <div id="all-events-container">
