@@ -1,9 +1,9 @@
 import clubInfoAndEvents from "../utils/club-info-and-events.js";
 
-export default async function jazzClub() {
+export default async function hiphop {
   const eventsHtml = await clubInfoAndEvents('a37c');
 
-  // HTML för jazzklubben
+  // HTML för Hiphop klubben
   return `
   <body class="hiphop-klubben">
     <header>
