@@ -3,15 +3,7 @@
 @import '../pages/jazz-club.css';
 @import '../pages/metal-club.css';
 @import '../pages/comedy.css';
-@import '../utils/setup-box-sizing.css';
-@import '../pages/start-page.css';
-@import '../pages/jazz-club.css';
-@import '../pages/metal-club.css';
 @import '../pages/house-techno-club.css';
-
-body {
-  margin: 20px
-}
 
 #all-events-container {
   display: flex;
@@ -63,10 +55,6 @@ nav a {
 }
 
 body {
-  margin: 0;
-}
-
-body {
   font-family: system-ui, sans-serif;
   margin: 0;
   background: #111;
@@ -95,8 +83,9 @@ header {
   font-weight: bold;
   transition: 0.3s;
 }
+
 .house-techno {
-  background: #6a1b9a; 
+  background: #6a1b9a;
 
 }
 
@@ -113,22 +102,8 @@ header {
   color: #000;
 }
 
-
-.theatre {
-  background: #4e342e;
-}
-
 .club:hover {
   transform: scale(1.05);
-}
-
-/* Centrerar events på förstasidan */
-#all-events-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  min-height: calc(100vh - 100px);
 }
 
 /* Wrapper = rutan som innehållet ligger i*/
