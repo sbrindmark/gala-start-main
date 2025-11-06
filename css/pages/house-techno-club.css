@@ -3,8 +3,10 @@
 :root {
   --bg-dark: #0b0b10;
   --text-main: #f4f4f4;
-  --accent: #6a4cff; /* purple */
-  --accent-secondary: #00bcd4; /* cyan */
+  --accent: #6a4cff;
+  /* purple */
+  --accent-secondary: #00bcd4;
+  /* cyan */
   --radius: 12px;
   --font-title: 'Orbitron', sans-serif;
   --font-body: 'Inter', sans-serif;
@@ -19,9 +21,9 @@ body.house-techno-klubben {
   display: flex;
   flex-direction: column;
   background-color: var(--bg-dark);
-  background-image: 
+  background-image:
     linear-gradient(rgba(10, 0, 20, 0.75), rgba(0, 0, 0, 0.9)),
-    url("../images/djairobot.jpg");
+    url("../../images/djairobot.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -35,6 +37,7 @@ body.house-techno-klubben header {
   border-bottom: 2px solid var(--accent);
   text-align: center;
 }
+
 body.house-techno-klubben header h1 {
   font-family: var(--font-title);
   font-size: 2.3rem;
@@ -42,6 +45,7 @@ body.house-techno-klubben header h1 {
   color: var(--accent);
   text-transform: uppercase;
 }
+
 body.house-techno-klubben header p {
   font-size: 1rem;
   color: #ccc;
@@ -56,6 +60,7 @@ body.house-techno-klubben nav {
   flex-wrap: wrap;
   gap: 0.8rem;
 }
+
 body.house-techno-klubben nav a {
   color: var(--text-main);
   background: rgba(24, 24, 32, 0.8);
@@ -66,6 +71,7 @@ body.house-techno-klubben nav a {
   font-weight: 600;
   transition: 0.3s;
 }
+
 body.house-techno-klubben nav a:hover,
 body.house-techno-klubben nav a:focus {
   background: var(--accent);
@@ -81,6 +87,7 @@ body.house-techno-klubben main {
   align-items: center;
   gap: 2rem;
 }
+
 body.house-techno-klubben main h1 {
   color: var(--accent);
   text-align: center;
@@ -88,6 +95,7 @@ body.house-techno-klubben main h1 {
   text-transform: uppercase;
   font-size: 1.8rem;
 }
+
 body.house-techno-klubben main p {
   text-align: center;
   max-width: 650px;
@@ -106,16 +114,19 @@ body.house-techno-klubben .event {
   width: 90%;
   transition: transform 0.25s ease, box-shadow 0.35s ease;
 }
+
 body.house-techno-klubben .event:hover {
   transform: translateY(-5px);
   box-shadow: 0 4px 20px rgba(0, 180, 216, 0.25);
 }
+
 body.house-techno-klubben .event h3 {
   color: var(--accent-secondary);
   margin-top: 0;
   font-family: var(--font-title);
   font-size: 1.3rem;
 }
+
 body.house-techno-klubben .event p {
   color: #ccc;
   font-size: 0.95rem;
@@ -128,20 +139,24 @@ body.house-techno-klubben .contact-section {
   padding: 2rem 1rem;
   text-align: center;
 }
+
 body.house-techno-klubben .contact-section h2 {
   color: var(--accent);
   font-family: var(--font-title);
   margin-bottom: 0.8rem;
 }
+
 body.house-techno-klubben .contact-section p {
   color: #ccc;
   font-size: 0.95rem;
   line-height: 1.5;
 }
+
 body.house-techno-klubben .contact-section a {
   color: var(--accent-secondary);
   text-decoration: none;
 }
+
 body.house-techno-klubben .contact-section a:hover {
   text-decoration: underline;
 }
@@ -161,6 +176,7 @@ body.house-techno-klubben footer {
   body.house-techno-klubben header h1 {
     font-size: 1.7rem;
   }
+
   body.house-techno-klubben nav a {
     padding: 0.5rem 0.8rem;
     font-size: 0.9rem;
