@@ -1,29 +1,29 @@
-// 🎧 HOUSE TECHNO CLUB – Individuell klubbsida
-// Vanilla JS – hämtar data från JSON Server via clubInfoAndEvents()
-
+// 🎧 HOUSE TECHNO CLUB 
+// Vanilla JS + lätt interaktiv bakgrund bara på denna sida
 
 import clubInfoAndEvents from "../utils/club-info-and-events.js";
 
 export default async function houseTechnoClub() {
-  // Hämtar klubbens events via din JSON-server
+  // Hämtar klubbens evenemang
   const html = await clubInfoAndEvents("k23o");
 
-  // Väntar lite och lägger till en klass för klubbens tema
+  // När sidan laddats: aktivera temat + bakgrundseffekt
   setTimeout(() => {
     const body = document.body;
-    body.className = "house-techno-klubben"; // kopplar till CSS-filen
+    body.className = "house-techno-klubben";
 
-    // Subtil interaktiv bakgrundsrörelse (visuellt men lätt)
+    // 💫 Endast på denna sida – musrörelse påverkar bakgrunden subtilt
     document.addEventListener("mousemove", (e) => {
+      if (!body.classList.contains("house-techno-klubben")) return;
       const x = e.clientX / window.innerWidth;
       const y = e.clientY / window.innerHeight;
       body.style.background = `
-        radial-gradient(circle at ${x * 100}% ${y * 100}%, #200040, #000)
+        radial-gradient(circle at ${x * 100}% ${y * 100}%, #250046, #000)
       `;
     });
   }, 100);
 
-  // Returnerar klubbens HTML + kontaktsektion
+  // Returnerar HTML för klubbens innehåll + kontaktsektion
   return `
     <section class="wrapper">
       ${html}
