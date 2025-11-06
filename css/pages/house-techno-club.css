@@ -19,9 +19,7 @@ body.house-techno-klubben {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-}
 
-/* HEADER & NAV */
 header {
   background-color: #101018;
   padding: 1.8rem 1rem;
@@ -43,6 +41,9 @@ header p {
   color: #ccc;
   margin-top: 0.4rem;
 }
+}
+
+
 
 nav {
   margin-top: 1rem;
