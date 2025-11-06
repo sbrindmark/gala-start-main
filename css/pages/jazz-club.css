@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap');
 
 body.jazz-klubben {
-  background: url('../../images/Jazz.jpeg') no-repeat center center;
+  background: url('../../images/Jazz.jpg') no-repeat center center;
   background-size: cover;
   min-height: 100vh;
   background-color: #1b133d;

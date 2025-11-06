@@ -3,12 +3,15 @@ import jazzClub from './pages/jazz-club.js';
 import metalClub from './pages/metal-club.js';
 import standupComedy from './pages/comedy.js';
 import houseTechnoClub from './pages/house-techno-club.js';
+import eventbokare from './pages/eventbokare.js';
+
 
 
 // Our menu: label to display in menu and 
 // function to run on menu choice
 const menu = {
   "start": { label: 'Start', function: start },
+  "eventbokare": { label: "Boka Event", function: eventbokare },
   "jazz-klubben": { label: 'Jazz-klubben', function: jazzClub },
   "metal-klubben": { label: 'Metal-klubben', function: metalClub },
   "standup-comedy": { label: 'Stand-Up Comedy', function: standupComedy },
