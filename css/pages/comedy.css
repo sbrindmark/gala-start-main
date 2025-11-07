@@ -1,7 +1,7 @@
 /* 🎭 COMEDY PAGE STYLING */
 body.standup-comedy {
     background:
-        linear-gradient(rgba(10, 10, 10, 0.8), rgba(10, 10, 10, 0.8)),
+        linear-gradient(rgba(10, 10, 10, 0.8), #0a0a0acc),
         url('../../images/lightshow.jpg');
     background-size: cover;
     background-position: center;

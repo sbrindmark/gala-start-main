@@ -1,3 +1,4 @@
+
 import start from './pages/start.js';
 import jazzClub from './pages/jazz-club.js';
 import metalClub from './pages/metal-club.js';
@@ -31,8 +32,8 @@ function createMenu() {
 
 function createHeader() {
   return `
-    <h1><span class="header-icon">🎭</span> Gala Emporium</h1>
-    <p>Upplev levande framträdanden i världsklass</p>
+    <h1> Gala Emporium </h1>
+    <p>Känn rytmen, energin och gemenskapen – live på Gala Emporium.</p>
     <nav>${createMenu()}</nav>
   `;
 }
@@ -56,5 +57,5 @@ loadPageContent();
 // and then on every hash change of the url/location
 window.onhashchange = loadPageContent;
 
-// create the menu and display it
-document.querySelector('header nav').innerHTML = createMenu();
+// create the complete header and display it
+document.querySelector('header').innerHTML = createHeader();

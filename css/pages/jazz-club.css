@@ -11,9 +11,9 @@ body.jazz-klubben {
 }
 
 /* ---- HEADER / MENY ---- */
-header {
-  background: rgba(0, 0, 0, 0.8);
-  padding: 1rem 0;
+body.jazz-klubben header {
+  background: rgba(0, 0, 0, 0.8) !important;
+  padding: 1rem 0 !important;
 }
 
 header nav {
