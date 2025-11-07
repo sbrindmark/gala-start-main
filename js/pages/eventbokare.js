@@ -13,11 +13,18 @@ export default async function eventbokare() {
             <p>Ses på eventet — det kommer bli magiskt!</p>
             <p>Du har bokat <strong>${bokning.antal}</strong> biljetter till <strong>${bokning.eventNamn}</strong>.</p>
             <p>Totalkostnad: <strong>${bokning.totalKostnad} kr</strong> (${bokning.prisPerBiljett} kr/st)</p>
-            <button onclick="sessionStorage.removeItem('aktivBokning'); window.location.reload();" class="ny-bokning">Boka fler biljetter</button>
+            <p class="auto-back">Du skickas automatiskt tillbaka till bokningssidan om 5 sekunder...</p>
           </div>
         </div>
       </section>
     `;
+
+        // 🔹 Efter 5 sekunder – gå tillbaka till startsidan
+        setTimeout(() => {
+            sessionStorage.removeItem('aktivBokning');
+            window.location.reload();
+        }, 5000);
+
         return html;
     }
 
@@ -128,8 +135,6 @@ export default async function eventbokare() {
         // När formuläret skickas
         document.getElementById("eventForm").addEventListener("submit", async (e) => {
             e.preventDefault(); // Stoppar formuläret från att skickas
-
-            // Förhindra att URL:en ändras vilket skulle trigga omladdning
             history.pushState(null, '', location.href);
 
             if (!valdEvent) {
@@ -145,7 +150,6 @@ export default async function eventbokare() {
 
             const totalKostnad = antal * biljettPris;
 
-            // Inaktivera submit-knappen för att förhindra dubbelbokningar
             bokaBtn.disabled = true;
             bokaBtn.textContent = "Bokar...";
 
@@ -167,32 +171,35 @@ export default async function eventbokare() {
 
                 if (!res.ok) throw new Error("Kunde inte spara bokningen");
 
+                // 🔹 Spara bokningen i sessionStorage
+                sessionStorage.setItem('aktivBokning', JSON.stringify(bokning));
+
                 // Visa bekräftelse
                 rubrik.textContent = "Din bokning är klar! 🎉";
                 rubrik.classList.add("confirmed");
 
-                // Dölj formuläret med animation
                 innehall.style.transition = "opacity 0.5s ease-out";
                 innehall.style.opacity = "0";
 
                 setTimeout(() => {
                     innehall.style.display = "none";
-
-                    // Visa bekräftelsen
                     resultat.innerHTML = `
-                    <div class="booking-confirmation">
-                      <p>Ses på eventet — det kommer bli magiskt!</p>
-                      <p>Du har bokat <strong>${antal}</strong> biljetter till <strong>${eventNamn}</strong>.</p>
-                      <p>Totalkostnad: <strong>${totalKostnad} kr</strong> (${biljettPris} kr/st)</p>
-                      <button onclick="location.hash='eventbokare'" class="ny-bokning">Boka fler biljetter</button>
-                    </div>
-                  `;
-
-                    // Scrolla bekräftelsen till synligt läge
+            <div class="booking-confirmation">
+              <p>Ses på eventet — det kommer bli magiskt!</p>
+              <p>Du har bokat <strong>${antal}</strong> biljetter till <strong>${eventNamn}</strong>.</p>
+              <p>Totalkostnad: <strong>${totalKostnad} kr</strong> (${biljettPris} kr/st)</p>
+              <p class="auto-back">Du skickas automatiskt tillbaka till bokningssidan om 5 sekunder...</p>
+            </div>
+          `;
                     const confirmation = document.querySelector('.booking-confirmation');
-                    if (confirmation) {
-                        confirmation.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    }
+                    if (confirmation) confirmation.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+                    // ⏳ Efter 5 sekunder, återgå automatiskt
+                    setTimeout(() => {
+                        sessionStorage.removeItem('aktivBokning');
+                        window.location.reload();
+                    }, 5000);
+
                 }, 500);
             } catch (err) {
                 console.error("Fel vid bokning:", err);
