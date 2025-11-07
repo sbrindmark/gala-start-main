@@ -505,6 +505,15 @@
       "prisPerBiljett": 286,
       "totalKostnad": 572,
       "datum": "2025-11-07T09:57:51.849Z"
+    },
+    {
+      "id": "3998",
+      "eventId": "h01",
+      "eventNamn": "Underground Pulse",
+      "antal": 2,
+      "prisPerBiljett": 174,
+      "totalKostnad": 348,
+      "datum": "2025-11-07T12:12:46.598Z"
     }
   ]
 }
