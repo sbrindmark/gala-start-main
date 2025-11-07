@@ -5,6 +5,11 @@
 @import '../pages/comedy.css';
 @import '../pages/house-techno-club.css';
 
+
+body {
+  background: none;
+}
+
 #all-events-container {
   display: flex;
   justify-content: center;
