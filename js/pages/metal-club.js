@@ -1,7 +1,9 @@
-import clubInfoAndEvents from "../utils/club-info-and-events.js";
+import clubInfoAndEvents, { attachDeleteButtonListeners } from "../utils/club-info-and-events.js";
 
 export default async function metalClub() {
   const eventsHtml = await clubInfoAndEvents('fg5i');
+
+  attachDeleteButtonListeners();
 
   // Vänta tills nästa event loop så HTML:en finns i DOM:en
   setTimeout(() => {
@@ -84,7 +86,6 @@ export default async function metalClub() {
     });
 
   }, 1000);
-
 
 
   // HTML för metalclub

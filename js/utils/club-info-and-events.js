@@ -1,5 +1,39 @@
 import { isAdmin } from "../pages/admin.js";
 
+
+export function attachDeleteButtonListeners() {
+  setTimeout(() => {
+    const deleteButtons = document.querySelectorAll('.delete-event-btn');
+    console.log('Hittade', deleteButtons.length, 'delete-knappar');
+
+    deleteButtons.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const eventId = e.target.dataset.id;
+        console.log('Klickade på delete-knapp för event:', eventId);
+
+        if (confirm(`Är du säker på att du vill ta bort event med ID: ${eventId}?`)) {
+          fetch(`http://localhost:3000/events/${eventId}`, {
+            method: 'DELETE',
+          })
+            .then(response => {
+              if (response.ok) {
+                alert('Event borttaget!');
+                // Ta bort hela article-elementet
+                e.target.closest('article').remove();
+              } else {
+                alert('Kunde inte ta bort eventet.');
+              }
+            })
+            .catch(error => {
+              console.error('Fel:', error);
+              alert('Ett fel uppstod vid borttagning.');
+            });
+        }
+      });
+    });
+  }, 100);
+}
+
 export default async function clubInfoAndEvents(clubId) {
   let name = '', description = '', id = '';
   // if there is a clubId -> fetch the info about the club

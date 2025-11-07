@@ -1,11 +1,13 @@
-import clubInfoAndEvents from "../utils/club-info-and-events.js";
+import clubInfoAndEvents, { attachDeleteButtonListeners } from "../utils/club-info-and-events.js";
 
 // Global variabel för admin-status
 export let isAdmin = false;
 
 export default async function admin() {
 
-  const eventsHtml = await clubInfoAndEvents('');
+  // Starta utan att ladda events
+  let eventsHtml = '';
+
   setTimeout(() => {
     const form = document.getElementById('bandForm');
 
@@ -67,25 +69,7 @@ export default async function admin() {
   }, 1000);
 
 
-
-
-
-  //Funktion för att ta bort en bokning ur databasen.
-  setTimeout(() => {
-    const removeForm = document.getElementById('removeForm');
-    if (!removeForm) {
-      console.error('Formuläret hittades inte!');
-      return;
-    }
-    removeForm.addEventListener('submit', (event) => {
-      event.preventDefault();
-      const removeEventId = document.getElementById('removeEvent').value;
-      fetch(`http://localhost:3000/events/${removeEventId}`, {
-        method: 'DELETE',
-      });
-    });
-
-  }, 1000);
+  // Toggle för att visa events
 
   setTimeout(() => {
     const button = document.getElementById('toggleButton');
@@ -96,7 +80,17 @@ export default async function admin() {
       return;
     }
 
-    button.addEventListener('click', () => {
+    button.addEventListener('click', async () => {
+      // Ladda events första gången man klickar
+      if (list.innerHTML.trim() === '<li></li>' || list.innerHTML.trim() === '') {
+        console.log('Laddar events...');
+        const loadedEvents = await clubInfoAndEvents('');
+        list.innerHTML = `<li>${loadedEvents}</li>`;
+
+
+        attachDeleteButtonListeners();
+      }
+
       list.classList.toggle('show');
 
       if (list.classList.contains('show')) {
@@ -105,15 +99,38 @@ export default async function admin() {
         button.textContent = 'Visa events';
       }
     });
-  }, 1000);
+  }, 10);
 
+
+
+
+
+
+  // Toggle för isAdmin = true or false
   setTimeout(() => {
     const adminButton = document.getElementById('isAdmin');
+
+    if (!adminButton) {
+      console.error('Admin-knappen hittades inte!');
+      return;
+    }
+
+    console.log('Admin-knapp event listener tillagd');
+
     adminButton.addEventListener('click', () => {
       isAdmin = !isAdmin; // Toggla mellan true och false
-    });
-  }, 1000);
 
+      console.log('Admin-läge:', isAdmin);
+
+      if (isAdmin) {
+        adminButton.textContent = 'Admin: ON';
+        adminButton.style.backgroundColor = 'green';
+      } else {
+        adminButton.textContent = 'Admin: OFF';
+        adminButton.style.backgroundColor = '';
+      }
+    });
+  }, 10);
 
   // HTML för metalclub
   return `
@@ -136,20 +153,20 @@ export default async function admin() {
       </form>
     </div>
 
-    <div class="remove-event"><br>
+    <!--<div class="remove-event"><br>
     <form id="removeForm">
     <p>Skriv in ID på det event du vill ta bort</p>
     <input type="text" id="removeEvent" placeholder="Ta bort" required>
     <input type="submit" value="Ta bort">
     </form>
-    </div>
+    </div>-->
 
 
     <button id="isAdmin">Admin</button>
 
     <button id="toggleButton">Visa events</button>
       <ul id="eventList" class="event-list">
-        <li>${eventsHtml}</li>
+        <li></li>
       </ul>
 
 

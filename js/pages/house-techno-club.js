@@ -1,11 +1,13 @@
 // 🎧 HOUSE TECHNO CLUB 
 // Vanilla JS + lätt interaktiv bakgrund bara på denna sida
 
-import clubInfoAndEvents from "../utils/club-info-and-events.js";
+import clubInfoAndEvents, { attachDeleteButtonListeners } from "../utils/club-info-and-events.js";
 
 export default async function houseTechnoClub() {
   // Hämtar klubbens evenemang
   const html = await clubInfoAndEvents("k23o");
+
+  attachDeleteButtonListeners();
 
   // När sidan laddats: aktivera temat + bakgrundseffekt
   setTimeout(() => {

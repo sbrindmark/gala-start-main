@@ -23,20 +23,6 @@
   ],
   "events": [
     {
-      "id": "89d1",
-      "date": "2025-11-07 20:00",
-      "name": "Laughter Night med Magnus & Lisa",
-      "description": "Två av Sveriges roligaste komiker tar scenen! Magnus berättar om livet som pappa medan Lisa delar sina observationer om modern dating.",
-      "clubId": "c8m3"
-    },
-    {
-      "id": "92e4",
-      "date": "2025-11-08 19:30",
-      "name": "Open Mic Comedy",
-      "description": "Kom och testa dina egna skämt! Open stage för blivande komiker. 5 minuter per person, anmäl dig vid entrén.",
-      "clubId": "c8m3"
-    },
-    {
       "id": "74f7",
       "date": "2025-11-10 21:00",
       "name": "Internationell Comedy Night",
@@ -72,10 +58,10 @@
       "clubId": "k23o"
     },
     {
-      "id": "da27",
+      "id": "d2d6",
       "clubId": "fg5i",
       "name": "Adept",
-      "date": "2025-11-14 22:00",
+      "date": "2025-11-14 17:24",
       "description": "Ett sternhårt band som kommer rocka kvällen lång"
     }
   ],
