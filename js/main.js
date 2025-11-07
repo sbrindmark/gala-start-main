@@ -14,7 +14,8 @@ const menu = {
   "eventbokare": { label: "Boka Event", function: eventbokare },
   "jazz-klubben": { label: 'Jazz-klubben', function: jazzClub },
   "metal-klubben": { label: 'Metal-klubben', function: metalClub },
-  "house-techno-klubben": { label: 'House-techno-klubben', function: houseTechnoClub }
+  "house-techno-klubben": { label: 'House-techno-klubben', function: houseTechnoClub },
+  "hiphop-klubben": { label: 'Hip-Hop-klubben', function: hiphopClub } ,
 };
 
 function createMenu() {
