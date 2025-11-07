@@ -1,9 +1,8 @@
 import clubInfoAndEvents from "../utils/club-info-and-events.js";
 
-export default async function metalClub() {
-  const eventsHtml = await clubInfoAndEvents('fg5i');
+export default async function admin() {
 
-  // Vänta tills nästa event loop så HTML:en finns i DOM:en
+  const eventsHtml = await clubInfoAndEvents('');
   setTimeout(() => {
     const form = document.getElementById('bandForm');
 
@@ -85,12 +84,32 @@ export default async function metalClub() {
 
   }, 1000);
 
+  setTimeout(() => {
+    const button = document.getElementById('toggleButton');
+    const list = document.getElementById('eventList');
+
+    if (!button || !list) {
+      console.error('Toggle-element hittades inte!');
+      return;
+    }
+
+    button.addEventListener('click', () => {
+      list.classList.toggle('show');
+
+      if (list.classList.contains('show')) {
+        button.textContent = 'Dölj events';
+      } else {
+        button.textContent = 'Visa events';
+      }
+    });
+  }, 1000);
+
+
 
 
   // HTML för metalclub
   return `
   <div class ="wrapper">
-    ${eventsHtml}
   
     <div class ="create-event">
       <form id="bandForm">
@@ -116,8 +135,11 @@ export default async function metalClub() {
     <input type="submit" value="Ta bort">
     </form>
     </div>
-    
-    
+
+    <button id="toggleButton">Visa events</button>
+      <ul id="eventList" class="event-list">
+        <li>${eventsHtml}</li>
+      </ul>
 
 
     <footer class="contact">
@@ -127,6 +149,4 @@ export default async function metalClub() {
     </footer>
   </div>
   `;
-
-
 }

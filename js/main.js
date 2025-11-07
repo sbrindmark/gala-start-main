@@ -4,6 +4,7 @@ import metalClub from './pages/metal-club.js';
 import standupComedy from './pages/comedy.js';
 import houseTechnoClub from './pages/house-techno-club.js';
 import eventbokare from './pages/eventbokare.js';
+import admin from './pages/admin.js';
 
 
 
@@ -16,6 +17,7 @@ const menu = {
   "metal-klubben": { label: 'Metal-klubben', function: metalClub },
   "standup-comedy": { label: 'Stand-Up Comedy', function: standupComedy },
   "house-techno-klubben": { label: 'House Techno', function: houseTechnoClub },
+  "admin": { label: 'Admin', function: admin },
 };
 
 function createMenu() {
