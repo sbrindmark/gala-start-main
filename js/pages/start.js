@@ -58,7 +58,7 @@ export default async function start() {
      </a>
 
     <a href="#house-techno-klubben" class="club house-techno">
-   <img src="images/technoHouse.jpg" alt="House Techno Nights" class="club-image">
+   <img src="images/djairobot.jpg" alt="House Techno Nights" class="club-image">
    <strong>House Techno – Vibrerande nätter</strong>
    <p class="club-desc">Där basen möter ljuset och dansgolvet aldrig sover.</p>
     </a>
