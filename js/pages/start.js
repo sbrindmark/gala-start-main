@@ -2,7 +2,6 @@ import clubInfoAndEvents from "../utils/club-info-and-events.js";
 let allEvents = [];
 let allClubs = [];
  
-
 export default async function start() {
   let eventHtml = '';
   try {
@@ -15,33 +14,23 @@ export default async function start() {
     allEvents = await eventsResponse.json();
     allClubs = await clubsResponse.json();
  
-      fetch('http://localhost:3000/events'),
-      fetch('http://localhost:3000/clubs')
-    ]);
-
-    allEvents = await eventsResponse.json();
-    allClubs = await clubsResponse.json();
-
     // Add club info to events for better search
     allEvents = allEvents.map(event => ({
       ...event,
       clubName: allClubs.find(club => club.id === event.clubId)?.name || ''
     }));
  
-
     eventHtml = await clubInfoAndEvents();
   } catch (error) {
     console.error('Error loading events:', error);
     eventHtml = '<p>Kunde inte ladda events. Kontrollera att servern körs.</p>';
   }
  
-
   // Add event listeners after the HTML is rendered
   setTimeout(() => {
     setupSearchFunctionality();
   }, 0);
  
-
   return `
     <section id="alla-klubbar" class="clubs-section">
   <div class="clubs-intro">
@@ -56,14 +45,12 @@ export default async function start() {
      <p class="club-desc">Avslappnad stämning, levande toner och ren musikglädje.</p>
     </a>
  
-
     <a href="#metal-klubben" class="club metal">
      <img src="images/metal.jpeg" alt="Metal Club" class="club-image">
    <strong>Metal-Klubben – Där metal lever</strong>
     <p class="club-desc">Mörker, energi och gemenskap – metal på riktigt.</p>
     </a>
  
-
      <a href="#standup-comedy" class="club comedy">
     <img src="images/Lo.jpg" alt="Stand-Up Comedy" class="club-image">
    <strong>Stand-Up Comedy – Skratt utan gränser</strong>
@@ -77,27 +64,17 @@ export default async function start() {
     </a>
  
  
-
-    <a href="#house-techno-klubben" class="club house-techno">
-   <img src="images/djairobot.jpg" alt="House Techno Nights" class="club-image">
-   <strong>House Techno – Vibrerande nätter</strong>
-   <p class="club-desc">Där basen möter ljuset och dansgolvet aldrig sover.</p>
-    </a>
-
-
       </div>
       <div id="all-events-container">
         <h2>Vilket är ditt nästa evenemang?</h2>
         <p>Här är alla kommande evenemang på Gala Emporium:</p>
  
-
         <!-- Search functionality -->
         <div class="search-container">
           <input type="text" id="event-search" placeholder="Sök efter evenemang..." />
           <button id="clear-search">Rensa</button>
         </div>
        
-        
         <div class="wrapper" id="events-wrapper">
           ${eventHtml}
         </div>
@@ -106,7 +83,6 @@ export default async function start() {
   `;
 }
  
-
 function setupSearchFunctionality() {
   const searchInput = document.getElementById('event-search');
   const clearButton = document.getElementById('clear-search');
@@ -114,16 +90,12 @@ function setupSearchFunctionality() {
  
   if (!searchInput || !clearButton || !eventsWrapper) return;
  
-
-  if (!searchInput || !clearButton || !eventsWrapper) return;
-
   // Search functionality
   searchInput.addEventListener('input', (e) => {
     const searchTerm = e.target.value.toLowerCase().trim();
     filterEvents(searchTerm, eventsWrapper);
   });
  
-
   // Enter key search
   searchInput.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') {
@@ -132,7 +104,6 @@ function setupSearchFunctionality() {
     }
   });
  
-
   // Clear search
   clearButton.addEventListener('click', () => {
     searchInput.value = '';
@@ -140,7 +111,6 @@ function setupSearchFunctionality() {
     searchInput.focus();
   });
  
-
   // Focus search input when clicking on search container
   const searchContainer = document.querySelector('.search-container');
   if (searchContainer) {
@@ -152,7 +122,6 @@ function setupSearchFunctionality() {
   }
 }
  
-
 function filterEvents(searchTerm, eventsWrapper) {
   if (!searchTerm) {
     // Show all events
@@ -160,27 +129,23 @@ function filterEvents(searchTerm, eventsWrapper) {
     return;
   }
  
-
   const filteredEvents = allEvents.filter(event => {
     const name = event.name.toLowerCase();
     const description = event.description.toLowerCase();
     const date = event.date.toLowerCase();
     const clubName = (event.clubName || '').toLowerCase();
  
-
     return name.includes(searchTerm) ||
       description.includes(searchTerm) ||
       date.includes(searchTerm) ||
       clubName.includes(searchTerm);
   });
  
-
   displayFilteredEvents(filteredEvents, eventsWrapper);
 } function displayFilteredEvents(events, eventsWrapper) {
   const searchInput = document.getElementById('event-search');
   const searchTerm = searchInput ? searchInput.value.trim() : '';
  
-
   if (events.length === 0) {
     eventsWrapper.innerHTML = searchTerm
       ? '<p>Inga evenemang hittades som matchar din sökning.</p>'
@@ -188,7 +153,6 @@ function filterEvents(searchTerm, eventsWrapper) {
     return;
   }
  
-
   const eventHtml = events
     .toSorted((a, b) => a.date > b.date ? 1 : -1)
     .map(({ date, name, description }) => `
@@ -203,11 +167,6 @@ function filterEvents(searchTerm, eventsWrapper) {
     ? `<p class="search-results">Visar ${events.length} evenemang som matchar "${searchTerm}"</p>`
     : '<p></p>';
  
-
-  const resultsText = searchTerm
-    ? `<p class="search-results">Visar ${events.length} evenemang som matchar "${searchTerm}"</p>`
-    : '<p></p>';
-
   eventsWrapper.innerHTML = `
     <h1></h1>
     ${resultsText}

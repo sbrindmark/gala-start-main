@@ -2,183 +2,176 @@
 
 :root {
   --bg-dark: #0b0b10;
+  --bg-light: #14141d;
   --text-main: #f4f4f4;
   --accent: #6a4cff;
-  /* purple */
+  /* electric purple */
   --accent-secondary: #00bcd4;
   /* cyan */
   --radius: 12px;
   --font-title: 'Orbitron', sans-serif;
+  /* DJ / Techno style */
   --font-body: 'Inter', sans-serif;
 }
 
-/* BASE */
 body.house-techno-klubben {
   margin: 0;
+  background: radial-gradient(circle at 30% 10%, #0f0f1f, #07070c 80%);
   font-family: var(--font-body);
   color: var(--text-main);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: var(--bg-dark);
-  background-image:
-    linear-gradient(rgba(10, 0, 20, 0.75), rgba(0, 0, 0, 0.9)),
-    url("../../images/djairobot.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-}
 
-/* HEADER */
-body.house-techno-klubben header {
-  background: rgba(10, 10, 20, 0.9);
-  padding: 1.8rem 1rem;
-  border-bottom: 2px solid var(--accent);
-  text-align: center;
-}
-
-body.house-techno-klubben header h1 {
-  font-family: var(--font-title);
-  font-size: 2.3rem;
-  margin: 0;
-  color: var(--accent);
-  text-transform: uppercase;
-}
-
-body.house-techno-klubben header p {
-  font-size: 1rem;
-  color: #ccc;
-  margin-top: 0.4rem;
-}
-
-/* NAVIGATION */
-body.house-techno-klubben nav {
-  margin-top: 1rem;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 0.8rem;
-}
-
-body.house-techno-klubben nav a {
-  color: var(--text-main);
-  background: rgba(24, 24, 32, 0.8);
-  border: 1px solid var(--accent);
-  padding: 0.6rem 1rem;
-  border-radius: var(--radius);
-  text-decoration: none;
-  font-weight: 600;
-  transition: 0.3s;
-}
-
-body.house-techno-klubben nav a:hover,
-body.house-techno-klubben nav a:focus {
-  background: var(--accent);
-  color: #fff;
-}
-
-/* MAIN */
-body.house-techno-klubben main {
-  flex: 1;
-  padding: 2rem 1rem 4rem 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
-}
-
-body.house-techno-klubben main h1 {
-  color: var(--accent);
-  text-align: center;
-  font-family: var(--font-title);
-  text-transform: uppercase;
-  font-size: 1.8rem;
-}
-
-body.house-techno-klubben main p {
-  text-align: center;
-  max-width: 650px;
-  line-height: 1.6;
-  color: #ddd;
-}
-
-/* EVENTS */
-body.house-techno-klubben .event {
-  background: rgba(26, 26, 34, 0.85);
-  border: 1px solid var(--accent-secondary);
-  border-radius: var(--radius);
-  padding: 1.2rem;
-  margin: 1rem;
-  max-width: 720px;
-  width: 90%;
-  transition: transform 0.25s ease, box-shadow 0.35s ease;
-}
-
-body.house-techno-klubben .event:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 20px rgba(0, 180, 216, 0.25);
-}
-
-body.house-techno-klubben .event h3 {
-  color: var(--accent-secondary);
-  margin-top: 0;
-  font-family: var(--font-title);
-  font-size: 1.3rem;
-}
-
-body.house-techno-klubben .event p {
-  color: #ccc;
-  font-size: 0.95rem;
-}
-
-/* CONTACT */
-body.house-techno-klubben .contact-section {
-  background: rgba(15, 15, 22, 0.85);
-  border-top: 1px solid #222;
-  padding: 2rem 1rem;
-  text-align: center;
-}
-
-body.house-techno-klubben .contact-section h2 {
-  color: var(--accent);
-  font-family: var(--font-title);
-  margin-bottom: 0.8rem;
-}
-
-body.house-techno-klubben .contact-section p {
-  color: #ccc;
-  font-size: 0.95rem;
-  line-height: 1.5;
-}
-
-body.house-techno-klubben .contact-section a {
-  color: var(--accent-secondary);
-  text-decoration: none;
-}
-
-body.house-techno-klubben .contact-section a:hover {
-  text-decoration: underline;
-}
-
-/* FOOTER */
-body.house-techno-klubben footer {
-  background: rgba(30, 0, 40, 0.9);
-  text-align: center;
-  padding: 1rem;
-  font-size: 0.9rem;
-  color: #ddd;
-  border-top: 1px solid #222;
-}
-
-/* RESPONSIVE */
-@media (max-width: 700px) {
-  body.house-techno-klubben header h1 {
-    font-size: 1.7rem;
+  header {
+    background-color: #101018;
+    padding: 1.8rem 1rem;
+    border-bottom: 2px solid var(--accent);
+    text-align: center;
   }
 
-  body.house-techno-klubben nav a {
-    padding: 0.5rem 0.8rem;
+  header h1 {
+    font-family: var(--font-title);
+    font-size: 2.3rem;
+    letter-spacing: 1px;
+    margin: 0;
+    color: var(--accent);
+    text-transform: uppercase;
+  }
+
+  header p {
+    font-size: 1rem;
+    color: #ccc;
+    margin-top: 0.4rem;
+  }
+
+  nav {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+  }
+
+  nav a {
+    color: var(--text-main);
+    background: #181820;
+    border: 1px solid var(--accent);
+    padding: 0.6rem 1rem;
+    border-radius: var(--radius);
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+  }
+
+  nav a:hover,
+  nav a:focus {
+    background: var(--accent);
+    color: #fff;
+  }
+
+  /* MAIN CONTENT */
+  main {
+    flex: 1;
+    padding: 2rem 1rem 4rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  main h1 {
+    color: var(--accent);
+    text-align: center;
+    font-family: var(--font-title);
+    text-transform: uppercase;
+    font-size: 1.8rem;
+  }
+
+  main p {
+    text-align: center;
+    max-width: 650px;
+    line-height: 1.6;
+    color: #ddd;
+  }
+
+  /* EVENT CARDS */
+  .event {
+    background-color: #1a1a22;
+    border: 1px solid var(--accent-secondary);
+    border-radius: var(--radius);
+    padding: 1.2rem;
+    margin: 1rem;
+    max-width: 720px;
+    width: 90%;
+    transition: transform 0.25s ease, box-shadow 0.35s ease;
+  }
+
+  .event:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 20px rgba(0, 180, 216, 0.25);
+  }
+
+  .event h3 {
+    color: var(--accent-secondary);
+    margin-top: 0;
+    font-family: var(--font-title);
+    font-size: 1.3rem;
+  }
+
+  .event p {
+    color: #ccc;
+    font-size: 0.95rem;
+  }
+
+  /* CONTACT SECTION */
+  .contact-section {
+    background-color: #0f0f16;
+    border-top: 1px solid #222;
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+
+  .contact-section h2 {
+    color: var(--accent);
+    font-family: var(--font-title);
+    margin-bottom: 0.8rem;
+  }
+
+  .contact-section p {
+    color: #ccc;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .contact-section a {
+    color: var(--accent-secondary);
+    text-decoration: none;
+  }
+
+  .contact-section a:hover {
+    text-decoration: underline;
+  }
+
+  /* FOOTER */
+  footer {
+    background-color: #db2a94;
+    text-align: center;
+    padding: 1rem;
     font-size: 0.9rem;
+    color: #999;
+    border-top: 1px solid #222;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 700px) {
+    header h1 {
+      font-size: 1.7rem;
+    }
+
+    nav a {
+      padding: 0.5rem 0.8rem;
+      font-size: 0.9rem;
+    }
   }
 }
