@@ -42,11 +42,11 @@ export default function hiphopClub() {
         <p>${ev.description}</p>
       </div>
     `;
-  });
+});
 
-  html += `
-        </div>
-    </section>
+html += `
+      </div>
+  </section>
 
     <section id="om">
         <h2>Om Oss</h2>

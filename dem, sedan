@@ -1,4 +1,11 @@
-[33mcommit 78cf3c677ff8c00153ba4e3d7cf09da48ea4e170[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mfeature/-Hiphop[m[33m, [m[1;31mupstream/feature/-Hiphop[m[33m)[m
+powershell
+cd "c:\Users\qaium\OneDrive\Desktop\Gala-start\gala-start-main"
+git fetch origin
+git checkout main
+git pull origin main
+git merge --no-ff hip-hop -m "Merge hip-hop into main"
+# lös konflikter -> git add <fil> -> git commit
+git push origin main[33mcommit 78cf3c677ff8c00153ba4e3d7cf09da48ea4e170[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mfeature/-Hiphop[m[33m, [m[1;31mupstream/feature/-Hiphop[m[33m)[m
 Author: jelal <qaiumi@hotmail.com>
 Date:   Fri Nov 7 13:08:54 2025 +0100
 
