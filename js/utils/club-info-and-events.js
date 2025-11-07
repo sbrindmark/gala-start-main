@@ -1,3 +1,5 @@
+import { isAdmin } from "../pages/admin.js";
+
 export default async function clubInfoAndEvents(clubId) {
   let name = '', description = '', id = '';
   // if there is a clubId -> fetch the info about the club
@@ -14,20 +16,44 @@ export default async function clubInfoAndEvents(clubId) {
   const events =
     await (await fetch(url)).json();
   // return html
-  return `
+
+
+  if (!isAdmin) {
+
+    return `
     <h1>${name}</h1>
     <p>${description}</p>
     <h2>Events</h2>
     ${events
-      .toSorted((a, b) => a.date > b.date ? 1 : -1)
-      .map(({ date, name, description, id }) => `
+        .toSorted((a, b) => a.date > b.date ? 1 : -1)
+        .map(({ date, name, description, id }) => `
         <article class="event">
           <h3>${name} ${date}</h3>
           <p>${description}</p>
-          <p>${id}</p>
         </article>
       `)
-      .join('')
-    }
+        .join('')
+      }
   `;
+  }
+
+  else
+    return `
+    <h1>${name}</h1>
+    <p>${description}</p>
+    <h2>Events</h2>
+    ${events
+        .toSorted((a, b) => a.date > b.date ? 1 : -1)
+        .map(({ date, name, description, id }) => `
+        <article class="event" data-event-id="${id}">
+          <h3>${name} ${date}</h3>
+          <p>${description}</p>
+          <p>ID: ${id}</p>
+          <button class="delete-event-btn" data-id="${id}">Ta bort</button>
+        </article>
+      `)
+        .join('')
+      }
+  `;
+
 }

@@ -1,5 +1,8 @@
 import clubInfoAndEvents from "../utils/club-info-and-events.js";
 
+// Global variabel för admin-status
+export let isAdmin = false;
+
 export default async function admin() {
 
   const eventsHtml = await clubInfoAndEvents('');
@@ -104,7 +107,12 @@ export default async function admin() {
     });
   }, 1000);
 
-
+  setTimeout(() => {
+    const adminButton = document.getElementById('isAdmin');
+    adminButton.addEventListener('click', () => {
+      isAdmin = !isAdmin; // Toggla mellan true och false
+    });
+  }, 1000);
 
 
   // HTML för metalclub
@@ -136,6 +144,9 @@ export default async function admin() {
     </form>
     </div>
 
+
+    <button id="isAdmin">Admin</button>
+
     <button id="toggleButton">Visa events</button>
       <ul id="eventList" class="event-list">
         <li>${eventsHtml}</li>
@@ -149,4 +160,4 @@ export default async function admin() {
     </footer>
   </div>
   `;
-}
+};

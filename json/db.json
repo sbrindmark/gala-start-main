@@ -23,20 +23,6 @@
   ],
   "events": [
     {
-      "id": "43ac",
-      "date": "2025-11-05 19:00",
-      "name": "New Orleans-bandet",
-      "description": "New Orleans-bandet spelar old school jazz från 30-talet, med sväng och klarinett.",
-      "clubId": "a37c"
-    },
-    {
-      "id": "43ad",
-      "date": "2025-11-01 19:00",
-      "name": "Fusion-jazzarna Corea's Disciples",
-      "description": "Cool fusion-jazz med en massa dim-ackord.",
-      "clubId": "a37c"
-    },
-    {
       "id": "89d1",
       "date": "2025-11-07 20:00",
       "name": "Laughter Night med Magnus & Lisa",
@@ -84,13 +70,6 @@
       "name": "Deep Frequency Night",
       "description": "Minimal techno i perfekt balans mellan ljuddesign och rytm. En natt för sanna ljudentusiaster.",
       "clubId": "k23o"
-    },
-    {
-      "id": "a358",
-      "clubId": "a37c",
-      "name": "Jazz",
-      "date": "2025-11-07 14:24",
-      "description": "Jazzz"
     },
     {
       "id": "da27",
