@@ -3,7 +3,7 @@ import jazzClub from './pages/jazz-club.js';
 import metalClub from './pages/metal-club.js';
 import standupComedy from './pages/comedy.js';
 import houseTechnoClub from './pages/house-techno-club.js';
-import hiphopClub from "./pages/hiphop-club.js"; 
+import hiphopClub from "./pages/hip-hop.js"; 
 
 
 
@@ -11,7 +11,7 @@ import hiphopClub from "./pages/hiphop-club.js";
 // function to run on menu choice
 const menu = {
   "start": { label: 'Start', function: start },
-  "eventbokare": { label: "Boka Event", function: eventbokare },
+  //"eventbokare": { label: "Boka Event", function: eventbokare },
   "jazz-klubben": { label: 'Jazz-klubben', function: jazzClub },
   "metal-klubben": { label: 'Metal-klubben', function: metalClub },
   "house-techno-klubben": { label: 'House-techno-klubben', function: houseTechnoClub },
