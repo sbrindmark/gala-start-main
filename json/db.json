@@ -119,6 +119,20 @@
       "name": "Electric Winter",
       "description": "Säsongens avslutande event med LED-show, lasereffekter och DJs från Berlin och Amsterdam.",
       "clubId": "k23o"
+    },
+    {
+      "id": "f47f",
+      "clubId": "fg5i",
+      "name": "Adept",
+      "date": "2025-11-14 10:20",
+      "description": "Musik"
+    },
+    {
+      "id": "a358",
+      "clubId": "a37c",
+      "name": "Jazz",
+      "date": "2025-11-07 14:24",
+      "description": "Jazzz"
     }
   ],
   "bookings": []

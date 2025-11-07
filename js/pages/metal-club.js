@@ -61,7 +61,32 @@ export default async function metalClub() {
           alert('Kunde inte spara eventet. Kolla konsolen för detaljer.');
         });
     });
+
   }, 100); // Ökad timeout till 100ms för säkerhets skull
+
+
+  //Funktion för att ta bort en bokning ur databasen.
+  setTimeout(() => {
+    const form = document.getElementById('removeForm');
+
+    if (!form) {
+      console.error('Formuläret hittades inte!');
+      return;
+    }
+
+
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      fetch('http://localhost:3000/events/6872', {
+        method: 'DELETE',
+      });
+    });
+
+  }, 100); // Ökad timeout till 100ms för säkerhets skull
+
+
 
   // HTML för metalclub
   return `
@@ -85,6 +110,11 @@ export default async function metalClub() {
       </form>
     </div>
 
+    <div class="remove-event">
+    <form id="removeForm">
+    <input type="submit" value="Ta bort">
+    </div>
+
     <footer class="contact">
       <h2>Kontakta oss</h2>
       <p>Email: info@metalklubben.se</p>
@@ -92,4 +122,6 @@ export default async function metalClub() {
     </footer>
   </div>
   `;
+
+
 }
