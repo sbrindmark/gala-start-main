@@ -1,27 +1,32 @@
-export default async function eventbokare() {
+export default async function eventbokare() { 
   const res = await fetch("http://localhost:3000/clubs");
   const clubs = await res.json();
 
   const html = `
     <section class="eventbokare wrapper">
-      <h1>Boka Event</h1>
-      <p>Välj klubb, se tillgängliga event och boka dina biljetter.</p>
+      <h1 id="rubrik">Boka Event</h1>
 
-      <form id="eventForm">
-        <label for="klubb">Välj klubb:</label>
-        <select id="klubb" required>
-          <option value="">Välj...</option>
-          ${clubs.map(c => `<option value="${c.id}">${c.name}</option>`).join("")}
-        </select>
+      <div id="innehall">
+        <p>Välj klubb, se tillgängliga event och boka dina biljetter.</p>
 
-        <div id="event-lista"></div>
+        <form id="eventForm">
+          <div id="klubb-container">
+            <label for="klubb">Välj klubb:</label>
+            <select id="klubb" required>
+              <option value="">Välj...</option>
+              ${clubs.map(c => `<option value="${c.id}">${c.name}</option>`).join("")}
+            </select>
+          </div>
 
-        <div id="biljett-sektion" style="display:none;">
-          <label for="antal">Antal biljetter:</label>
-          <input type="number" id="antal" min="1" max="10" value="1">
-          <button id="bokaBtn" type="button">Boka</button>
-        </div>
-      </form>
+          <div id="event-lista"></div>
+
+          <div id="biljett-sektion" style="display:none;">
+            <label for="antal">Antal biljetter:</label>
+            <input type="number" id="antal" min="1" max="10" value="1">
+            <button id="bokaBtn" type="button">Boka</button>
+          </div>
+        </form>
+      </div>
 
       <div id="boknings-resultat"></div>
     </section>
@@ -29,12 +34,16 @@ export default async function eventbokare() {
 
   // Kör logik efter att sidan laddats in
   requestAnimationFrame(() => {
+    const rubrik = document.getElementById("rubrik");
+    const innehall = document.getElementById("innehall");
+    const klubbContainer = document.getElementById("klubb-container");
     const klubbSelect = document.getElementById("klubb");
     const eventLista = document.getElementById("event-lista");
     const biljettSektion = document.getElementById("biljett-sektion");
     const bokaBtn = document.getElementById("bokaBtn");
     const resultat = document.getElementById("boknings-resultat");
     let valdEvent = null;
+    let eventNamn = "";
 
     // När användaren väljer klubb
     klubbSelect?.addEventListener("change", async () => {
@@ -59,7 +68,7 @@ export default async function eventbokare() {
           .map(
             e => `
           <div>
-            <input type="radio" name="event" value="${e.id}" id="event-${e.id}">
+            <input type="radio" name="event" value="${e.id}" id="event-${e.id}" data-namn="${e.name}">
             <label for="event-${e.id}">${e.name} – ${e.date}</label>
           </div>
         `
@@ -69,6 +78,7 @@ export default async function eventbokare() {
       document.querySelectorAll('input[name="event"]').forEach(radio => {
         radio.addEventListener("change", e => {
           valdEvent = e.target.value;
+          eventNamn = e.target.dataset.namn;
           biljettSektion.style.display = "block";
         });
       });
@@ -83,25 +93,19 @@ export default async function eventbokare() {
 
       const antal = document.getElementById("antal").value;
 
-      await fetch("http://localhost:3000/bookings", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ eventId: valdEvent, tickets: antal }),
-      });
+      // 🔹 Ändra rubriken efter bokning
+      rubrik.textContent = "Din bokning är klar! 🎉";
 
-      // Visa tackmeddelande (stannar kvar!)
+      // Visa tackmeddelande
       resultat.innerHTML = `
         <div class="booking-confirmation">
-          <h3>✅ Tack för din bokning!</h3>
-          <p>Du har bokat <strong>${antal}</strong> biljetter.</p>
+          <p>Ses på eventet — det kommer bli magiskt!</p>
+          <p>Du har bokat <strong>${antal}</strong> biljetter till <strong>${eventNamn}</strong>.</p>
         </div>
       `;
 
-      // Rensa formuläret utan att ta bort tacktexten
-      document.getElementById("antal").value = 1;
-      document.querySelectorAll('input[name="event"]').forEach(r => (r.checked = false));
-      biljettSektion.style.display = "none";
-      // ❌ eventLista.innerHTML = ""; ← tas bort helt!
+      // Dölj formuläret och infon
+      innehall.style.display = "none";
     });
   });
 
