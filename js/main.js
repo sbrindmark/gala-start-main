@@ -3,6 +3,8 @@ import jazzClub from './pages/jazz-club.js';
 import metalClub from './pages/metal-club.js';
 import standupComedy from './pages/comedy.js';
 import houseTechnoClub from './pages/house-techno-club.js';
+import hiphopClub from "./pages/hiphop-club.js"; 
+
 
 
 // Our menu: label to display in menu and 
