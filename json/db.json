@@ -7,8 +7,18 @@
     },
     {
       "id": "fg5i",
-      "name": "Metal-club",
-      "description": "Hos oss pulserar mörkret, energin och gemenskapen. Metal-club är mötesplatsen för alla som älskar tung musik - från klassisk heavy metal till brutal death, black och allt däremellan.<br><br> Här hittar du kommande spelningar, klubbkvällar och specialevent med både etablerade band och nya talanger på uppgång. Vår scen vibrerar av passion, volym och äkta metalanda.<br><br><br><br> Vill du säkra din plats? Boka biljetter direkt här på sidan och håll koll på nya event - vi uppdaterar kalendern löpande.<br><br><br> <i>Kom för musiken. Stanna för gemenskapen.<br> <b>Metal-club</b> - där metal lever</i>.<br><br><br><br>"
+      "name": "Metal-klubben",
+      "description": "Hos oss pulserar mörkret, energin och gemenskapen. Metal-club är mötesplatsen för alla som älskar tung musik - från klassisk heavy metal till brutal death, black och allt däremellan. Här hittar du kommande spelningar, klubbkvällar och specialevent med både etablerade band och nya talanger på uppgång. Vår scen vibrerar av passion, volym och äkta metalanda. Vill du säkra din plats? Boka biljetter direkt här på sidan och håll koll på nya event - vi uppdaterar kalendern löpande. <i>Kom för musiken. Stanna för gemenskapen.<br><b>Metal-club</b> - där metal lever</i>."
+    },
+    {
+      "id": "k23o",
+      "name": "House Techno Klubben",
+      "description": "Där rytmen aldrig slutar! House Techno Klubben bjuder på pulserande beats, hypnotiska synthar och en ljusshow som får natten att kännas oändlig. Perfekt för alla som älskar elektronisk musik och dansgolvets magi."
+    },
+    {
+      "id": "c8m3",
+      "name": "Standup Comedy Club",
+      "description": "Skratta tills du får ont i magen! Våra komiker levererar de bästa skämten och mest underhållande berättelserna varje vecka."
     }
   ],
   "events": [
@@ -27,14 +37,14 @@
       "clubId": "fg5i"
     },
     {
-      "id": "57f3",
+      "id": "57f4",
       "date": "2025-11-15 22:00",
       "name": "In Flames",
       "description": "Svenskt klassiskt metal-band",
       "clubId": "fg5i"
     },
     {
-      "id": "43ac",
+      "id": "43ad",
       "date": "2025-11-01 19:00",
       "name": "Fusion-jazzarna Corea's Disciples",
       "description": "Cool fusion-jazz med en massa dim-ackord.",
@@ -46,6 +56,70 @@
       "name": "Adept",
       "date": "2025-11-04 22:00",
       "description": "Ett sternhårt band som kommer rocka kvällen lång"
+    },
+    {
+      "id": "89d1",
+      "date": "2025-11-07 20:00",
+      "name": "Laughter Night med Magnus & Lisa",
+      "description": "Två av Sveriges roligaste komiker tar scenen! Magnus berättar om livet som pappa medan Lisa delar sina observationer om modern dating.",
+      "clubId": "c8m3"
+    },
+    {
+      "id": "92e4",
+      "date": "2025-11-08 19:30",
+      "name": "Open Mic Comedy",
+      "description": "Kom och testa dina egna skämt! Open stage för blivande komiker. 5 minuter per person, anmäl dig vid entrén.",
+      "clubId": "c8m3"
+    },
+    {
+      "id": "74f7",
+      "date": "2025-11-10 21:00",
+      "name": "Internationell Comedy Night",
+      "description": "Komiker från hela världen! Engelska skämt, svenska punchlines och internationell humor som får alla att skratta.",
+      "clubId": "c8m3"
+    },
+    {
+      "id": "h01",
+      "date": "2025-11-15 22:00",
+      "name": "Underground Pulse",
+      "description": "En natt av hypnotiska beats med DJ Nova och stroboskopljus i takt med hjärtat.",
+      "clubId": "k23o"
+    },
+    {
+      "id": "h02",
+      "date": "2025-11-22 23:00",
+      "name": "Midnight Synths",
+      "description": "Live-syntar, visuals och techno på högsta volym. Upplev ljudets eufori!",
+      "clubId": "k23o"
+    },
+    {
+      "id": "h03",
+      "date": "2025-11-29 21:00",
+      "name": "Bassline Festival",
+      "description": "En explosion av house och techno från internationella DJs. Dansgolvet vibrerar hela natten!",
+      "clubId": "k23o"
+    },
+    {
+      "id": "h04",
+      "date": "2025-12-05 22:00",
+      "name": "Neon Dreams",
+      "description": "Ett ljus- och ljudinferno där DJ Aurora mixar drömska techno-vågor med mörka basgångar.",
+      "clubId": "k23o"
+    },
+    {
+      "id": "h05",
+      "date": "2025-12-12 22:30",
+      "name": "Deep Frequency Night",
+      "description": "Minimal techno i perfekt balans mellan ljuddesign och rytm. En natt för sanna ljudentusiaster.",
+      "clubId": "k23o"
+    },
+    {
+      "id": "h06",
+      "date": "2025-12-19 23:00",
+      "name": "Electric Winter",
+      "description": "Säsongens avslutande event med LED-show, lasereffekter och DJs från Berlin och Amsterdam.",
+      "clubId": "k23o"
     }
-  ]
+  ],
+  "bookings": []
 }

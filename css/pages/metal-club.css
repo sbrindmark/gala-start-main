@@ -67,7 +67,7 @@ body.metal-klubben {
   .wrapper {
     background: rgba(0, 0, 0, 0.7);
     border: 2px solid rgba(255, 255, 255, .2);
-    backdrop-filter: blur(20px);
+    /*backdrop-filter: blur(20px);*/
     box-shadow: 0 0 30px rgba(0, 0, 0, .5);
     color: white;
     border-radius: 10px;
