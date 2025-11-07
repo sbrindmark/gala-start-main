@@ -62,29 +62,28 @@ export default async function metalClub() {
         });
     });
 
-  }, 100); // Ökad timeout till 100ms för säkerhets skull
+  }, 1000);
+
+
+
 
 
   //Funktion för att ta bort en bokning ur databasen.
   setTimeout(() => {
-    const form = document.getElementById('removeForm');
-
-    if (!form) {
+    const removeForm = document.getElementById('removeForm');
+    if (!removeForm) {
       console.error('Formuläret hittades inte!');
       return;
     }
-
-
-
-    form.addEventListener('submit', (event) => {
+    removeForm.addEventListener('submit', (event) => {
       event.preventDefault();
-
-      fetch('http://localhost:3000/events/6872', {
+      const removeEventId = document.getElementById('removeEvent').value;
+      fetch(`http://localhost:3000/events/${removeEventId}`, {
         method: 'DELETE',
       });
     });
 
-  }, 100); // Ökad timeout till 100ms för säkerhets skull
+  }, 1000);
 
 
 
@@ -110,9 +109,12 @@ export default async function metalClub() {
       </form>
     </div>
 
-    <div class="remove-event">
+    <div class="remove-event"><br>
     <form id="removeForm">
+    <p>Skriv in ID på det event du vill ta bort</p>
+    <input type="text" id="removeEvent" placeholder="Ta bort" required>
     <input type="submit" value="Ta bort">
+    </form>
     </div>
 
     <footer class="contact">

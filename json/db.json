@@ -30,20 +30,6 @@
       "clubId": "a37c"
     },
     {
-      "id": "57f3",
-      "date": "2025-11-06 21:00",
-      "name": "Mega Death-die",
-      "description": "En open stage för death-metal-rockare, 30 minuter per band, upp till 6 band per kväll. Stjäl inte varandras effektpedaler!",
-      "clubId": "fg5i"
-    },
-    {
-      "id": "57f4",
-      "date": "2025-11-15 22:00",
-      "name": "In Flames",
-      "description": "Svenskt klassiskt metal-band",
-      "clubId": "fg5i"
-    },
-    {
       "id": "43ad",
       "date": "2025-11-01 19:00",
       "name": "Fusion-jazzarna Corea's Disciples",
@@ -119,13 +105,6 @@
       "name": "Electric Winter",
       "description": "Säsongens avslutande event med LED-show, lasereffekter och DJs från Berlin och Amsterdam.",
       "clubId": "k23o"
-    },
-    {
-      "id": "f47f",
-      "clubId": "fg5i",
-      "name": "Adept",
-      "date": "2025-11-14 10:20",
-      "description": "Musik"
     },
     {
       "id": "a358",

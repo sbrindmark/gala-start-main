@@ -1,5 +1,5 @@
 export default async function clubInfoAndEvents(clubId) {
-  let name = '', description = '';
+  let name = '', description = '', id = '';
   // if there is a clubId -> fetch the info about the club
   // and calculate the correct url for fetching filtered events
   let url = 'http://localhost:3000/events';
@@ -9,6 +9,7 @@ export default async function clubInfoAndEvents(clubId) {
     name = clubName;
     description = clubDescription;
     url += '?clubId=' + clubId;
+    id = id;
   }
   const events =
     await (await fetch(url)).json();
@@ -19,10 +20,11 @@ export default async function clubInfoAndEvents(clubId) {
     <h2>Events</h2>
     ${events
       .toSorted((a, b) => a.date > b.date ? 1 : -1)
-      .map(({ date, name, description }) => `
+      .map(({ date, name, description, id }) => `
         <article class="event">
           <h3>${name} ${date}</h3>
           <p>${description}</p>
+          <p>${id}</p>
         </article>
       `)
       .join('')
