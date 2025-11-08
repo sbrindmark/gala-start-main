@@ -17,46 +17,94 @@ export default function hiphopClub() {
       date: "2025-12-10",
       image: "images/hiphop.jpg",
       description: "Back to the roots – vinyl, scratch och groove hela kvällen.",
-    }
+    },
   ];
 
-  // Skapa HTML-sträng
-  let html = `
-    <section id="intro">
+  return `
+  <body class="hiphop-club">
+
+    <header>
+      <h1>Hip-Hop Klubben</h1>
+      <p>Beats, battles & street energy – varje helg, hela natten.</p>
+    </header>
+
+    <nav>
+      <a href="#intro">Hem</a>
+      <a href="#kalender">Evenemang</a>
+      <a href="#om">Om Oss</a>
+      <a href="#boka">Boka</a>
+    </nav>
+
+    <main>
+      <section id="intro">
         <h2>Välkommen till Hip-Hop Klubben</h2>
-        <p>Välkommen till Sveriges största nattklubb med ljud och ljus i världsklass.</p>
-    </section>
+        <p>Välkommen till Sveriges mest pulserande nattklubb där beatsen aldrig dör och scenen vibrerar av energi.</p>
+      </section>
 
-    <section id="kalender">
+      <section id="kalender">
         <h2>🎤 Kommande Evenemang</h2>
-        <div id="event-list" class="event-grid">
-  `;
+        <div class="event-grid">
+          ${events.map(ev => `
+            <div class="event-card">
+              <img src="${ev.image}" alt="${ev.title}">
+              <h3>${ev.title}</h3>
+              <p><strong>${ev.date}</strong></p>
+              <p>${ev.description}</p>
+            </div>
+          `).join('')}
+        </div>
+      </section>
 
-  // Lägg till evenemang
-  events.forEach(ev => {
-    html += `
-      <div class="event-card">
-        <img src="${ev.image}" alt="${ev.title}" style="width:100%; border-radius:6px;">
-        <h3>${ev.title}</h3>
-        <p><strong>${ev.date}</strong></p>
-        <p>${ev.description}</p>
-      </div>
-    `;
-});
-
-html += `
-      </div>
-  </section>
-
-    <section id="om">
+      <section id="om">
         <h2>Om Oss</h2>
-        <p>När natten faller över staden finns det bara ett ställe där musiken, energin och atmosfären möts på den högsta nivån – Gala Emporium.</p>
-        <p>På Gala Emporium handlar allt om känslan. Från det ögonblick du kliver in möts du av en värld där lyx möter lekfullhet – gnistrande ljus, förstklassigt ljud och en publik som vet hur man festar.</p>
-        <p>Gala Emporium är inte bara en nattklubb – det är en upplevelse, en livsstil och en destination.</p>
-    </section>
-  `;
+        <p>När natten faller över staden finns det bara ett ställe där musiken, energin och atmosfären möts – Hip-Hop Klubben.</p>
+        <p>Här är varje beat, varje danssteg och varje rhyme en del av kulturen. 
+        Vi lever för scenen, för vibben och för communityt.</p>
+        <p>Hip-Hop Klubben är mer än bara en nattklubb – det är en livsstil.</p>
+      </section>
 
-  return html; 
+      <section id="boka" class="booking-section">
+        <h2>Boka Ditt Event</h2>
+        <p>Vill du säkra din plats på nästa stora show? Fyll i formuläret och join vibben!</p>
+        <form>
+          <label for="event">Välj event</label>
+          <select id="event" name="event">
+            ${events.map(ev => `<option>${ev.title}</option>`).join('')}
+          </select>
+
+          <label for="antal">Antal biljetter</label>
+          <input type="number" id="antal" name="antal" min="1" max="10" value="1">
+
+          <button type="submit">Boka Nu 🎟️</button>
+        </form>
+
+        <div class="booking-confirmation" style="display:none;">
+          <h3 class="confirmed">Bokning Bekräftad!</h3>
+          <p>Tack för din bokning till <strong id="event-name">Hip-Hop Klubben</strong>.</p>
+          <p>Vi ses på dansgolvet 🔥</p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Hip-Hop Klubben – Där rytmen aldrig slutar.</p>
+    </footer>
+
+    <script>
+      const form = document.querySelector('form');
+      const confirmation = document.querySelector('.booking-confirmation');
+      const eventName = document.getElementById('event-name');
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const selected = document.getElementById('event').value;
+        eventName.textContent = selected;
+        form.style.display = 'none';
+        confirmation.style.display = 'block';
+      });
+    </script>
+  </body>
+  `;
 }
 
 
