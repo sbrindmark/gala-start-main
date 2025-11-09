@@ -22,13 +22,24 @@ body.house-techno-klubben {
   display: flex;
   flex-direction: column;
   background-color: var(--bg-dark);
-  background-image:
+  /*background-image:
     linear-gradient(rgba(10, 0, 20, 0.75), rgba(0, 0, 0, 0.9)),
-    url("../../images/djdisc.jpg"); /* ny bild */
+    url("../../images/djtech.jpg"); /* ny bild */*/
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+}
+body.house-techno-klubben video.bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 0.4;
+  pointer-events: none;
 }
 
 /* Header */
@@ -104,6 +115,66 @@ body.house-techno-klubben .event {
 body.house-techno-klubben .event:hover {
   transform: translateY(-5px);
   box-shadow: 0 4px 20px rgba(0, 180, 216, 0.25);
+}
+/* Info-ruta för event – bara på House Techno sidan */
+body.house-techno-klubben .event-info {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+body.house-techno-klubben .event-info-content {
+  background: rgba(30,30,40,0.95);
+  border: 1px solid var(--accent-secondary);
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 480px;
+  text-align: center;
+  box-shadow: 0 0 25px rgba(0,188,212,0.3);
+}
+
+body.house-techno-klubben .event-info-content h2 {
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+  font-family: var(--font-title);
+}
+
+body.house-techno-klubben .boka-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  background: var(--accent);
+  color: white;
+  padding: 0.7rem 1.4rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+body.house-techno-klubben .boka-btn:hover {
+  background: var(--accent-secondary);
+}
+
+body.house-techno-klubben .close-btn {
+  margin-top: 1rem;
+  background: transparent;
+  border: 1px solid #666;
+  color: #ccc;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+body.house-techno-klubben .close-btn:hover {
+  color: white;
+  border-color: white;
 }
 
 /* Kontaktsektion */
