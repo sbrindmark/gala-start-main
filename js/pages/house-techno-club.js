@@ -27,12 +27,19 @@ setTimeout(() => {
   bgVideo.playsInline = true;
   bgVideo.className = "bg-video";
 
+  // Om videon inte kan laddas → fallback-bild
+  bgVideo.onerror = () => {
+    console.warn(" Videon kunde inte spelas — visar bakgrundsbild istället.");
+    technoSection.style.backgroundImage = 'url("../../images/djtech.jpg")';
+    technoSection.style.backgroundSize = "cover";
+    technoSection.style.backgroundPosition = "center";
+  };
   // Lägger videon i klubbens sektion
   technoSection.prepend(bgVideo);
 }, 300);
 
 
-    // 🟣 Gör varje event klickbar
+    //  Gör varje event klickbar
     document.querySelectorAll(".event").forEach((eventEl) => {
       eventEl.style.cursor = "pointer";
       eventEl.addEventListener("click", () => {
