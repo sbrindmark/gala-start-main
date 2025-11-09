@@ -4,19 +4,19 @@ export default function hiphopClub() {
     {
       title: "Rap Battle Royale",
       date: "2025-11-15",
-      image: "images/pa.jpg",
+      
       description: "En natt med tunga bars, beats och energi på scenen.",
     },
     {
       title: "Breakdance Jam",
       date: "2025-11-28",
-      image: "images/2pa.jpg",
+      
       description: "Dansare från hela landet möts i en episk battle.",
     },
     {
       title: "DJ Night – Old School Edition",
       date: "2025-12-10",
-      image: "images/2pa.jpg",
+      
       description: "Back to the roots – vinyl, scratch och groove hela kvällen.",
     },
   ];
@@ -58,12 +58,16 @@ export default function hiphopClub() {
           </section>
 
           <section id="om">
+            <div class=wrapper>
             <h2>Om Oss</h2>
             <p>När natten faller över staden finns det bara ett ställe där musiken, energin och atmosfären möts – Hip-Hop Klubben.</p>
             <p>Här är varje beat, varje danssteg och varje rhyme en del av kulturen. Vi lever för scenen, för vibben och för communityt.</p>
             <p>Hip-Hop Klubben är mer än bara en nattklubb – det är en livsstil.</p>
           </section>
+
+          
     <section class="contact-section">
+      <div class=wrapper>
       <h2>Kontakt</h2>
       <p>📍 Stockholm, Sweden</p>
       <p>📧 <a href="mailto:info@Hiphop.se">info@hiphop.se</a></p>
