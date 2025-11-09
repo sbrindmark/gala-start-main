@@ -63,34 +63,21 @@ export default function hiphopClub() {
             <p>Här är varje beat, varje danssteg och varje rhyme en del av kulturen. Vi lever för scenen, för vibben och för communityt.</p>
             <p>Hip-Hop Klubben är mer än bara en nattklubb – det är en livsstil.</p>
           </section>
-
-          <section id="boka" class="booking-section">
-            <h2>Boka Ditt Event</h2>
-            <p>Vill du säkra din plats på nästa stora show? Fyll i formuläret och join vibben!</p>
-            <form>
-              <label for="event">Välj event</label>
-              <select id="event" name="event">
-                ${events.map(ev => `<option>${ev.title}</option>`).join('')}
-              </select>
-
-              <label for="antal">Antal biljetter</label>
-              <input type="number" id="antal" name="antal" min="1" max="10" value="1">
-
-              <button type="submit">Boka Nu 🎟️</button>
-            </form>
-
-            <div class="booking-confirmation" style="display:none;">
-              <h3 class="confirmed">Bokning Bekräftad!</h3>
-              <p>Tack för din bokning till <strong id="event-name">Hip-Hop Klubben</strong>.</p>
-              <p>Vi ses på dansgolvet 🔥</p>
-            </div>
-          </section>
+    <section class="contact-section">
+      <h2>Kontakt</h2>
+      <p>📍 Stockholm, Sweden</p>
+      <p>📧 <a href="mailto:info@Hiphop.se">info@hiphop.se</a></p>
+      <p>📞 +08 70 123 57 80</p>
+      <p>Följ oss på <a href="#">Instagram</a> & <a href="#">Facebook</a></p>
+    </section>
+         
         </div>
       </main>
 
       <footer>
         <p>&copy; 2025 Hip-Hop Klubben – Där rytmen aldrig slutar.</p>
       </footer>
+      
 
     </div>
   `;
