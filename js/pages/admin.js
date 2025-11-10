@@ -10,9 +10,6 @@ export function setIsAdmin(value) {
 
 export default async function admin() {
 
-  // Starta utan att ladda events
-  let eventsHtml = '';
-
   setTimeout(() => {
     const form = document.getElementById('bandForm');
 
@@ -106,38 +103,6 @@ export default async function admin() {
     });
   }, 10);
 
-
-
-
-
-
-  // Toggle för isAdmin = true or false
-  setTimeout(() => {
-    const adminButton = document.getElementById('isAdmin');
-
-    if (!adminButton) {
-      console.error('Admin-knappen hittades inte!');
-      return;
-    }
-
-    console.log('Admin-knapp event listener tillagd');
-
-    adminButton.addEventListener('click', () => {
-      isAdmin = !isAdmin; // Toggla mellan true och false
-
-      console.log('Admin-läge:', isAdmin);
-
-      if (isAdmin) {
-        adminButton.textContent = 'Admin: ON';
-        adminButton.style.backgroundColor = 'green';
-      } else {
-        adminButton.textContent = 'Admin: OFF';
-        adminButton.style.backgroundColor = '';
-      }
-    });
-  }, 10);
-
-  // HTML för metalclub
   return `
   <div class ="wrapper">
   
@@ -157,24 +122,10 @@ export default async function admin() {
       <input type="submit" value="Spara">
       </form>
     </div>
-
-    <!--<div class="remove-event"><br>
-    <form id="removeForm">
-    <p>Skriv in ID på det event du vill ta bort</p>
-    <input type="text" id="removeEvent" placeholder="Ta bort" required>
-    <input type="submit" value="Ta bort">
-    </form>
-    </div>-->
-
-
-    <button id="isAdmin">Admin</button>
-
     <button id="toggleButton">Visa events</button>
       <ul id="eventList" class="event-list">
         <li></li>
       </ul>
-
-
     <footer class="contact">
       <h2>Kontakta oss</h2>
       <p>Email: info@metalklubben.se</p>
