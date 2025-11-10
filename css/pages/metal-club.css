@@ -1,13 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap');
 
 body.metal-klubben {
-  background: url('../../images/metal.jpeg') no-repeat;
+  margin: 0;
+  padding: 0;
+  /*background: url('../../images/metal.jpeg') no-repeat;
   background-size: cover;
   min-height: 100vh;
   background-color: rgba(87, 30, 30, 0.774);
   color: white;
+  */
+
+  .image-background {
+    background-image: url('../../images/metal.jpeg');
+    background-position-x: 50%;
+    background-position-y: 0%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    width: 100%;
+  }
 
   main {
+    padding: 0%;
+    background-color: rgb(24, 23, 24);
+    box-sizing: border-box;
+    color: rgb(70, 70, 70);
+    display: block;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,35 +33,7 @@ body.metal-klubben {
     min-height: calc(100vh - 100px);
   }
 
-  header nav {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
-    padding: 10px 0;
-    justify-content: center;
-  }
 
-  header nav a {
-    display: inline-block;
-    padding: 10px 20px;
-    margin: 5px;
-    background-color: #333;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: 500;
-    transition: all 0.3s ease;
-  }
-
-  header nav a:hover {
-    background-color: #555;
-    transform: translateY(-2px);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  }
-
-  header nav a:active {
-    transform: translateY(0);
-  }
 
   /*Gör bakgrunden vid header mörk istället för lila-gradient */
   header {
@@ -62,18 +52,187 @@ body.metal-klubben {
     font-family: "Metal Mania", system-ui;
     font-weight: 400;
     font-style: normal;
+    color: white;
+  }
+
+  .container {
+    position: relative;
+    box-sizing: border-box;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 80px;
+    max-width: 1440px;
+    overflow-x: 0px;
+    padding-bottom: 100%;
+    padding-top: 32px;
+  }
+
+  .main-text {
+    margin-bottom: 30vh;
+  }
+
+  .main-text h1 {
+    font-size: 120px;
+    font-stretch: 100%;
+    text-align: center;
+    font-family: "Metal Mania", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+  }
+
+  .main-text p {
+    color: white;
+    font-size: 1.5vh;
+  }
+
+  .listen-now,
+  .live-shows {
+    font-size: 120px;
+    font-stretch: 100%;
+    text-align: center;
+  }
+
+  /* Slidshow main page*/
+
+  * {
+    box-sizing: border-box
+  }
+
+  /* Slideshow container */
+  .slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10vh;
+
+  }
+
+  .slideshow-container .text {
+    font-family: "Metal Mania", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 5vh;
+  }
+
+  /* Hide the images by default */
+  .mySlides {
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+  }
+
+  /* När slide är aktiv, visa som flex */
+  .mySlides[style*="display: block"] {
+    display: flex !important;
+  }
+
+  /* Max size på bilderna i slideshowen */
+  .mySlides img {
+    height: 800px;
+    width: 600px;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
+  /* Next & previous buttons */
+  .prev,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 3px;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  /* Position the "previous button" to the left OUTSIDE */
+  .prev {
+    left: -200px;
+    /* Flyttar pilen utanför till vänster */
+  }
+
+  /* Position the "next button" to the right OUTSIDE */
+  .next {
+    right: -200px;
+    /* Flyttar pilen utanför till höger */
+  }
+
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover,
+  .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+
+  /* Caption text */
+  .text {
+    color: #f2f2f2;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 20px;
+    position: relative;
+    bottom: auto;
+    width: auto;
+    text-align: left;
+    flex: 1;
+  }
+
+  /* The dots/bullets/indicators */
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+
+  .active,
+  .dot:hover {
+    background-color: #717171;
+  }
+
+  /* Fading animation */
+  .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+
+  @keyframes fade {
+    from {
+      opacity: .4
+    }
+
+    to {
+      opacity: 1
+    }
   }
 
   .wrapper {
-    background: rgba(0, 0, 0, 0.7);
-    border: 2px solid rgba(255, 255, 255, .2);
+    background: none;
+    border: none;
     /*backdrop-filter: blur(20px);*/
-    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    box-shadow: none;
     color: white;
-    border-radius: 10px;
     padding: 30px 40px;
-    margin: 10px;
-    max-width: 800px;
+    margin: 10px auto;
+    /* Auto på höger/vänster för att centrera */
+    max-width: 720px;
     line-height: 1.6;
   }
 
@@ -83,6 +242,12 @@ body.metal-klubben {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
     margin-top: 20px;
     margin-bottom: 15px;
+  }
+
+  /* Dölj klubbnamn och beskrivning */
+  .wrapper h1:first-of-type,
+  .wrapper p:not(article.event p) {
+    display: none;
   }
 
   .wrapper p {
@@ -98,7 +263,6 @@ body.metal-klubben {
 
   article.event {
     background: rgba(0, 0, 0, 0.5);
-    border: 1px solid rgba(255, 255, 255, 0.3);
     margin: 15px 0;
     padding: 20px;
     border-radius: 8px;
@@ -109,7 +273,7 @@ body.metal-klubben {
   article.event h3 {
     font-size: 18px;
     margin-bottom: 10px;
-    color: #ffd700;
+    color: white;
   }
 
   article.event p {
@@ -128,5 +292,9 @@ body.metal-klubben {
   .create-event {
     display: flex;
     flex-direction: column;
+  }
+
+  footer {
+    margin: 0%;
   }
 }
