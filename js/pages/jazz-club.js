@@ -1,9 +1,7 @@
-import clubInfoAndEvents, { attachDeleteButtonListeners } from "../utils/club-info-and-events.js";
+import clubInfoAndEvents from "../utils/club-info-and-events.js";
 
 export default async function jazzClub() {
   const eventsHtml = await clubInfoAndEvents('a37c');
-
-  attachDeleteButtonListeners();
 
   return `
     <div class="wrapper jazz-wrapper">
