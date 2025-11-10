@@ -3,6 +3,11 @@ import clubInfoAndEvents, { attachDeleteButtonListeners } from "../utils/club-in
 // Global variabel för admin-status
 export let isAdmin = false;
 
+//Funktion för att ändra isAdmin
+export function setIsAdmin(value) {
+  isAdmin = value;
+}
+
 export default async function admin() {
 
   // Starta utan att ladda events

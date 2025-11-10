@@ -5,7 +5,7 @@ import metalClub from './pages/metal-club.js';
 import standupComedy from './pages/comedy.js';
 import houseTechnoClub from './pages/house-techno-club.js';
 import eventbokare from './pages/eventbokare.js';
-import admin from './pages/admin.js';
+import admin, { setIsAdmin } from './pages/admin.js';
 import hiphopClub from './pages/hiphopnew.js';
 
 
@@ -45,6 +45,12 @@ function createHeader() {
 async function loadPageContent() {
   // if no hash redirect to #start
   if (location.hash === '') { location.replace('#start'); }
+  // Sätter admin till true när man besöker sidan och ändrar till false när man lämnar
+  if (location.hash === '#admin') {
+    setIsAdmin(true);
+  } else {
+    setIsAdmin(false);
+  }
   // add a class on body so that we can style differnt pages differently
   document.body.setAttribute('class', location.hash.slice(1));
   // get the correct function to run depending on location.hash
