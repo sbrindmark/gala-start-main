@@ -154,7 +154,7 @@
 }
 
 .club.comedy {
-    background: linear-gradient(135deg, #FF6B6B, #FF8E53);
+    background: linear-gradient(135deg, #d32f2f, #e57373);
 }
 
 .club.house-techno {
@@ -164,6 +164,7 @@
 .club.hiphop {
     background: linear-gradient(135deg, #deca2c, #bfd707);
 }
+
 /* Events wrapper */
 .wrapper {
     max-width: 800px;
