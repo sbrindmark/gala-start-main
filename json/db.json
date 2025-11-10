@@ -505,6 +505,24 @@
       "prisPerBiljett": 286,
       "totalKostnad": 572,
       "datum": "2025-11-07T09:57:51.849Z"
+    },
+    {
+      "id": "5859",
+      "eventId": "h04",
+      "eventNamn": "Neon Dreams",
+      "antal": 1,
+      "prisPerBiljett": 253,
+      "totalKostnad": 253,
+      "datum": "2025-11-07T11:33:28.963Z"
+    },
+    {
+      "id": "6a32",
+      "eventId": "57f4",
+      "eventNamn": "In Flames",
+      "antal": 3,
+      "prisPerBiljett": 219,
+      "totalKostnad": 657,
+      "datum": "2025-11-10T11:53:37.703Z"
     }
   ]
 }
