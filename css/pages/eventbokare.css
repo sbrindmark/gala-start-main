@@ -1,4 +1,123 @@
-.eventbokare {
-  padding: 2rem;
-  text-align: center;
+/* === Bokningsbekräftelse === */
+.booking-confirmation {
+  background: linear-gradient(145deg, rgba(123, 0, 255, 0.25), rgba(209, 0, 110, 0.2));
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  margin-top: 2.5rem;
+body.eventbokare {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  min-height: 100vh;
+  color: #fff;
 }
+
+body.eventbokare header {
+  background: linear-gradient(135deg, #4a90e2 0%, #357abd 50%, #2c5aa0 100%) !important;
+}
+
+.eventbokare {
+  text-align: center;
+  color: #fff;
+  font-size: 1.1rem;
+  box-shadow: 0 0 25px rgba(123, 0, 255, 0.5);
+  animation: fadeIn 1.2s ease-out forwards;
+  max-width: 550px;
+  margin-left: auto;
+  margin-right: auto;
+  backdrop-filter: blur(10px);
+}
+
+.booking-confirmation strong {
+  color: #ff72d2;
+  font-weight: 700;
+  text-shadow: 0 0 6px rgba(255, 114, 210, 0.6);
+}
+
+.booking-confirmation p {
+  margin: 1rem 0;
+  line-height: 1.6;
+}
+
+/* === Ändra huvudrubriken vid bekräftelse === */
+.eventbokare h1 {
+  font-size: 2.2rem;
+  text-align: center;
+  color: #fff;
+  margin-top: 1rem;
+  transition: color 0.5s ease, transform 0.5s ease, text-shadow 0.5s ease;
+  letter-spacing: 1px;
+}
+
+.eventbokare h1.confirmed {
+  color: #ff72d2;
+  transform: scale(1.08);
+  text-shadow: 0 0 15px rgba(255, 114, 210, 0.8);
+}
+
+/* === Formulär & knappar === */
+.eventbokare form {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+  box-shadow: 0 0 10px rgba(123, 0, 255, 0.3);
+  backdrop-filter: blur(6px);
+}
+
+.eventbokare label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #ccc;
+  font-weight: 500;
+}
+
+.eventbokare select,
+.eventbokare input[type="number"] {
+  width: 100%;
+  padding: 0.6rem;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  margin-bottom: 1rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.eventbokare button {
+  background: linear-gradient(90deg, #7b00ff, #d1006e);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.8rem 1.4rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.eventbokare button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 15px rgba(209, 0, 110, 0.6);
+}
+
+/* === Animation === */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === Responsivitet === */
+@media (max-width: 600px) {
+  .booking-confirmation {
+    padding: 1.5rem;
+    font-size: 1rem;
+  }
+  .eventbokare h1 {
+    font-size: 1.8rem;
+  }
+}:
