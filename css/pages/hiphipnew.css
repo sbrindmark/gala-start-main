@@ -17,9 +17,7 @@ body.hiphop-club {
   color: var(--text-main);
 
   /* 🖼️ Bakgrundsbild över hela sidan */
-  background-image:("images/2pac.jpg), ")
-    linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.95)),
-    url("images/2pac.jpg");
+  background-image: url("../../images/2pac.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
