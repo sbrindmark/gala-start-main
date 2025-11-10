@@ -86,6 +86,11 @@ Metal-club - där metal lever.</p>
 <div class="slideshow-container">
 
   <!-- Full-width images with number and caption text -->
+<div class="mySlides fade">
+    <img src="https://media.revolvermag.com/smaecrmuhw/styles/article-banner/2024/07/11/sleep-token_2024_tour_credit_adamross_williams.jpg.webp?t=e6588d3c.webp" style="width:100%">
+    <div class="text">SLEEP TOKEN</div>
+  </div>
+
   <div class="mySlides fade">
     <img src="https://m.media-amazon.com/images/M/MV5BNDkyMTVkZWEtNjgzMy00OWE4LTg0ZDAtMzQwNWI5NmVhOTRiXkEyXkFqcGc@._V1_.jpg" style="width:100%">
     <div class="text">BLACK SABBATH</div>
