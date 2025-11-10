@@ -59,3 +59,4 @@ window.onhashchange = loadPageContent;
 
 // create the complete header and display it
 document.querySelector('header').innerHTML = createHeader();
+
