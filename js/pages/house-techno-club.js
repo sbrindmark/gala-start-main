@@ -20,7 +20,7 @@ setTimeout(() => {
 
   // Skapar videoelement för bakgrunden
   const bgVideo = document.createElement("video");
-  bgVideo.src = "././videos/technovd.mp4"; // rätt sökväg
+  bgVideo.src = "././videos/housedanceslow.mp4"; // rätt sökväg
   bgVideo.autoplay = true;
   bgVideo.loop = true;
   bgVideo.muted = true;

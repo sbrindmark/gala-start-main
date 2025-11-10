@@ -523,6 +523,15 @@
       "prisPerBiljett": 262,
       "totalKostnad": 262,
       "datum": "2025-11-09T22:07:04.448Z"
+    },
+    {
+      "id": "9cb7",
+      "eventId": "57f3",
+      "eventNamn": "Mega Death-die",
+      "antal": 1,
+      "prisPerBiljett": 155,
+      "totalKostnad": 155,
+      "datum": "2025-11-10T11:24:33.015Z"
     }
   ]
 }
