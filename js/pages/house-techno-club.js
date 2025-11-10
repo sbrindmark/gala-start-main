@@ -1,11 +1,9 @@
 // House Techno klubbens sida
-import clubInfoAndEvents, { attachDeleteButtonListeners } from "../utils/club-info-and-events.js";
+import clubInfoAndEvents from "../utils/club-info-and-events.js";
 
 export default async function houseTechnoClub() {
-  // Hämtar innehåll för klubben
   const html = await clubInfoAndEvents("k23o");
 
-  // Returnerar HTML direkt (först)
   const pageHtml = `
     <section class="wrapper">
       ${html}
@@ -20,12 +18,10 @@ export default async function houseTechnoClub() {
     </section>
   `;
 
-  // När sidan har laddats helt
   setTimeout(() => {
     const body = document.body;
     body.className = "house-techno-klubben";
 
-    // Lägg till bakgrundsvideo endast på denna sida
     const technoSection = document.querySelector("section.wrapper");
     if (!technoSection) return;
 
@@ -46,9 +42,8 @@ export default async function houseTechnoClub() {
 
     technoSection.prepend(bgVideo);
 
-    // Gör varje event klickbar
-    const eventEls = document.querySelectorAll(".event");
-    eventEls.forEach((eventEl) => {
+    // Gör event klickbara
+    document.querySelectorAll(".event").forEach((eventEl) => {
       eventEl.style.cursor = "pointer";
 
       eventEl.addEventListener("click", () => {
@@ -67,10 +62,78 @@ export default async function houseTechnoClub() {
         `;
 
         document.body.appendChild(infoBox);
+        infoBox.querySelector(".close-btn").addEventListener("click", () => infoBox.remove());
+      });
+    });
 
-        // Stänger info-rutan
-        infoBox.querySelector(".close-btn").addEventListener("click", () => {
-          infoBox.remove();
+    //  Lägg till "Play"-knappar till varje event
+    const events = document.querySelectorAll(".event");
+    const tracks = [
+      "././sounds/djAgge1.mp3",
+      "././sounds/djAgge2.mp3",
+      "././sounds/djAgge3.mp3",
+      "././sounds/djAgge4.mp3",
+      "././sounds/djAggeecho.mp3",
+      "././sounds/djAgge6.mp3"
+    ];
+
+    let activeAudio = null;
+    let activeButton = null;
+
+    events.forEach((eventEl, i) => {
+      if (eventEl.querySelector(".play-btn")) return; // guard clause: redan har knapp
+
+      const btn = document.createElement("button");
+      btn.className = "play-btn";
+      btn.textContent = "▶";
+      btn.dataset.sound = tracks[i] || "./sounds/default.mp3";
+
+      const h3 = eventEl.querySelector("h3");
+      if (h3) h3.insertAdjacentElement("afterend", btn);
+
+      const audio = new Audio(btn.dataset.sound);
+
+      btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+
+        // Om annat ljud spelas, stoppa det direkt
+        if (activeAudio && activeAudio !== audio) {
+          activeAudio.pause();
+          activeAudio.currentTime = 0;
+          if (activeButton) activeButton.textContent = "▶";
+        }
+
+        // Om nuvarande ljud spelas, stoppa det
+        if (!audio.paused) {
+          audio.pause();
+          audio.currentTime = 0;
+          btn.textContent = "▶";
+          activeAudio = null;
+          activeButton = null;
+          return; // guard clause avslutar här
+        }
+
+        // Spela ljud
+        audio.play().catch(err => console.error("Kunde inte spela ljud:", err));
+        btn.textContent = "⏸";
+        activeAudio = audio;
+        activeButton = btn;
+
+        // Stoppa automatiskt efter 1 minut
+        setTimeout(() => {
+          if (!audio.paused) {
+            audio.pause();
+            audio.currentTime = 0;
+            btn.textContent = "▶";
+            activeAudio = null;
+            activeButton = null;
+          }
+        }, 70000); // 70 sekunder
+
+        audio.addEventListener("ended", () => {
+          btn.textContent = "▶";
+          activeAudio = null;
+          activeButton = null;
         });
       });
     });
