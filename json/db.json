@@ -112,6 +112,13 @@
       "name": "Electric Winter",
       "description": "Säsongens avslutande event med LED-show, lasereffekter och DJs från Berlin och Amsterdam.",
       "clubId": "k23o"
+    },
+    {
+      "id": "2413",
+      "clubId": "fg5i",
+      "name": "Sleep Token",
+      "date": "2025-11-10 22:00",
+      "description": "Take me back to eden"
     }
   ],
   "bookings": [
@@ -505,6 +512,42 @@
       "prisPerBiljett": 286,
       "totalKostnad": 572,
       "datum": "2025-11-07T09:57:51.849Z"
+    },
+    {
+      "id": "71b4",
+      "eventId": "h01",
+      "eventNamn": "Underground Pulse",
+      "antal": 1,
+      "prisPerBiljett": 168,
+      "totalKostnad": 168,
+      "datum": "2025-11-09T21:20:05.398Z"
+    },
+    {
+      "id": "6509",
+      "eventId": "57f4",
+      "eventNamn": "In Flames",
+      "antal": 1,
+      "prisPerBiljett": 262,
+      "totalKostnad": 262,
+      "datum": "2025-11-09T22:07:04.448Z"
+    },
+    {
+      "id": "9cb7",
+      "eventId": "57f3",
+      "eventNamn": "Mega Death-die",
+      "antal": 1,
+      "prisPerBiljett": 155,
+      "totalKostnad": 155,
+      "datum": "2025-11-10T11:24:33.015Z"
+    },
+    {
+      "id": "645b",
+      "eventId": "74f7",
+      "eventNamn": "Internationell Comedy Night",
+      "antal": 2,
+      "prisPerBiljett": 329,
+      "totalKostnad": 658,
+      "datum": "2025-11-10T12:14:59.844Z"
     }
   ]
 }

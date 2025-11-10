@@ -1,9 +1,10 @@
 import clubInfoAndEvents from "../utils/club-info-and-events.js";
 
 export default async function comedy() {
-    const eventsHtml = await clubInfoAndEvents('c8m3');
-    //html för comedy club
-    return `
+  const eventsHtml = await clubInfoAndEvents('c8m3');
+
+  //html för comedy club
+  return `
     <div class="comedy-page">
       ${eventsHtml}
  

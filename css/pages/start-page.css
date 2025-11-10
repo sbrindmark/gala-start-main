@@ -161,6 +161,10 @@
     background: linear-gradient(135deg, #4ECDC4, #44A08D);
 }
 
+.club.hiphop {
+    background: linear-gradient(135deg, #deca2c, #bfd707);
+}
+
 /* Events wrapper */
 .wrapper {
     max-width: 800px;
@@ -194,4 +198,39 @@
     font-style: italic;
     text-align: center;
     margin: 10px 0;
+}
+
+button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+
+/* Dold lista */
+.event-list {
+    display: none;
+    margin-top: 10px;
+    padding: 0;
+    list-style-type: none;
+}
+
+/* När listan är synlig */
+.event-list.show {
+    display: block;
+}
+
+.event-list li {
+    margin: 5px 0;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+.delete-event-btn {
+    background: red;
+    width: 10vh;
 }
