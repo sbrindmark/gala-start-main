@@ -161,6 +161,9 @@
     background: linear-gradient(135deg, #4ECDC4, #44A08D);
 }
 
+.club.hiphop {
+    background: linear-gradient(135deg, #deca2c, #bfd707);
+}
 /* Events wrapper */
 .wrapper {
     max-width: 800px;

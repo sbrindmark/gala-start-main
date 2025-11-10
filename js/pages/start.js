@@ -63,6 +63,11 @@ export default async function start() {
    <p class="club-desc">Där basen möter ljuset och dansgolvet aldrig sover.</p>
     </a>
 
+    <a href="#hiphop-klubben" class="club hiphop">
+   <img src="images/2pac.jpg" alt="Hip-Hop Club" class="club-image">
+   <strong>Hip-Hop Klubben – Beats & Rytm</strong>
+   <p class="club-desc">En natt med tunga bars, beats och energi på scenen.</p>
+    </a>
 
       </div>
       <div id="all-events-container">
