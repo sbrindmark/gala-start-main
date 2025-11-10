@@ -1,7 +1,6 @@
 // 🎧 HOUSE TECHNO CLUB – Individuell klubbsida
 // Vanilla JS – hämtar data från JSON Server via clubInfoAndEvents()
 
-
 import clubInfoAndEvents from "../utils/club-info-and-events.js";
 
 export default async function houseTechnoClub() {
