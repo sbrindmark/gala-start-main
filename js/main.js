@@ -19,8 +19,8 @@ const menu = {
   "metal-klubben": { label: 'Metal-klubben', function: metalClub },
   "standup-comedy": { label: 'Stand-Up Comedy', function: standupComedy },
   "house-techno-klubben": { label: 'House Techno', function: houseTechnoClub },
-  "admin": { label: 'Admin', function: admin },
   "hiphop-klubben": { label: 'Hip hop', function: hiphopClub },
+  "admin": { label: 'Admin', function: admin },
 };
 
 function createMenu() {
