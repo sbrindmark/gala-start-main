@@ -5,48 +5,56 @@ export default async function houseTechnoClub() {
   // Hämtar innehåll för klubben
   const html = await clubInfoAndEvents("k23o");
 
-  // När sidan laddas – aktivera klubbens tema
+  // Returnerar HTML direkt (först)
+  const pageHtml = `
+    <section class="wrapper">
+      ${html}
+    </section>
+
+    <section class="contact-section">
+      <h2>Kontakt</h2>
+      <p>📍 Stockholm, Sweden</p>
+      <p>📧 <a href="mailto:info@housetechno.se">info@housetechno.se</a></p>
+      <p>📞 +46 70 123 45 67</p>
+      <p>Följ oss på <a href="#">Instagram</a> & <a href="#">Facebook</a></p>
+    </section>
+  `;
+
+  // När sidan har laddats helt
   setTimeout(() => {
     const body = document.body;
     body.className = "house-techno-klubben";
-   // Aktiverar klubbens tema och lägger till bakgrundsvideo
-setTimeout(() => {
-  const body = document.body;
-  body.className = "house-techno-klubben";
 
-  // Kontrollera att vi befinner oss på House Techno Klubben
-  const technoSection = document.querySelector("section.wrapper");
-  if (!technoSection) return; // påverkar inte andra sidor
+    // Lägg till bakgrundsvideo endast på denna sida
+    const technoSection = document.querySelector("section.wrapper");
+    if (!technoSection) return;
 
-  // Skapar videoelement för bakgrunden
-  const bgVideo = document.createElement("video");
-  bgVideo.src = "././videos/housedanceslow.mp4"; // rätt sökväg
-  bgVideo.autoplay = true;
-  bgVideo.loop = true;
-  bgVideo.muted = true;
-  bgVideo.playsInline = true;
-  bgVideo.className = "bg-video";
+    const bgVideo = document.createElement("video");
+    bgVideo.src = "././videos/housedanceslow.mp4";
+    bgVideo.autoplay = true;
+    bgVideo.loop = true;
+    bgVideo.muted = true;
+    bgVideo.playsInline = true;
+    bgVideo.className = "bg-video";
 
-  // Om videon inte kan laddas → fallback-bild
-  bgVideo.onerror = () => {
-    console.warn(" Videon kunde inte spelas — visar bakgrundsbild istället.");
-    technoSection.style.backgroundImage = 'url("../../images/djtech.jpg")';
-    technoSection.style.backgroundSize = "cover";
-    technoSection.style.backgroundPosition = "center";
-  };
-  // Lägger videon i klubbens sektion
-  technoSection.prepend(bgVideo);
-}, 300);
+    bgVideo.onerror = () => {
+      console.warn("Videon kunde inte spelas — visar bakgrundsbild istället.");
+      technoSection.style.backgroundImage = 'url("../../images/djtech.jpg")';
+      technoSection.style.backgroundSize = "cover";
+      technoSection.style.backgroundPosition = "center";
+    };
 
+    technoSection.prepend(bgVideo);
 
-    //  Gör varje event klickbar
-    document.querySelectorAll(".event").forEach((eventEl) => {
+    // Gör varje event klickbar
+    const eventEls = document.querySelectorAll(".event");
+    eventEls.forEach((eventEl) => {
       eventEl.style.cursor = "pointer";
+
       eventEl.addEventListener("click", () => {
         const title = eventEl.querySelector("h3")?.textContent || "";
         const desc = eventEl.querySelector("p")?.textContent || "";
 
-        // Informationsruta om events
         const infoBox = document.createElement("div");
         infoBox.className = "event-info";
         infoBox.innerHTML = `
@@ -60,26 +68,13 @@ setTimeout(() => {
 
         document.body.appendChild(infoBox);
 
-        // Stäng info-rutan
+        // Stänger info-rutan
         infoBox.querySelector(".close-btn").addEventListener("click", () => {
           infoBox.remove();
         });
       });
     });
-  }, 200);
+  }, 300);
 
-  // Returnerar innehåll och kontakt
-  return `
-    <section class="wrapper">
-      ${html}
-    </section>
-
-    <section class="contact-section">
-      <h2>Kontakt</h2>
-      <p>📍 Stockholm, Sweden</p>
-      <p>📧 <a href="mailto:info@housetechno.se">info@housetechno.se</a></p>
-      <p>📞 +46 70 123 45 67</p>
-      <p>Följ oss på <a href="#">Instagram</a> & <a href="#">Facebook</a></p>
-    </section>
-  `;
+  return pageHtml;
 }

@@ -532,6 +532,15 @@
       "prisPerBiljett": 155,
       "totalKostnad": 155,
       "datum": "2025-11-10T11:24:33.015Z"
+    },
+    {
+      "id": "645b",
+      "eventId": "74f7",
+      "eventNamn": "Internationell Comedy Night",
+      "antal": 2,
+      "prisPerBiljett": 329,
+      "totalKostnad": 658,
+      "datum": "2025-11-10T12:14:59.844Z"
     }
   ]
 }
