@@ -1,23 +1,24 @@
 export default function hiphopClub() {
 
   const events = [
+
     {
-      title: "Rap Battle Royale",
+      title: "Ken Ring",
       date: "2025-11-15",
       
       description: "En natt med tunga bars, beats och energi på scenen.",
     },
     {
-      title: "Breakdance Jam",
+      title: "Breakdance battle",
       date: "2025-11-28",
       
       description: "Dansare från hela landet möts i en episk battle.",
     },
     {
-      title: "DJ Night – Old School Edition",
+      title: "DJ Night  Old School Edition",
       date: "2025-12-10",
       
-      description: "Back to the roots – vinyl, scratch och groove hela kvällen.",
+      description: "Back to the roots vinyl, scratch och groove hela kvällen.",
     },
   ];
 
@@ -71,7 +72,7 @@ export default function hiphopClub() {
       <h2>Kontakt</h2>
       <p>📍 Stockholm, Sweden</p>
       <p>📧 <a href="mailto:info@Hiphop.se">info@hiphop.se</a></p>
-      <p>📞 +08 70 123 57 80</p>
+      <p>📞 +46 70 123 57 80</p>
       <p>Följ oss på <a href="#">Instagram</a> & <a href="#">Facebook</a></p>
     </section>
          

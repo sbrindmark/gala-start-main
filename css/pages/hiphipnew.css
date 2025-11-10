@@ -15,13 +15,16 @@ body.hiphop-club {
   margin: 0;
   font-family: var(--font-body);
   color: var(--text-main);
-  background-color: var(--bg-dark);
-  background-image:
-    linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.95)),
+
+  /* 🖼️ Bakgrundsbild över hela sidan */
+  background-image:("images/2pac.jpg), ")
+    linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.95)),
     url("images/2pac.jpg");
   background-size: cover;
-  background-attachment: fixed;
+  background-repeat: no-repeat;
   background-position: center;
+  background-attachment: fixed;
+
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -62,7 +65,7 @@ body.hiphop-club nav {
 
 body.hiphop-club nav a {
   color: var(--text-main);
-  background: rgba(40, 40, 40, 0.8);
+  background: rgba(187, 200, 8, 0.8);
   border: 1px solid var(--accent);
   padding: 0.6rem 1.1rem;
   border-radius: var(--radius);
@@ -101,6 +104,24 @@ body.hiphop-club p {
   text-align: center;
   line-height: 1.6;
   color: #ddd;
+}
+
+/* === WRAPPER === */
+.wrapper {
+  background: rgba(0, 0, 0, 0.7);
+  border: 2px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 2rem;
+  max-width: 1000px;
+  width: 90%;
+  margin: 0 auto;
+  box-shadow: 0 0 20px rgba(255, 180, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.wrapper:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 30px rgba(255, 180, 0, 0.4);
 }
 
 /* === EVENTS === */
@@ -162,5 +183,9 @@ body.hiphop-club footer {
   .event-card {
     width: 100%;
     max-width: 340px;
+  }
+
+  .wrapper {
+    padding: 1.5rem;
   }
 }
