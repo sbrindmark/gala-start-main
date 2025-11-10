@@ -187,6 +187,59 @@ body.hiphop-club footer {
   border-top: 2px solid var(--accent-secondary);
 }
 
+/* === OVERLAY FÖR KLICKAT EVENT === */
+.event-info {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(2px);
+  display: grid;
+  place-items: center;
+  z-index: 10000;
+}
+
+.event-info-content {
+  background: rgba(20,20,20,0.95);
+  border: 2px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 2rem;
+  width: min(90vw, 560px);
+  box-shadow: 0 0 30px rgba(255,180,0,0.3);
+  text-align: center;
+}
+
+.event-info-content h2 {
+  font-family: var(--font-title);
+  color: var(--accent);
+  margin: 0 0 0.75rem;
+}
+
+.event-info-content p {
+  color: #fff;
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+}
+
+.boka-btn {
+  display: inline-block;
+  background: var(--accent);
+  color: #000;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 0.7rem 1.2rem;
+  border-radius: var(--radius);
+  margin-right: 0.75rem;
+}
+
+.close-btn {
+  background: transparent;
+  color: #fff;
+  border: 1px solid #777;
+  padding: 0.6rem 1rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
 /* === RESPONSIV === */
 @media (max-width: 700px) {
   body.hiphop-club header h1 {
