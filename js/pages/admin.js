@@ -1,11 +1,15 @@
 import clubInfoAndEvents, { attachDeleteButtonListeners } from "../utils/club-info-and-events.js";
 
-export default async function metalClub() {
-  const eventsHtml = await clubInfoAndEvents('fg5i');
+// Global variabel för admin-status
+export let isAdmin = false;
 
-  attachDeleteButtonListeners();
+//Funktion för att ändra isAdmin
+export function setIsAdmin(value) {
+  isAdmin = value;
+}
 
-  // Vänta tills nästa event loop så HTML:en finns i DOM:en
+export default async function admin() {
+
   setTimeout(() => {
     const form = document.getElementById('bandForm');
 
@@ -67,31 +71,40 @@ export default async function metalClub() {
   }, 1000);
 
 
+  // Toggle för att visa events
 
-
-
-  //Funktion för att ta bort en bokning ur databasen.
   setTimeout(() => {
-    const removeForm = document.getElementById('removeForm');
-    if (!removeForm) {
-      console.error('Formuläret hittades inte!');
+    const button = document.getElementById('toggleButton');
+    const list = document.getElementById('eventList');
+
+    if (!button || !list) {
+      console.error('Toggle-element hittades inte!');
       return;
     }
-    removeForm.addEventListener('submit', (event) => {
-      event.preventDefault();
-      const removeEventId = document.getElementById('removeEvent').value;
-      fetch(`http://localhost:3000/events/${removeEventId}`, {
-        method: 'DELETE',
-      });
+
+    button.addEventListener('click', async () => {
+      // Ladda events första gången man klickar
+      if (list.innerHTML.trim() === '<li></li>' || list.innerHTML.trim() === '') {
+        console.log('Laddar events...');
+        const loadedEvents = await clubInfoAndEvents('');
+        list.innerHTML = `<li>${loadedEvents}</li>`;
+
+
+        attachDeleteButtonListeners();
+      }
+
+      list.classList.toggle('show');
+
+      if (list.classList.contains('show')) {
+        button.textContent = 'Dölj events';
+      } else {
+        button.textContent = 'Visa events';
+      }
     });
+  }, 10);
 
-  }, 1000);
-
-
-  // HTML för metalclub
   return `
   <div class ="wrapper">
-    ${eventsHtml}
   
     <div class ="create-event">
       <form id="bandForm">
@@ -109,18 +122,10 @@ export default async function metalClub() {
       <input type="submit" value="Spara">
       </form>
     </div>
-
-    <div class="remove-event"><br>
-    <form id="removeForm">
-    <p>Skriv in ID på det event du vill ta bort</p>
-    <input type="text" id="removeEvent" placeholder="Ta bort" required>
-    <input type="submit" value="Ta bort">
-    </form>
-    </div>
-    
-    
-
-
+    <button id="toggleButton">Visa events</button>
+      <ul id="eventList" class="event-list">
+        <li></li>
+      </ul>
     <footer class="contact">
       <h2>Kontakta oss</h2>
       <p>Email: info@metalklubben.se</p>
@@ -128,6 +133,4 @@ export default async function metalClub() {
     </footer>
   </div>
   `;
-
-
-}
+};

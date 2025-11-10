@@ -1,6 +1,6 @@
 // Hus Techno klubbens sida
 
-import clubInfoAndEvents from "../utils/club-info-and-events.js";
+import clubInfoAndEvents, { attachDeleteButtonListeners } from "../utils/club-info-and-events.js";
 
 export default async function houseTechnoClub() {
   // Hämtar innehåll för klubben

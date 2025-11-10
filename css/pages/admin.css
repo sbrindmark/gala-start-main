@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap');
 
-body.metal-klubben {
-  background: url('../../images/metal.jpeg') no-repeat;
+body.admin {
+
   background-size: cover;
   min-height: 100vh;
   background-color: rgba(87, 30, 30, 0.774);
@@ -75,6 +75,7 @@ body.metal-klubben {
     margin: 10px;
     max-width: 800px;
     line-height: 1.6;
+
   }
 
   .wrapper h1,
@@ -124,9 +125,7 @@ body.metal-klubben {
     display: none;
   }
 
-  /* Rutan för att skapa event*/
-  .create-event {
-    display: flex;
-    flex-direction: column;
+  #toggleButton {
+    margin-top: 2vh;
   }
 }
