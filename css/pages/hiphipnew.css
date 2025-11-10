@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600&family=Rubik+Spray+Paint&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600;700&display=swap');
 
 :root {
   --bg-dark: #0d0c0c;
@@ -6,8 +6,8 @@
   --accent: #ffb400;
   --accent-secondary: #ff5500;
   --radius: 12px;
-  --font-title: 'Rubik Spray Paint', cursive;
-  --font-body: 'Inter', sans-serif;
+  --font-title: 'Bebas Neue', sans-serif;
+  --font-body: 'Poppins', sans-serif;
 }
 
 /* === BODY === */
@@ -30,7 +30,7 @@ body.hiphop-club {
 
 /* === HEADER === */
 body.hiphop-club header {
-  background: rgba(20, 20, 20, 0.9);
+  background: rgba(20, 20, 20, 0.95);
   padding: 2rem 1rem;
   border-bottom: 3px solid var(--accent);
   text-align: center;
@@ -40,16 +40,19 @@ body.hiphop-club header {
 body.hiphop-club header h1 {
   font-family: var(--font-title);
   color: var(--accent);
-  font-size: 3rem;
+  font-size: 3.5rem;
   text-transform: uppercase;
-  letter-spacing: 3px;
+  letter-spacing: 4px;
   margin: 0;
-  text-shadow: 0 0 20px rgba(255,100,0,0.8);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  font-weight: 700;
 }
 
 body.hiphop-club header p {
-  color: #ccc;
+  color: #fff;
   margin-top: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 400;
 }
 
 /* === NAVIGATION === */
@@ -58,24 +61,28 @@ body.hiphop-club nav {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 0.8rem;
+  gap: 1rem;
 }
 
 body.hiphop-club nav a {
-  color: var(--text-main);
-  background: rgba(187, 200, 8, 0.8);
-  border: 1px solid var(--accent);
-  padding: 0.6rem 1.1rem;
+  color: #000;
+  background: var(--accent);
+  border: 2px solid var(--accent);
+  padding: 0.8rem 1.5rem;
   border-radius: var(--radius);
   text-decoration: none;
   font-weight: 700;
   text-transform: uppercase;
   transition: 0.3s;
+  font-size: 0.95rem;
+  letter-spacing: 1px;
 }
 
 body.hiphop-club nav a:hover {
-  background: var(--accent);
-  color: #000;
+  background: var(--accent-secondary);
+  border-color: var(--accent-secondary);
+  color: #fff;
+  transform: translateY(-2px);
 }
 
 /* === MAIN === */
@@ -91,91 +98,99 @@ body.hiphop-club main {
 body.hiphop-club h2 {
   font-family: var(--font-title);
   color: var(--accent);
-  font-size: 2rem;
+  font-size: 2.5rem;
   text-transform: uppercase;
   text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: 3px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 body.hiphop-club p {
   max-width: 700px;
   text-align: center;
-  line-height: 1.6;
-  color: #ddd;
+  line-height: 1.8;
+  color: #fff;
+  font-size: 1.05rem;
+  font-weight: 400;
 }
 
 /* === WRAPPER === */
 .wrapper {
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.85);
   border: 2px solid var(--accent);
   border-radius: var(--radius);
-  padding: 2rem;
+  padding: 2.5rem;
   max-width: 1000px;
   width: 90%;
   margin: 0 auto;
-  box-shadow: 0 0 20px rgba(255, 180, 0, 0.2);
+  box-shadow: 0 0 20px rgba(255, 180, 0, 0.3);
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .wrapper:hover {
   transform: translateY(-5px);
-  box-shadow: 0 0 30px rgba(255, 180, 0, 0.4);
+  box-shadow: 0 0 30px rgba(255, 180, 0, 0.5);
 }
 
 /* === EVENTS === */
 .event-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.5rem;
+  gap: 2rem;
   justify-content: center;
 }
 
 .event-card {
-  background: rgba(30, 30, 30, 0.85);
-  border: 1px solid var(--accent-secondary);
+  background: rgba(30, 30, 30, 0.9);
+  border: 2px solid var(--accent-secondary);
   border-radius: var(--radius);
   width: 280px;
-  padding: 1rem;
+  padding: 1.5rem;
   transition: transform 0.25s ease, box-shadow 0.35s ease;
-  box-shadow: 0 0 10px rgba(255, 140, 0, 0.3);
+  box-shadow: 0 0 15px rgba(255, 140, 0, 0.3);
 }
 
 .event-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 25px rgba(255, 180, 0, 0.4);
-}
-
-.event-card img {
-  width: 100%;
-  border-radius: var(--radius);
-  margin-bottom: 0.8rem;
+  transform: translateY(-8px);
+  box-shadow: 0 0 30px rgba(255, 180, 0, 0.5);
+  border-color: var(--accent);
 }
 
 .event-card h3 {
   font-family: var(--font-title);
-  color: var(--accent-secondary);
-  font-size: 1.4rem;
-  margin-bottom: 0.4rem;
+  color: var(--accent);
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: 2px;
 }
 
 .event-card p {
-  color: #ccc;
+  color: #fff;
+  font-size: 1rem;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.event-card p strong {
+  color: var(--accent-secondary);
+  font-weight: 700;
 }
 
 /* === FOOTER === */
 body.hiphop-club footer {
-  background: rgba(20, 20, 20, 0.9);
+  background: rgba(20, 20, 20, 0.95);
   text-align: center;
-  padding: 1rem;
-  color: #aaa;
-  font-size: 0.9rem;
-  border-top: 1px solid var(--accent-secondary);
+  padding: 1.5rem;
+  color: #fff;
+  font-size: 1rem;
+  border-top: 2px solid var(--accent-secondary);
 }
 
 /* === RESPONSIV === */
 @media (max-width: 700px) {
   body.hiphop-club header h1 {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
   }
 
   .event-card {
