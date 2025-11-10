@@ -23,11 +23,60 @@
   ],
   "events": [
     {
+      "id": "43ac",
+      "date": "2025-11-05 19:00",
+      "name": "New Orleans-bandet",
+      "description": "New Orleans-bandet spelar old school jazz från 30-talet, med sväng och klarinett.",
+      "clubId": "a37c"
+    },
+    {
+      "id": "57f3",
+      "date": "2025-11-06 21:00",
+      "name": "Mega Death-die",
+      "description": "En open stage för death-metal-rockare, 30 minuter per band, upp till 6 band per kväll. Stjäl inte varandras effektpedaler!",
+      "clubId": "fg5i"
+    },
+    {
+      "id": "57f4",
+      "date": "2025-11-15 22:00",
+      "name": "In Flames",
+      "description": "Svenskt klassiskt metal-band",
+      "clubId": "fg5i"
+    },
+    {
+      "id": "43ad",
+      "date": "2025-11-01 19:00",
+      "name": "Fusion-jazzarna Corea's Disciples",
+      "description": "Cool fusion-jazz med en massa dim-ackord.",
+      "clubId": "a37c"
+    },
+    {
+      "id": "89d1",
+      "date": "2025-11-07 20:00",
+      "name": "Laughter Night med Magnus & Lisa",
+      "description": "Två av Sveriges roligaste komiker tar scenen! Magnus berättar om livet som pappa medan Lisa delar sina observationer om modern dating.",
+      "clubId": "c8m3"
+    },
+    {
+      "id": "92e4",
+      "date": "2025-11-08 19:30",
+      "name": "Open Mic Comedy",
+      "description": "Kom och testa dina egna skämt! Open stage för blivande komiker. 5 minuter per person, anmäl dig vid entrén.",
+      "clubId": "c8m3"
+    },
+    {
       "id": "74f7",
       "date": "2025-11-10 21:00",
       "name": "Internationell Comedy Night",
       "description": "Komiker från hela världen! Engelska skämt, svenska punchlines och internationell humor som får alla att skratta.",
       "clubId": "c8m3"
+    },
+    {
+      "id": "h01",
+      "date": "2025-11-15 22:00",
+      "name": "Underground Pulse",
+      "description": "En natt av hypnotiska beats med DJ Nova och stroboskopljus i takt med hjärtat.",
+      "clubId": "k23o"
     },
     {
       "id": "h02",
@@ -58,11 +107,11 @@
       "clubId": "k23o"
     },
     {
-      "id": "d2d6",
-      "clubId": "fg5i",
-      "name": "Adept",
-      "date": "2025-11-14 17:24",
-      "description": "Ett sternhårt band som kommer rocka kvällen lång"
+      "id": "h06",
+      "date": "2025-12-19 23:00",
+      "name": "Electric Winter",
+      "description": "Säsongens avslutande event med LED-show, lasereffekter och DJs från Berlin och Amsterdam.",
+      "clubId": "k23o"
     }
   ],
   "bookings": [
