@@ -52,7 +52,7 @@ export default async function start() {
     </a>
 
      <a href="#standup-comedy" class="club comedy">
-    <img src="images/Lo.jpg" alt="Stand-Up Comedy" class="club-image">
+    <img src="images/standup-alt.jpg" alt="Stand-Up Comedy" class="club-image">
    <strong>Stand-Up Comedy – Skratt utan gränser</strong>
     <p class="club-desc">Upplev det bästa av stand-up med både stjärnor och nya talanger.</p>
      </a>

@@ -16,16 +16,16 @@ body.standup-comedy {
 body.standup-comedy header {
     background: rgba(0, 0, 0, 0.9);
     padding: 20px;
-    border-bottom: 2px solid #ff2e2e;
-    box-shadow: 0 5px 20px rgba(255, 46, 46, 0.3);
+    border-bottom: 2px solid #d32f2f;
+    box-shadow: 0 5px 20px rgba(211, 47, 47, 0.3);
 }
 
 body.standup-comedy header h1 {
-    color: #ff2e2e;
+    color: #d32f2f;
     text-align: center;
     font-size: 2rem;
     margin: 0 0 15px 0;
-    text-shadow: 0 0 15px rgba(255, 46, 46, 0.6);
+    text-shadow: 0 0 15px rgba(211, 47, 47, 0.6);
     text-transform: uppercase;
     letter-spacing: 3px;
 }
@@ -50,8 +50,8 @@ body.standup-comedy nav a {
     text-decoration: none;
     padding: 12px 25px;
     margin: 0 10px;
-    background: rgba(255, 46, 46, 0.2);
-    border: 2px solid #ff2e2e;
+    background: rgba(211, 47, 47, 0.2);
+    border: 2px solid #d32f2f;
     border-radius: 25px;
     font-weight: bold;
     transition: all 0.3s ease;
@@ -61,9 +61,9 @@ body.standup-comedy nav a {
 }
 
 body.standup-comedy nav a:hover {
-    background: #ff2e2e;
+    background: #d32f2f;
     color: #000;
-    box-shadow: 0 5px 15px rgba(255, 46, 46, 0.5);
+    box-shadow: 0 5px 15px rgba(211, 47, 47, 0.5);
     transform: translateY(-2px);
 }
 
@@ -71,11 +71,11 @@ body.standup-comedy nav a:hover {
 
 /* Klubbnamn från db.json */
 body.standup-comedy main h1 {
-    color: #ff2e2e;
+    color: #d32f2f;
     text-align: center;
     font-size: 3rem;
     margin: 30px 0;
-    text-shadow: 0 0 20px rgba(255, 46, 46, 0.7);
+    text-shadow: 0 0 20px rgba(211, 47, 47, 0.7);
     text-transform: uppercase;
     letter-spacing: 2px;
 }
@@ -92,41 +92,115 @@ body.standup-comedy main>p {
     background: rgba(0, 0, 0, 0.6);
     padding: 20px;
     border-radius: 10px;
-    border-left: 4px solid #ff2e2e;
+    border-left: 4px solid #d32f2f;
 }
 
 /* Events rubrik från db.json */
 body.standup-comedy main h2 {
-    color: #ff2e2e;
+    color: #d32f2f;
     text-align: center;
     font-size: 2.5rem;
     margin: 40px 0 30px;
-    text-shadow: 0 0 15px rgba(255, 46, 46, 0.5);
+    text-shadow: 0 0 15px rgba(211, 47, 47, 0.5);
 }
 
 /* Event-kort från db.json */
 body.standup-comedy .event {
     background: rgba(20, 20, 20, 0.9);
-    border-left: 6px solid #ff2e2e;
+    border-left: 6px solid #d32f2f;
     border-radius: 12px;
     padding: 25px;
     margin: 20px 0;
     transition: all 0.3s ease;
-    box-shadow: 0 5px 20px rgba(255, 0, 0, 0.3);
+    box-shadow: 0 5px 20px rgba(211, 47, 47, 0.3);
+    cursor: pointer;
 }
 
 body.standup-comedy .event:hover {
     transform: translateY(-8px);
-    box-shadow: 0 15px 40px rgba(255, 46, 46, 0.6);
+    box-shadow: 0 15px 40px rgba(211, 47, 47, 0.6);
     border-left-width: 10px;
+}
+
+/* EVENT INFO POPUP STYLING */
+body.standup-comedy .event-info {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+body.standup-comedy .event-info-content {
+    background: rgba(30, 30, 40, 0.95);
+    border: 1px solid #d32f2f;
+    border-radius: 12px;
+    padding: 2rem;
+    max-width: 480px;
+    text-align: center;
+    box-shadow: 0 0 25px rgba(211, 47, 47, 0.3);
+}
+
+body.standup-comedy .event-info-content h2 {
+    color: #d32f2f;
+    margin-bottom: 0.5rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-shadow: 0 0 10px rgba(211, 47, 47, 0.5);
+}
+
+body.standup-comedy .event-info-content p {
+    color: #ddd;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+body.standup-comedy .boka-btn {
+    display: inline-block;
+    margin-top: 1rem;
+    background: #d32f2f;
+    color: white;
+    padding: 0.7rem 1.4rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+    box-shadow: 0 5px 15px rgba(211, 47, 47, 0.3);
+}
+
+body.standup-comedy .boka-btn:hover {
+    background: #e57373;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(211, 47, 47, 0.5);
+}
+
+body.standup-comedy .close-btn {
+    margin-top: 1rem;
+    background: transparent;
+    border: 1px solid #666;
+    color: #ccc;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+body.standup-comedy .close-btn:hover {
+    color: white;
+    border-color: white;
 }
 
 /* Event namn från db.json */
 body.standup-comedy .event h3 {
-    color: #ff2e2e;
+    color: #d32f2f;
     font-size: 1.4rem;
     margin-bottom: 10px;
-    text-shadow: 0 0 8px rgba(255, 46, 46, 0.4);
+    text-shadow: 0 0 8px rgba(211, 47, 47, 0.4);
 }
 
 /* Event beskrivning från db.json */
@@ -137,26 +211,40 @@ body.standup-comedy .event p {
     margin: 0;
 }
 
-/* 😂 SKRATT BILD PÅ HÖGER SIDA */
+/* SKRATT BILD PÅ HÖGER SIDA */
 body.standup-comedy::after {
     content: '';
     position: fixed;
     right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 250px;
     width: 200px;
     height: 300px;
     background: url('../../images/skratt.jpg') center/cover;
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(255, 46, 46, 0.4);
-    border: 3px solid #ff2e2e;
+    box-shadow: 0 10px 30px rgba(211, 47, 47, 0.4);
+    border: 3px solid #d32f2f;
     z-index: 10;
     opacity: 0.8;
     transition: opacity 0.3s ease;
+    animation: floatImage 5s ease-in-out infinite;
 }
 
 body.standup-comedy::after:hover {
     opacity: 1;
+    animation-play-state: paused;
+}
+
+/* Animation för bilden */
+@keyframes floatImage {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
 }
 
 /* Anpassa main för att ge plats åt bilden */
