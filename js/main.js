@@ -34,9 +34,9 @@ function createMenu() {
     .join('');
 }
 
-function createHeader() {
+function createHeader() { // <a> tag that links to #start (main page)
   return `
-    <h1> Gala Emporium </h1>
+    <h1><a href="#start" style="color: inherit; text-decoration: none; cursor: pointer;"> Gala Emporium</a></h1>
     <p>Känn rytmen, energin och gemenskapen – live på Gala Emporium.</p>
     <nav>${createMenu()}</nav>
   `;
