@@ -112,6 +112,13 @@
       "name": "Electric Winter",
       "description": "Säsongens avslutande event med LED-show, lasereffekter och DJs från Berlin och Amsterdam.",
       "clubId": "k23o"
+    },
+    {
+      "id": "2413",
+      "clubId": "fg5i",
+      "name": "Sleep Token",
+      "date": "2025-11-10 22:00",
+      "description": "Take me back to eden"
     }
   ],
   "bookings": [

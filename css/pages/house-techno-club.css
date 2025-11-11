@@ -179,22 +179,36 @@ body.house-techno-klubben .close-btn:hover {
 
 /* Kontaktsektion */
 body.house-techno-klubben .contact-section {
-  background: rgba(15, 15, 22, 0.85);
-  border-top: 1px solid #222;
-  padding: 2rem 1rem;
+  background: rgba(18, 18, 30, 0.9);        
+  border-top: 1px solid rgba(100, 100, 255, 0.2);
+  padding: 2rem 7rem;                        /* mer utrymme runt innehållet */
   text-align: center;
 }
 
 body.house-techno-klubben .contact-section h2 {
   color: var(--accent);
   font-family: var(--font-title);
-  margin-bottom: 0.8rem;
+  margin-bottom: 1.2rem;
+  letter-spacing: 1px;
+  font-size: 1.8rem;                         /* något större rubrik */
 }
 
 body.house-techno-klubben .contact-section p {
-  color: #ccc;
-  font-size: 0.95rem;
-  line-height: 1.5;
+  color: #ddd;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  max-width: 700px;                          /* bredare textyta */
+  margin: 0.5rem auto;                       /* centrerad layout */
+}
+
+body.house-techno-klubben .contact-section a {
+  color: var(--accent-secondary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+body.house-techno-klubben .contact-section a:hover {
+  text-decoration: underline;
 }
 
 /* Footer */

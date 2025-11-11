@@ -86,7 +86,7 @@ export default async function houseTechnoClub() {
       const btn = document.createElement("button");
       btn.className = "play-btn";
       btn.textContent = "▶";
-      btn.dataset.sound = tracks[i] || "./sounds/default.mp3";
+      btn.dataset.sound = tracks[i] || "././sounds/default.mp3";
 
       const h3 = eventEl.querySelector("h3");
       if (h3) h3.insertAdjacentElement("afterend", btn);
