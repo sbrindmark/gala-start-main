@@ -24,7 +24,7 @@ body.eventbokare header {
   max-width: 550px;
   margin-left: auto;
   margin-right: auto;
-  backdrop-filter: blur(10px);
+  /*backdrop-filter: blur(10px);*/
 }
 
 .booking-confirmation strong {
@@ -61,7 +61,7 @@ body.eventbokare header {
   padding: 1.5rem;
   margin-top: 1.5rem;
   box-shadow: 0 0 10px rgba(123, 0, 255, 0.3);
-  backdrop-filter: blur(6px);
+  /*backdrop-filter: blur(6px);*/
 }
 
 .eventbokare label {
@@ -120,4 +120,5 @@ body.eventbokare header {
   .eventbokare h1 {
     font-size: 1.8rem;
   }
-}:
+}
+}
