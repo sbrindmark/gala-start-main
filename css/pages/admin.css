@@ -217,4 +217,15 @@ body.admin {
   #bandForm textarea::placeholder {
     color: rgba(255, 255, 255, 0.5);
   }
+
+  /* Styling för "ta bort"-knappen*/
+  .delete-event-btn {
+    background: red;
+    width: 10vh;
+  }
+
+  /* Styling för "ändra"-knappen*/
+  .change-event-btn {
+    width: 10vh;
+  }
 }

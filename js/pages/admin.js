@@ -1,4 +1,4 @@
-import clubInfoAndEvents, { attachDeleteButtonListeners } from "../utils/club-info-and-events.js";
+import clubInfoAndEvents, { attachDeleteButtonListeners, attachChangeButtonListeners } from "../utils/club-info-and-events.js";
 
 // Global variabel för admin-status
 export let isAdmin = false;
@@ -91,6 +91,7 @@ export default async function admin() {
 
 
         attachDeleteButtonListeners();
+        attachChangeButtonListeners();
       }
 
       list.classList.toggle('show');
