@@ -86,4 +86,135 @@ body.admin {
   #toggleButton {
     margin-top: 2vh;
   }
+
+  /* ===== EVENT CREATION FORM DESIGN ===== */
+  .create-event {
+    background: rgba(0, 0, 0, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 30px;
+    margin: 20px 0;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+
+  .create-event h2 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 28px;
+    text-align: center;
+    color: white;
+    text-shadow: none;
+    font-family: system-ui, sans-serif;
+    font-weight: 400;
+  }
+
+  #bandForm {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .form-group label {
+    font-weight: 600;
+    font-size: 14px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  #bandForm input[type="text"],
+  #bandForm input[type="datetime-local"],
+  #bandForm textarea {
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    transition: all 0.3s ease;
+  }
+
+  #bandForm input[type="text"]:focus,
+  #bandForm input[type="datetime-local"]:focus,
+  #bandForm textarea:focus {
+    outline: none;
+    border-color: #667eea;
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 15px rgba(102, 126, 234, 0.4);
+  }
+
+  #bandForm textarea {
+    min-height: 100px;
+    resize: vertical;
+    font-family: inherit;
+  }
+
+  .radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .radio-group label {
+    font-weight: 400;
+    text-transform: none;
+  }
+
+  .radio-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .radio-option:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(5px);
+  }
+
+  .radio-option input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+  }
+
+  #bandForm input[type="submit"] {
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 10px;
+  }
+
+  #bandForm input[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(52, 152, 219, 0.5);
+  }
+
+  #bandForm input[type="submit"]:active {
+    transform: translateY(0);
+  }
+
+  /* Placeholder styling */
+  #bandForm input::placeholder,
+  #bandForm textarea::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+  }
 }
