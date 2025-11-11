@@ -87,7 +87,6 @@ body.admin {
     margin-top: 2vh;
   }
 
-  /* ===== EVENT CREATION FORM DESIGN ===== */
   .create-event {
     background: rgba(0, 0, 0, 0.3);
     border: 2px solid rgba(255, 255, 255, 0.2);
