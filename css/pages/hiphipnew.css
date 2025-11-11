@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600;700&display=swap');
 
-:root {
+body.hiphop-club {
   --bg-dark: #0d0c0c;
   --text-main: #fefefe;
   --accent: #ffb400;
@@ -15,14 +15,11 @@ body.hiphop-club {
   margin: 0;
   font-family: var(--font-body);
   color: var(--text-main);
-
-  /* 🖼️ Bakgrundsbild över hela sidan */
   background-image: url("../../images/2pac.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
-
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -116,7 +113,7 @@ body.hiphop-club p {
 }
 
 /* === WRAPPER === */
-.wrapper {
+body.hiphop-club .wrapper {
   background: rgba(0, 0, 0, 0.85);
   border: 2px solid var(--accent);
   border-radius: var(--radius);
@@ -128,13 +125,13 @@ body.hiphop-club p {
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.wrapper:hover {
+body.hiphop-club .wrapper:hover {
   transform: translateY(-5px);
   box-shadow: 0 0 30px rgba(255, 180, 0, 0.5);
 }
 
 /* === EVENTS === */
-.event-grid {
+body.hiphop-club .event-grid {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
@@ -151,13 +148,13 @@ body.hiphop-club p {
   box-shadow: 0 0 15px rgba(255, 140, 0, 0.3);
 }
 
-.event-card:hover {
+body.hiphop-club .event-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 0 30px rgba(255, 180, 0, 0.5);
   border-color: var(--accent);
 }
 
-.event-card h3 {
+body.hiphop-club .event-card h3 {
   font-family: var(--font-title);
   color: var(--accent);
   font-size: 1.8rem;
@@ -165,14 +162,14 @@ body.hiphop-club p {
   letter-spacing: 2px;
 }
 
-.event-card p {
+body.hiphop-club .event-card p {
   color: #fff;
   font-size: 1rem;
   line-height: 1.6;
   text-align: left;
 }
 
-.event-card p strong {
+body.hiphop-club .event-card p strong {
   color: var(--accent-secondary);
   font-weight: 700;
 }
@@ -187,57 +184,81 @@ body.hiphop-club footer {
   border-top: 2px solid var(--accent-secondary);
 }
 
-/* === OVERLAY FÖR KLICKAT EVENT === */
-.event-info {
+/* === EVENT OVERLAY === */
+body.hiphop-club .event-info {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.6);
-  backdrop-filter: blur(2px);
-  display: grid;
-  place-items: center;
-  z-index: 10000;
+  background: rgba(0,0,0,0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
 }
 
-.event-info-content {
-  background: rgba(20,20,20,0.95);
-  border: 2px solid var(--accent);
-  border-radius: var(--radius);
-  padding: 2rem;
-  width: min(90vw, 560px);
-  box-shadow: 0 0 30px rgba(255,180,0,0.3);
+body.hiphop-club .event-info-content {
+  background: rgba(30,30,40,0.95);
+  border: 2px solid var(--accent-secondary);
+  border-radius: 12px;
+  padding: 2rem 2.2rem;
+  max-width: 520px;
+  width: min(92%, 520px);
   text-align: center;
+  box-shadow: 0 0 28px rgba(255,140,0,0.35);
+  animation: popIn .28s ease;
 }
 
-.event-info-content h2 {
-  font-family: var(--font-title);
+@keyframes popIn {
+  from { transform: scale(.85); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+body.hiphop-club .event-info-content h2 {
   color: var(--accent);
-  margin: 0 0 0.75rem;
+  margin: 0 0 .75rem;
+  font-family: var(--font-title);
+  letter-spacing: 2px;
 }
 
-.event-info-content p {
-  color: #fff;
-  line-height: 1.7;
-  margin-bottom: 1.25rem;
+body.hiphop-club .event-info-content p {
+  line-height: 1.6;
+  color: #eee;
+  margin: 0 0 1.25rem;
 }
 
-.boka-btn {
+body.hiphop-club .boka-btn {
   display: inline-block;
   background: var(--accent);
   color: #000;
-  font-weight: 700;
+  padding: 0.75rem 1.4rem;
+  border-radius: 8px;
   text-decoration: none;
-  padding: 0.7rem 1.2rem;
-  border-radius: var(--radius);
-  margin-right: 0.75rem;
+  font-weight: 700;
+  transition: .25s;
+  margin-right: .6rem;
+  box-shadow: 0 0 12px rgba(255,180,0,0.35);
 }
 
-.close-btn {
-  background: transparent;
+body.hiphop-club .boka-btn:hover {
+  background: var(--accent-secondary);
   color: #fff;
-  border: 1px solid #777;
-  padding: 0.6rem 1rem;
-  border-radius: var(--radius);
+  transform: translateY(-2px);
+}
+
+body.hiphop-club .close-btn {
+  background: transparent;
+  border: 1px solid #666;
+  color: #ccc;
+  padding: 0.65rem 1.1rem;
+  border-radius: 8px;
   cursor: pointer;
+  font-weight: 600;
+  transition: .25s;
+}
+
+body.hiphop-club .close-btn:hover {
+  color: #fff;
+  border-color: #fff;
+  transform: translateY(-2px);
 }
 
 /* === RESPONSIV === */
@@ -246,12 +267,20 @@ body.hiphop-club footer {
     font-size: 2.5rem;
   }
 
-  .event-card {
+  body.hiphop-club .event-card {
     width: 100%;
     max-width: 340px;
   }
 
-  .wrapper {
+  body.hiphop-club .wrapper {
     padding: 1.5rem;
+  }
+
+  body.hiphop-club .event-info-content {
+    padding: 1.5rem 1.4rem;
+  }
+  
+  body.hiphop-club .event-info-content h2 {
+    font-size: 1.9rem;
   }
 }
