@@ -54,7 +54,7 @@ export default function hiphopClub() {
             <p>📍 Stockholm, Sweden</p>
             <p>📧 <a href="mailto:info@hiphop.se">info@hiphop.se</a></p>
             <p>📞 +46 70 123 57 80</p>
-            <p>Följ oss på <a href="#">Instagram</a> & <a href="#">Facebook</a></p>
+        
           </section>
         </div>
       </main>
