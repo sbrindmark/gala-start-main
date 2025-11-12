@@ -59,9 +59,7 @@ export default function hiphopClub() {
         </div>
       </main>
 
-      <footer>
-        <p>&copy; 2025 Hip-Hop Klubben – Där rytmen aldrig slutar.</p>
-      </footer>
+      
     </div>
   `;
 
