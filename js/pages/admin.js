@@ -1,4 +1,4 @@
-import clubInfoAndEvents, { attachDeleteButtonListeners } from "../utils/club-info-and-events.js";
+import clubInfoAndEvents, { attachDeleteButtonListeners, attachChangeButtonListeners } from "../utils/club-info-and-events.js";
 
 // Global variabel för admin-status
 export let isAdmin = false;
@@ -91,6 +91,7 @@ export default async function admin() {
 
 
         attachDeleteButtonListeners();
+        attachChangeButtonListeners();
       }
 
       list.classList.toggle('show');
@@ -104,31 +105,65 @@ export default async function admin() {
   }, 10);
 
   return `
-  <div class ="wrapper">
+  <div class="wrapper">
   
-    <div class ="create-event">
+    <div class="create-event">
+      <h2>Skapa Nytt Event</h2>
       <form id="bandForm">
-      <input type="text" id="bandnamn" placeholder="Bandnamn" required>
-      <input type="text" id="beskrivning" placeholder="Beskrivning" required>
-      <input type="datetime-local" required><br>
-      <input type="radio" name="klubb" value="a37c" required>
-      <label for="radio">Jazz</label>
-      <input type="radio" name="klubb" value="fg5i">
-      <label for="radio">Metal</label>
-      <input type="radio" name="klubb" value="house-techno">
-      <label for="radio">House/techno</label>
-      <input type="radio" name="klubb" value="hiphop">
-      <label for="radio">Hiphop</label><br>
-      <input type="submit" value="Spara">
+        
+        <div class="form-group">
+          <label for="bandnamn">Artist/Band</label>
+          <input type="text" id="bandnamn" placeholder="T.ex. Metallica" required>
+        </div>
+
+        <div class="form-group">
+          <label for="beskrivning">Beskrivning</label>
+          <textarea id="beskrivning" placeholder="Beskriv eventet..." required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="datetime">Datum & Tid</label>
+          <input type="datetime-local" id="datetime" required>
+        </div>
+
+        <div class="form-group">
+          <label>Välj Klubb</label>
+          <div class="radio-group">
+            <div class="radio-option">
+              <input type="radio" name="klubb" id="jazz" value="a37c" required>
+              <label for="jazz">Jazz-klubben</label>
+            </div>
+            <div class="radio-option">
+              <input type="radio" name="klubb" id="metal" value="fg5i">
+              <label for="metal">Metal-klubben</label>
+            </div>
+            <div class="radio-option">
+              <input type="radio" name="klubb" id="house" value="house-techno">
+              <label for="house">House/Techno</label>
+            </div>
+            <div class="radio-option">
+              <input type="radio" name="klubb" id="standup" value="c8m3">
+              <label for="standup">Stand-up Comedy</label>
+            </div>
+            <div class="radio-option">
+              <input type="radio" name="klubb" id="hiphop" value="hiphop">
+              <label for="hiphop">Hip-hop</label>
+            </div>
+          </div>
+        </div>
+
+        <input type="submit" value="Skapa Event">
       </form>
     </div>
+
     <button id="toggleButton">Visa events</button>
-      <ul id="eventList" class="event-list">
-        <li></li>
-      </ul>
+    <ul id="eventList" class="event-list">
+      <li></li>
+    </ul>
+
     <footer class="contact">
       <h2>Kontakta oss</h2>
-      <p>Email: info@metalklubben.se</p>
+      <p>Email: info@galaemporium.se</p>
       <p>Telefon: 08-123 45 67</p>
     </footer>
   </div>
