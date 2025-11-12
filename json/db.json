@@ -1,6 +1,11 @@
 {
   "clubs": [
     {
+      "id": "h9p2",
+      "name": "Hip-Hop Klubben",
+      "description": "Beats, battles & street energy – varje helg, hela natten. Kom och upplev den äkta hip-hop kulturen med rappare, breakdancers och graffiti-artister."
+    },
+    {
       "id": "a37c",
       "name": "Jazz-klubben",
       "description": "Vår laid-back jazz-klubb där vi varje vecka får träffa nya spännande artister."
@@ -119,6 +124,27 @@
       "name": "Sleep Token",
       "date": "2025-11-10 22:00",
       "description": "Take me back to eden"
+    },
+    {
+      "id": "hh01",
+      "date": "2025-11-15 22:00",
+      "name": "Ken Ring",
+      "description": "En natt med tunga bars, beats och energi på scenen.",
+      "clubId": "h9p2"
+    },
+    {
+      "id": "hh02",
+      "date": "2025-11-28 21:00",
+      "name": "Breakdance Battle",
+      "description": "Dansare från hela landet möts i en episk battle.",
+      "clubId": "h9p2"
+    },
+    {
+      "id": "hh03",
+      "date": "2025-12-10 22:30",
+      "name": "DJ Night - Old School Edition",
+      "description": "Back to the roots vinyl, scratch och groove hela kvällen.",
+      "clubId": "h9p2"
     }
   ],
   "bookings": [
