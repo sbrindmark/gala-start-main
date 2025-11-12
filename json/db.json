@@ -719,6 +719,33 @@
       "prisPerBiljett": 323,
       "totalKostnad": 323,
       "datum": "2025-11-12T12:08:16.780Z"
+    },
+    {
+      "id": "250f",
+      "eventId": "89d1",
+      "eventNamn": "Laughter Night med Magnus & Lisa",
+      "antal": 5,
+      "prisPerBiljett": 348,
+      "totalKostnad": 1740,
+      "datum": "2025-11-12T12:42:56.404Z"
+    },
+    {
+      "id": "8ec0",
+      "eventId": "74f7",
+      "eventNamn": "Internationell Comedy Night",
+      "antal": 2,
+      "prisPerBiljett": 239,
+      "totalKostnad": 478,
+      "datum": "2025-11-12T12:43:20.930Z"
+    },
+    {
+      "id": "bd09",
+      "eventId": "92e4",
+      "eventNamn": "Open Mic Comedy",
+      "antal": 1,
+      "prisPerBiljett": 198,
+      "totalKostnad": 198,
+      "datum": "2025-11-12T12:49:06.814Z"
     }
   ]
 }
