@@ -692,6 +692,33 @@
       "prisPerBiljett": 272,
       "totalKostnad": 272,
       "datum": "2025-11-12T11:56:50.042Z"
+    },
+    {
+      "id": "5359",
+      "eventId": "43ad",
+      "eventNamn": "Fusion-jazzarna Corea's Disciples",
+      "antal": 1,
+      "prisPerBiljett": 294,
+      "totalKostnad": 294,
+      "datum": "2025-11-12T12:06:54.385Z"
+    },
+    {
+      "id": "fa7e",
+      "eventId": "43ad",
+      "eventNamn": "Fusion-jazzarna Corea's Disciples",
+      "antal": 2,
+      "prisPerBiljett": 184,
+      "totalKostnad": 368,
+      "datum": "2025-11-12T12:07:42.502Z"
+    },
+    {
+      "id": "7f7f",
+      "eventId": "43ad",
+      "eventNamn": "Fusion-jazzarna Corea's Disciples",
+      "antal": 1,
+      "prisPerBiljett": 323,
+      "totalKostnad": 323,
+      "datum": "2025-11-12T12:08:16.780Z"
     }
   ]
 }

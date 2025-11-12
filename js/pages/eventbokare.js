@@ -145,6 +145,17 @@ export default async function eventbokare() {
       }
     });
 
+    // Om vi har en förifylld bokning (prefillBooking) - auto-select klubb
+    if (prefillObj && klubbSelect) {
+      try {
+        klubbSelect.value = prefillObj.clubId || klubbSelect.value;
+        // trigga change för att ladda events och applicera prefill
+        klubbSelect.dispatchEvent(new Event('change'));
+      } catch (err) {
+        console.warn('Kunde inte auto-selecta klubb från prefill:', err);
+      }
+    }
+
     // Uppdatera priset när antal ändras
     document.getElementById("antal").addEventListener("input", () => {
       uppdateraPris();
