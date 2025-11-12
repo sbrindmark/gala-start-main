@@ -1,4 +1,4 @@
-import clubInfoAndEvents from "../utils/club-info-and-events.js";
+import clubInfoAndEvents, { attachDeleteButtonListeners } from "../utils/club-info-and-events.js";
 
 export default async function comedy() {
   const eventsHtml = await clubInfoAndEvents('c8m3');
