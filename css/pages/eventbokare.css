@@ -16,17 +16,17 @@
     background: linear-gradient(135deg, #4a90e2 0%, #357abd 50%, #2c5aa0 100%) !important;
   }
 
-.eventbokare {
-  text-align: center;
-  color: #fff;
-  font-size: 1.1rem;
-  box-shadow: 0 0 25px rgba(123, 0, 255, 0.5);
-  animation: fadeIn 1.2s ease-out forwards;
-  max-width: 550px;
-  margin-left: auto;
-  margin-right: auto;
-  /*backdrop-filter: blur(10px);*/
-}
+  .eventbokare {
+    text-align: center;
+    color: #fff;
+    font-size: 1.1rem;
+    box-shadow: 0 0 25px rgba(123, 0, 255, 0.5);
+    animation: fadeIn 1.2s ease-out forwards;
+    max-width: 550px;
+    margin-left: auto;
+    margin-right: auto;
+    /*backdrop-filter: blur(10px);*/
+  }
 
   .booking-confirmation strong {
     color: #ff72d2;
@@ -55,15 +55,15 @@
     text-shadow: 0 0 15px rgba(255, 114, 210, 0.8);
   }
 
-/* === Formulär & knappar === */
-.eventbokare form {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 16px;
-  padding: 1.5rem;
-  margin-top: 1.5rem;
-  box-shadow: 0 0 10px rgba(123, 0, 255, 0.3);
-  backdrop-filter: blur(6px);
-}
+  /* === Formulär & knappar === */
+  .eventbokare form {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+    box-shadow: 0 0 10px rgba(123, 0, 255, 0.3);
+    backdrop-filter: blur(6px);
+  }
 
   .eventbokare label {
     display: block;
@@ -113,13 +113,15 @@
     }
   }
 
-/* === Responsivitet === */
-@media (max-width: 600px) {
-  .booking-confirmation {
-    padding: 1.5rem;
-    font-size: 1rem;
+  /* === Responsivitet === */
+  @media (max-width: 600px) {
+    .booking-confirmation {
+      padding: 1.5rem;
+      font-size: 1rem;
+    }
+
+    .eventbokare h1 {
+      font-size: 1.8rem;
+    }
   }
-  .eventbokare h1 {
-    font-size: 1.8rem;
-  }
-}:
+}
