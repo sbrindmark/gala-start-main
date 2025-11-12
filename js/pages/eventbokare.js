@@ -55,7 +55,7 @@ export default async function eventbokare() {
             <input type="text" id="fullnamn" required placeholder="Skriv ditt fullständiga namn" />
 
             <label for="epost">E-postadress:</label>
-            <input type="email" id="epost" required placeholder="exempel@mail.se" />
+            <input type="email" id="epost" required placeholder="johndoe@gmail.com />
 
             <label for="telefon">Telefonnummer:</label>
             <input type="tel" id="telefon" pattern="[0-9+ ]{6,}" placeholder="+46 70 123 45 67" required />
