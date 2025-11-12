@@ -154,6 +154,7 @@ body.metal-klubben {
     font-size: 18px;
     transition: 0.6s ease;
     border-radius: 3px;
+    -webkit-user-select: none;
     user-select: none;
     background-color: rgba(0, 0, 0, 0.5);
   }
