@@ -76,48 +76,13 @@ export default async function eventbokare() {
     let eventNamn = "";
     let biljettPris = 0;
 
-    // Kolla om vi har en förvald event från en annan sida
-    const selectedEventData = sessionStorage.getItem('selectedEvent');
-    if (selectedEventData) {
-      const eventInfo = JSON.parse(selectedEventData);
-      klubbSelect.value = eventInfo.clubId;
-      rubrik.innerHTML = `Boka: <span style="display:block;font-size:2.5rem;font-weight:700;">${eventInfo.eventName}</span><span style="display:block;font-size:2rem;font-weight:600;">${eventInfo.eventDate}</span>`;
-
-      // Hämta events för klubben och välj rätt event direkt
-      fetch(`http://localhost:3000/events?clubId=${eventInfo.clubId}`)
-        .then(res => res.json())
-        .then(events => {
-          if (events.length === 0) {
-            eventLista.innerHTML = "<p>Inga event tillgängliga för denna klubb just nu.</p>";
-            return;
-          }
-          eventLista.innerHTML =
-            "<label>Välj event:</label>" +
-            events
-              .map(e => {
-                const pris = Math.floor(Math.random() * 200) + 150;
-                return `
-          <div>
-          <input type=\"radio\" name=\"event\" value=\"${e.id}\" id=\"event-${e.id}\" data-namn=\"${e.name}\" data-pris=\"${pris}\">
-          <label for=\"event-${e.id}\">${e.name} – ${e.date} <span style=\"color:#ff72d2;\">(${pris} kr/biljett)</span></label>
-          </div>
-        `;
-              })
-              .join("");
-
-          // Välj rätt event automatiskt
-          setTimeout(() => {
-            const matchingRadio = Array.from(document.querySelectorAll('input[name="event"]'))
-              .find(radio => radio.dataset.namn === eventInfo.eventName);
-            if (matchingRadio) {
-              matchingRadio.checked = true;
-              matchingRadio.dispatchEvent(new Event('change'));
-            }
-            // Visa biljettsektionen direkt
-            biljettSektion.style.display = "block";
-            sessionStorage.removeItem('selectedEvent');
-          }, 200);
-        });
+    // Kolla om vi har en förifylld bokning (från t.ex. jazz popup)
+    const prefill = sessionStorage.getItem('prefillBooking');
+    let prefillObj = null;
+    if (prefill) {
+      try {
+        prefillObj = JSON.parse(prefill);
+      } catch (err) { prefillObj = null; }
     }
 
     // När användaren väljer klubb
@@ -162,23 +127,34 @@ export default async function eventbokare() {
         });
       });
 
-      // Om vi har en förvald event, välj den automatiskt
-      const selectedEventData = sessionStorage.getItem('selectedEvent');
-      if (selectedEventData) {
-        const eventInfo = JSON.parse(selectedEventData);
-        setTimeout(() => {
-          const matchingRadio = Array.from(document.querySelectorAll('input[name="event"]'))
-            .find(radio => radio.dataset.namn === eventInfo.eventName);
-
-          if (matchingRadio) {
-            matchingRadio.checked = true;
-            matchingRadio.dispatchEvent(new Event('change'));
-            // Rensa sessionStorage nu när vi har använt den
-            sessionStorage.removeItem('selectedEvent');
+      // Om vi har en prefill och klubben vi laddade är den vi vill
+      if (prefillObj && prefillObj.clubId === klubb) {
+        // om eventId matchar en av radioknapparna – välj den
+        const targetRadio = document.querySelector(`input[name="event"][value="${prefillObj.eventId}"]`);
+        if (targetRadio) {
+          targetRadio.checked = true;
+          targetRadio.dispatchEvent(new Event('change'));
+          // om prefill innehåller pris, använd det
+          if (prefillObj.price) {
+            biljettPris = parseInt(prefillObj.price);
+            uppdateraPris();
           }
-        }, 100);
+          // rensa prefill så det inte appliceras flera gånger
+          sessionStorage.removeItem('prefillBooking');
+        }
       }
     });
+
+    // Om vi har en förifylld bokning (prefillBooking) - auto-select klubb
+    if (prefillObj && klubbSelect) {
+      try {
+        klubbSelect.value = prefillObj.clubId || klubbSelect.value;
+        // trigga change för att ladda events och applicera prefill
+        klubbSelect.dispatchEvent(new Event('change'));
+      } catch (err) {
+        console.warn('Kunde inte auto-selecta klubb från prefill:', err);
+      }
+    }
 
     // Uppdatera priset när antal ändras
     document.getElementById("antal").addEventListener("input", () => {
