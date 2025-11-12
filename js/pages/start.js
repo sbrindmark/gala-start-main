@@ -40,7 +40,7 @@ export default async function start() {
    
       <div class="club-grid">
     <a href="#jazz-klubben" class="club jazz">
-     <img src="images/jazzmain.jpg" alt="Jazz Club" class="club-image">
+     <img src="images/jazz.jpg" alt="Jazz Club" class="club-image">
        <strong>Jazz-Klubben – Upplev svingen i jazzbaren</strong>
      <p class="club-desc">Avslappnad stämning, levande toner och ren musikglädje.</p>
     </a>
