@@ -59,7 +59,9 @@ export default function hiphopClub() {
         </div>
       </main>
 
-      
+      <footer>
+        <p>&copy; 2025 Hip-Hop Klubben – Där rytmen aldrig slutar.</p>
+      </footer>
     </div>
   `;
 
@@ -84,7 +86,7 @@ export default function hiphopClub() {
           <div class="event-info-content">
             <h2>${title}</h2>
             <p>${desc}</p>
-            <a href="#eventbokare" class="boka-btn">🎟️ Boka event</a>
+            <a href="#boka" class="boka-btn">🎟️ Boka event</a>
             <button class="close-btn" aria-label="Stäng">Stäng</button>
           </div>
         `;
