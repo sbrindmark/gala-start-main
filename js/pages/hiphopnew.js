@@ -54,7 +54,7 @@ export default function hiphopClub() {
             <p>📍 Stockholm, Sweden</p>
             <p>📧 <a href="mailto:info@hiphop.se">info@hiphop.se</a></p>
             <p>📞 +46 70 123 57 80</p>
-            <p>Följ oss på <a href="#">Instagram</a> & <a href="#">Facebook</a></p>
+        
           </section>
         </div>
       </main>
@@ -86,7 +86,7 @@ export default function hiphopClub() {
           <div class="event-info-content">
             <h2>${title}</h2>
             <p>${desc}</p>
-            <a href="#boka" class="boka-btn">🎟️ Boka event</a>
+            <a href="#eventbokare" class="boka-btn">🎟️ Boka event</a>
             <button class="close-btn" aria-label="Stäng">Stäng</button>
           </div>
         `;
