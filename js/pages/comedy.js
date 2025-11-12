@@ -18,6 +18,8 @@ export default async function comedy() {
       eventEl.addEventListener("click", () => {
         const title = eventEl.querySelector("h3")?.textContent || "";
         const desc = eventEl.querySelector("p")?.textContent || "";
+        const date = eventEl.querySelector(".date")?.textContent || "";
+
         // Skapa info-rutan
         const infoBox = document.createElement("div");
         infoBox.className = "event-info";
@@ -25,12 +27,29 @@ export default async function comedy() {
           <div class="event-info-content">
             <h2>${title}</h2>
             <p>${desc}</p>
-            <a href="#eventbokare" class="boka-btn">🎟️ Boka event</a>
+            <button class="boka-btn">🎟️ Boka event</button>
             <button class="close-btn">Stäng</button>
           </div>
         `;
 
         document.body.appendChild(infoBox);
+
+        // Boka event knappen
+        infoBox.querySelector(".boka-btn").addEventListener("click", () => {
+          // Spara eventinfo i sessionStorage
+          const eventInfo = {
+            clubId: 'c8m3', // Comedy club ID
+            clubName: 'Standup Comedy Club',
+            eventName: title,
+            eventDate: date,
+            eventDesc: desc
+          };
+          sessionStorage.setItem('selectedEvent', JSON.stringify(eventInfo));
+
+          // Gå till bokningssidan
+          window.location.hash = '#eventbokare';
+          infoBox.remove();
+        });
 
         // Stänger info-rutan
         infoBox.querySelector(".close-btn").addEventListener("click", () => {
