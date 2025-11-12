@@ -3,8 +3,6 @@ import clubInfoAndEvents from "../utils/club-info-and-events.js";
 export default async function comedy() {
   const eventsHtml = await clubInfoAndEvents('c8m3');
 
-  attachDeleteButtonListeners();
-
   // Ta bort eventuella kvarvarande popup-rutor när sidan laddas
   const existingPopups = document.querySelectorAll('.event-info');
   existingPopups.forEach(popup => popup.remove());
