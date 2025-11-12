@@ -1,18 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@300;500;700&display=swap');
+/* Stil för House Techno Klubben */
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Rajdhani:wght@400;600&display=swap');
+
+/* :root innehåller variabler för färger, typsnitt och stil – lättare att ändra hela temat */
 
 :root {
   --bg-dark: #0b0b10;
   --text-main: #f4f4f4;
   --accent: #6a4cff;
-  /* purple */
   --accent-secondary: #00bcd4;
-  /* cyan */
   --radius: 12px;
-  --font-title: 'Orbitron', sans-serif;
-  --font-body: 'Inter', sans-serif;
+  --font-title: 'Audiowide', sans-serif;
+  --font-body: 'Rajdhani', sans-serif;
 }
 
-/* BASE */
+/* Bakgrund och layout */
 body.house-techno-klubben {
   margin: 0;
   font-family: var(--font-body);
@@ -21,16 +22,27 @@ body.house-techno-klubben {
   display: flex;
   flex-direction: column;
   background-color: var(--bg-dark);
-  background-image:
+  /*background-image:
     linear-gradient(rgba(10, 0, 20, 0.75), rgba(0, 0, 0, 0.9)),
-    url("../../images/djairobot.jpg");
+    url("../../images/djtech.jpg"); /* ny bild */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
 }
+body.house-techno-klubben video.bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 0.4;
+  pointer-events: none;
+}
 
-/* HEADER */
+/* Header */
 body.house-techno-klubben header {
   background: rgba(10, 10, 20, 0.9);
   padding: 1.8rem 1rem;
@@ -52,7 +64,7 @@ body.house-techno-klubben header p {
   margin-top: 0.4rem;
 }
 
-/* NAVIGATION */
+/* Navigation */
 body.house-techno-klubben nav {
   margin-top: 1rem;
   display: flex;
@@ -78,7 +90,7 @@ body.house-techno-klubben nav a:focus {
   color: #fff;
 }
 
-/* MAIN */
+/* Innehåll */
 body.house-techno-klubben main {
   flex: 1;
   padding: 2rem 1rem 4rem 1rem;
@@ -88,22 +100,7 @@ body.house-techno-klubben main {
   gap: 2rem;
 }
 
-body.house-techno-klubben main h1 {
-  color: var(--accent);
-  text-align: center;
-  font-family: var(--font-title);
-  text-transform: uppercase;
-  font-size: 1.8rem;
-}
-
-body.house-techno-klubben main p {
-  text-align: center;
-  max-width: 650px;
-  line-height: 1.6;
-  color: #ddd;
-}
-
-/* EVENTS */
+/* Event */
 body.house-techno-klubben .event {
   background: rgba(26, 26, 34, 0.85);
   border: 1px solid var(--accent-secondary);
@@ -119,59 +116,141 @@ body.house-techno-klubben .event:hover {
   transform: translateY(-5px);
   box-shadow: 0 4px 20px rgba(0, 180, 216, 0.25);
 }
+/* Info-ruta för event – bara på House Techno sidan */
+body.house-techno-klubben .event-info {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
 
-body.house-techno-klubben .event h3 {
-  color: var(--accent-secondary);
-  margin-top: 0;
+body.house-techno-klubben .event-info-content {
+  background: rgba(30,30,40,0.95);
+  border: 1px solid var(--accent-secondary);
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 480px;
+  text-align: center;
+  box-shadow: 0 0 25px rgba(0,188,212,0.3);
+}
+
+body.house-techno-klubben .event-info-content h2 {
+  color: var(--accent);
+  margin-bottom: 0.5rem;
   font-family: var(--font-title);
-  font-size: 1.3rem;
 }
 
-body.house-techno-klubben .event p {
+body.house-techno-klubben .boka-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  background: var(--accent);
+  color: white;
+  padding: 0.7rem 1.4rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+body.house-techno-klubben .boka-btn:hover {
+  background: var(--accent-secondary);
+}
+
+body.house-techno-klubben .close-btn {
+  margin-top: 1rem;
+  background: transparent;
+  border: 1px solid #666;
   color: #ccc;
-  font-size: 0.95rem;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
 }
 
-/* CONTACT */
+body.house-techno-klubben .close-btn:hover {
+  color: white;
+  border-color: white;
+}
+
+/* Kontaktsektion */
 body.house-techno-klubben .contact-section {
-  background: rgba(15, 15, 22, 0.85);
-  border-top: 1px solid #222;
-  padding: 2rem 1rem;
+  background: rgba(18, 18, 30, 0.9);        
+  border-top: 1px solid rgba(100, 100, 255, 0.2);
+  padding: 2rem 7rem;                        /* mer utrymme runt innehållet */
   text-align: center;
 }
 
 body.house-techno-klubben .contact-section h2 {
   color: var(--accent);
   font-family: var(--font-title);
-  margin-bottom: 0.8rem;
+  margin-bottom: 1.2rem;
+  letter-spacing: 1px;
+  font-size: 1.8rem;                         /* något större rubrik */
 }
 
 body.house-techno-klubben .contact-section p {
-  color: #ccc;
-  font-size: 0.95rem;
-  line-height: 1.5;
+  color: #ddd;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  max-width: 700px;                          /* bredare textyta */
+  margin: 0.5rem auto;                       /* centrerad layout */
 }
 
 body.house-techno-klubben .contact-section a {
   color: var(--accent-secondary);
   text-decoration: none;
+  font-weight: 500;
 }
 
 body.house-techno-klubben .contact-section a:hover {
   text-decoration: underline;
 }
 
-/* FOOTER */
+/* Footer */
 body.house-techno-klubben footer {
-  background: rgba(30, 0, 40, 0.9);
+  background: rgba(10, 10, 20, 0.9);
   text-align: center;
   padding: 1rem;
   font-size: 0.9rem;
   color: #ddd;
   border-top: 1px solid #222;
 }
+/* Placera play-knappen i övre högra hörnet */
+body.house-techno-klubben .event {
+  position: relative;
+}
 
-/* RESPONSIVE */
+body.house-techno-klubben .play-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(0, 188, 212, 0.15);
+  border: 1px solid var(--accent-secondary);
+  color: var(--accent-secondary);
+  font-size: 1rem;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body.house-techno-klubben .play-btn:hover {
+  background: var(--accent-secondary);
+  color: #000;
+  box-shadow: 0 0 10px var(--accent-secondary);
+  transform: scale(1.1);
+}
+
+/* Responsiv */
 @media (max-width: 700px) {
   body.house-techno-klubben header h1 {
     font-size: 1.7rem;
