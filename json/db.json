@@ -719,6 +719,24 @@
       "prisPerBiljett": 323,
       "totalKostnad": 323,
       "datum": "2025-11-12T12:08:16.780Z"
+    },
+    {
+      "id": "4401",
+      "eventId": "43ac",
+      "eventNamn": "New Orleans-bandet",
+      "antal": 1,
+      "prisPerBiljett": 253,
+      "totalKostnad": 253,
+      "datum": "2025-11-12T12:38:58.675Z"
+    },
+    {
+      "id": "88b5",
+      "eventId": "43ac",
+      "eventNamn": "New Orleans-bandet",
+      "antal": 7,
+      "prisPerBiljett": 240,
+      "totalKostnad": 1680,
+      "datum": "2025-11-12T12:41:15.943Z"
     }
   ]
 }
