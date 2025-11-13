@@ -57,42 +57,22 @@ export default async function hiphopClub() {
     </div>
   `;
 
-  // Klickbar event-overlay (stödjer både .event och .event-card)
+  // När ett event klickas, gå direkt till bokningssidan och visa priser
   setTimeout(() => {
     const eventEls = document.querySelectorAll(".hiphop-club .event, .hiphop-club .event-card");
     eventEls.forEach((eventEl) => {
       eventEl.style.cursor = "pointer";
       eventEl.addEventListener("click", () => {
         const title = eventEl.querySelector("h3")?.textContent || "";
-        const ps = [...eventEl.querySelectorAll("p")];
-        const desc = (ps[1]?.textContent || ps[0]?.textContent || "").trim();
-        const id = eventEl.dataset.eventId || "";
-
-        document.querySelectorAll(".event-info").forEach(n => n.remove());
-
-        const infoBox = document.createElement("div");
-        infoBox.className = "event-info";
-        infoBox.innerHTML = `
-          <div class="event-info-content">
-            <h2>${title}</h2>
-            <p>${desc}</p>
-            <a href="#eventbokare?id=${encodeURIComponent(id)}" class="boka-btn" data-event-id="${id}">🎟️ Boka event</a>
-            <button class="close-btn" aria-label="Stäng">Stäng</button>
-          </div>
-        `;
-        
-        document.body.appendChild(infoBox);
-
-        infoBox.querySelector(".boka-btn")?.addEventListener("click", () => {
-          sessionStorage.setItem("selectedEvent", JSON.stringify({ id, title, desc }));
-        });
-
-        const close = () => infoBox.remove();
-        infoBox.querySelector(".close-btn")?.addEventListener("click", close);
-        infoBox.addEventListener("click", (e) => { if (e.target === infoBox) close(); });
-        document.addEventListener("keydown", function onKey(e){
-          if (e.key === "Escape") { close(); document.removeEventListener("keydown", onKey); }
-        });
+        // Förifyll bokningssidan via sessionStorage så den kan visa priser direkt
+        const clubId = 'h9p2'; // hip-hop klubbens id
+        const eventId = eventEl.dataset.eventId || null;
+        // Generera ett pris (samma logik som bokningssidan använder)
+        const price = Math.floor(Math.random() * 200) + 150;
+        const prefill = { clubId, eventId, eventName: title, price };
+        sessionStorage.setItem('prefillBooking', JSON.stringify(prefill));
+        // Navigera till bokningssidan (hash)
+        location.hash = 'eventbokare';
       });
     });
   }, 100);

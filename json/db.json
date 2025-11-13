@@ -599,6 +599,15 @@
       "prisPerBiljett": 337,
       "totalKostnad": 337,
       "datum": "2025-11-13T12:49:04.426Z"
+    },
+    {
+      "id": "4ea1",
+      "eventId": "hh01",
+      "eventNamn": "Ken Ring",
+      "antal": 1,
+      "prisPerBiljett": 264,
+      "totalKostnad": 264,
+      "datum": "2025-11-13T13:43:14.491Z"
     }
   ]
 }
