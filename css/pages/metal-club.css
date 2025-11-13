@@ -3,17 +3,12 @@
 body.metal-klubben {
   margin: 0;
   padding: 0;
-  /*background: url('../../images/metal.jpeg') no-repeat;
-  background-size: cover;
-  min-height: 100vh;
-  background-color: rgba(87, 30, 30, 0.774);
-  color: white;
-  */
+  background: none;
+  background-color: rgb(24, 23, 24);
 
   .image-background {
     background-image: url('../../images/metal.jpeg');
-    background-position-x: 50%;
-    background-position-y: 0%;
+    background-position: 50% 0%;
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 100vh;
@@ -21,7 +16,7 @@ body.metal-klubben {
   }
 
   main {
-    padding: 0%;
+    padding: 0px;
     background-color: rgb(24, 23, 24);
     box-sizing: border-box;
     color: rgb(70, 70, 70);
@@ -33,9 +28,7 @@ body.metal-klubben {
     min-height: calc(100vh - 100px);
   }
 
-
-
-  /*Gör bakgrunden vid header mörk istället för lila-gradient */
+  /* Gör bakgrunden vid header mörk istället för lila-gradient */
   header {
     background: #181718;
   }
@@ -44,7 +37,7 @@ body.metal-klubben {
     font-family: "Metal Mania", system-ui;
     font-weight: 400;
     font-style: normal;
-    font-size: 4vh;
+    font-size: clamp(24px, 4vh, 48px);
   }
 
   main h1,
@@ -59,72 +52,70 @@ body.metal-klubben {
     position: relative;
     box-sizing: border-box;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 80px;
+    margin: 80px auto 0;
     max-width: 1440px;
-    overflow-x: 0px;
-    padding-bottom: 100%;
-    padding-top: 32px;
+    padding: 32px 20px;
+    width: 100%;
   }
 
   .main-text {
-    margin-bottom: 30vh;
+    margin-bottom: 60px;
+    padding: 20px;
   }
 
   .main-text h1 {
-    font-size: 120px;
-    font-stretch: 100%;
+    font-size: clamp(32px, 8vw, 120px);
     text-align: center;
     font-family: "Metal Mania", system-ui;
     font-weight: 400;
     font-style: normal;
     color: white;
+    margin-bottom: 20px;
   }
 
   .main-text p {
     color: white;
-    font-size: 1.5vh;
+    font-size: clamp(14px, 1.5vh, 18px);
+    line-height: 1.6;
   }
 
   .listen-now,
   .live-shows {
-    font-size: 120px;
-    font-stretch: 100%;
+    font-size: clamp(32px, 8vw, 120px);
     text-align: center;
   }
 
-  /* Slidshow main page*/
-
+  /* Slideshow main page */
   * {
-    box-sizing: border-box
+    box-sizing: border-box;
   }
 
   /* Slideshow container */
   .slideshow-container {
     max-width: 1000px;
+    width: 100%;
     position: relative;
-    margin: auto;
+    margin: 40px auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10vh;
-
+    padding: 20px;
   }
 
   .slideshow-container .text {
     font-family: "Metal Mania", system-ui;
     font-weight: 400;
     font-style: normal;
-    font-size: 5vh;
+    font-size: clamp(20px, 4vw, 40px);
   }
 
   /* Hide the images by default */
   .mySlides {
     display: none;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    gap: 30px;
+    gap: 20px;
+    width: 100%;
   }
 
   /* När slide är aktiv, visa som flex */
@@ -132,10 +123,10 @@ body.metal-klubben {
     display: flex !important;
   }
 
-  /* Max size på bilderna i slideshowen */
+  /* Fast bildstorlek så alla bilder är lika stora */
   .mySlides img {
-    height: 800px;
     width: 600px;
+    height: 600px;
     object-fit: cover;
     flex-shrink: 0;
   }
@@ -154,21 +145,19 @@ body.metal-klubben {
     font-size: 18px;
     transition: 0.6s ease;
     border-radius: 3px;
-    -webkit-user-select: none;
     user-select: none;
     background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10;
   }
 
-  /* Position the "previous button" to the left OUTSIDE */
+  /* Position the "previous button" */
   .prev {
-    left: -200px;
-    /* Flyttar pilen utanför till vänster */
+    left: 10px;
   }
 
-  /* Position the "next button" to the right OUTSIDE */
+  /* Position the "next button" */
   .next {
-    right: -200px;
-    /* Flyttar pilen utanför till höger */
+    right: 10px;
   }
 
   /* On hover, add a black background color with a little bit see-through */
@@ -177,18 +166,14 @@ body.metal-klubben {
     background-color: rgba(0, 0, 0, 0.8);
   }
 
-
   /* Caption text */
   .text {
     color: #f2f2f2;
-    font-size: 24px;
+    font-size: clamp(18px, 3vw, 24px);
     font-weight: bold;
     padding: 20px;
-    position: relative;
-    bottom: auto;
-    width: auto;
-    text-align: left;
-    flex: 1;
+    text-align: center;
+    width: 100%;
   }
 
   /* The dots/bullets/indicators */
@@ -203,6 +188,9 @@ body.metal-klubben {
     transition: background-color 0.6s ease;
   }
 
+  margin: 0 2px;
+  border-radius: 50%;
+
   .active,
   .dot:hover {
     background-color: #717171;
@@ -216,24 +204,23 @@ body.metal-klubben {
 
   @keyframes fade {
     from {
-      opacity: .4
+      opacity: 0.4;
     }
 
     to {
-      opacity: 1
+      opacity: 1;
     }
   }
 
   .wrapper {
     background: none;
     border: none;
-    /*backdrop-filter: blur(20px);*/
     box-shadow: none;
     color: white;
-    padding: 30px 40px;
-    margin: 10px auto;
-    /* Auto på höger/vänster för att centrera */
+    padding: 30px 20px;
+    margin: 20px auto;
     max-width: 720px;
+    width: 100%;
     line-height: 1.6;
   }
 
@@ -264,11 +251,15 @@ body.metal-klubben {
 
   article.event {
     background: rgba(0, 0, 0, 0.5);
-    margin: 15px 0;
+    margin: 20px 0;
     padding: 20px;
     border-radius: 8px;
-    transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    transition: transform 0.2s ease;
+  }
+
+  article.event:hover {
+    transform: translateY(-2px);
   }
 
   article.event h3 {
@@ -282,20 +273,78 @@ body.metal-klubben {
     font-size: 15px;
   }
 
-
-
-  /* Döljer ikonen vid "Gala emporium*/
+  /* Döljer ikonen vid "Gala emporium" */
   .header-icon {
     display: none;
   }
 
-  /* Rutan för att skapa event*/
+  /* Rutan för att skapa event */
   .create-event {
     display: flex;
     flex-direction: column;
+    margin: 20px 0;
   }
 
   footer {
-    margin: 0%;
+    margin: 20px 0;
+  }
+
+  /* Media queries för mobil */
+  @media (max-width: 768px) {
+    main {
+      padding: 10px;
+    }
+
+    .container {
+      margin-top: 40px;
+      padding: 16px 10px;
+    }
+
+    .main-text {
+      margin-bottom: 30px;
+      padding: 10px;
+    }
+
+    .slideshow-container {
+      margin: 20px auto;
+      padding: 10px;
+    }
+
+    .mySlides {
+      gap: 15px;
+    }
+
+    .prev,
+    .next {
+      padding: 12px;
+      font-size: 16px;
+    }
+
+    .wrapper {
+      padding: 20px 15px;
+      margin: 15px auto;
+    }
+
+    article.event {
+      margin: 15px 0;
+      padding: 15px;
+    }
+  }
+
+  @media (min-width: 769px) {
+
+    /* Lite mer spacing för större skärmar - pilarna utanför slideshowen */
+    .prev {
+      left: -80px;
+    }
+
+    .next {
+      right: -80px;
+    }
+
+    .mySlides img {
+      width: 600px;
+      height: 600px;
+    }
   }
 }

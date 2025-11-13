@@ -1,11 +1,6 @@
 {
   "clubs": [
     {
-      "id": "h9p2",
-      "name": "Hip-Hop Klubben",
-      "description": "Beats, battles & street energy – varje helg, hela natten. Kom och upplev den äkta hip-hop kulturen med rappare, breakdancers och graffiti-artister."
-    },
-    {
       "id": "a37c",
       "name": "Jazz-klubben",
       "description": "Vår laid-back jazz-klubb där vi varje vecka får träffa nya spännande artister."
@@ -33,13 +28,6 @@
       "name": "New Orleans-bandet",
       "description": "New Orleans-bandet spelar old school jazz från 30-talet, med sväng och klarinett.",
       "clubId": "a37c"
-    },
-    {
-      "id": "57f3",
-      "date": "2025-11-06 21:00",
-      "name": "Mega Death-die",
-      "description": "En open stage för death-metal-rockare, 30 minuter per band, upp till 6 band per kväll. Stjäl inte varandras effektpedaler!",
-      "clubId": "fg5i"
     },
     {
       "id": "57f4",
@@ -124,27 +112,6 @@
       "name": "Sleep Token",
       "date": "2025-11-10 22:00",
       "description": "Take me back to eden"
-    },
-    {
-      "id": "hh01",
-      "date": "2025-11-15 22:00",
-      "name": "Ken Ring",
-      "description": "En natt med tunga bars, beats och energi på scenen.",
-      "clubId": "h9p2"
-    },
-    {
-      "id": "hh02",
-      "date": "2025-11-28 21:00",
-      "name": "Breakdance Battle",
-      "description": "Dansare från hela landet möts i en episk battle.",
-      "clubId": "h9p2"
-    },
-    {
-      "id": "hh03",
-      "date": "2025-12-10 22:30",
-      "name": "DJ Night - Old School Edition",
-      "description": "Back to the roots vinyl, scratch och groove hela kvällen.",
-      "clubId": "h9p2"
     }
   ],
   "bookings": [
@@ -170,7 +137,7 @@
     },
     {
       "id": "3287",
-      "eventId": "57f3",
+      "eventId": null,
       "tickets": "1"
     },
     {
@@ -180,7 +147,7 @@
     },
     {
       "id": "e891",
-      "eventId": "57f3",
+      "eventId": null,
       "tickets": "1"
     },
     {
@@ -307,7 +274,7 @@
     },
     {
       "id": "052c",
-      "eventId": "57f3",
+      "eventId": null,
       "eventNamn": "Mega Death-die",
       "antal": 1,
       "prisPerBiljett": 232,
@@ -325,7 +292,7 @@
     },
     {
       "id": "625f",
-      "eventId": "57f3",
+      "eventId": null,
       "eventNamn": "Mega Death-die",
       "antal": 1,
       "prisPerBiljett": 197,
@@ -343,7 +310,7 @@
     },
     {
       "id": "23d4",
-      "eventId": "57f3",
+      "eventId": null,
       "eventNamn": "Mega Death-die",
       "antal": 1,
       "prisPerBiljett": 269,
@@ -559,7 +526,7 @@
     },
     {
       "id": "9cb7",
-      "eventId": "57f3",
+      "eventId": null,
       "eventNamn": "Mega Death-die",
       "antal": 1,
       "prisPerBiljett": 155,
@@ -576,202 +543,13 @@
       "datum": "2025-11-10T12:14:59.844Z"
     },
     {
-      "id": "204b",
-      "eventId": "43ad",
-      "eventNamn": "Fusion-jazzarna Corea's Disciples",
-      "antal": 3,
-      "prisPerBiljett": 167,
-      "totalKostnad": 501,
-      "datum": "2025-11-10T20:02:19.590Z"
-    },
-    {
-      "id": "932f",
-      "eventId": "43ac",
-      "eventNamn": "New Orleans-bandet",
+      "id": "bb37",
+      "eventId": null,
+      "eventNamn": "Mega Death-die",
       "antal": 1,
-      "prisPerBiljett": 236,
-      "totalKostnad": 236,
-      "datum": "2025-11-12T10:12:03.113Z"
-    },
-    {
-      "id": "d856",
-      "eventId": "43ac",
-      "eventNamn": "New Orleans-bandet 2025-11-05 19:00",
-      "antal": 1,
-      "prisPerBiljett": 227,
-      "totalKostnad": 227,
-      "datum": "2025-11-12T10:21:39.474Z"
-    },
-    {
-      "id": "f382",
-      "eventId": "43ac",
-      "eventNamn": "New Orleans-bandet 2025-11-05 19:00",
-      "antal": 2,
-      "prisPerBiljett": 321,
-      "totalKostnad": 642,
-      "datum": "2025-11-12T10:22:00.374Z"
-    },
-    {
-      "id": "0932",
-      "eventId": "43ad",
-      "eventNamn": "Fusion-jazzarna Corea's Disciples 2025-11-01 19:00",
-      "antal": 1,
-      "prisPerBiljett": 250,
-      "totalKostnad": 250,
-      "datum": "2025-11-12T10:23:40.101Z"
-    },
-    {
-      "id": "ac16",
-      "eventId": "43ad",
-      "eventNamn": "Fusion-jazzarna Corea's Disciples 2025-11-01 19:00",
-      "antal": 1,
-      "prisPerBiljett": 227,
-      "totalKostnad": 227,
-      "datum": "2025-11-12T10:25:26.151Z"
-    },
-    {
-      "id": "c693",
-      "eventId": "43ad",
-      "eventNamn": "Fusion-jazzarna Corea's Disciples 2025-11-01 19:00",
-      "antal": 1,
-      "prisPerBiljett": 297,
-      "totalKostnad": 297,
-      "datum": "2025-11-12T10:25:34.794Z"
-    },
-    {
-      "id": "575c",
-      "eventId": "43ad",
-      "eventNamn": "Fusion-jazzarna Corea's Disciples 2025-11-01 19:00",
-      "antal": 1,
-      "prisPerBiljett": 267,
-      "totalKostnad": 267,
-      "datum": "2025-11-12T10:25:44.515Z"
-    },
-    {
-      "id": "5ffa",
-      "eventId": "43ad",
-      "eventNamn": "Fusion-jazzarna Corea's Disciples 2025-11-01 19:00",
-      "antal": 1,
-      "prisPerBiljett": 255,
-      "totalKostnad": 255,
-      "datum": "2025-11-12T10:26:02.956Z"
-    },
-    {
-      "id": "ba89",
-      "eventId": "43ad",
-      "eventNamn": "Fusion-jazzarna Corea's Disciples 2025-11-01 19:00",
-      "antal": 1,
-      "prisPerBiljett": 213,
-      "totalKostnad": 213,
-      "datum": "2025-11-12T10:26:05.089Z"
-    },
-    {
-      "id": "8d68",
-      "eventId": "43ac",
-      "eventNamn": "New Orleans-bandet 2025-11-05 19:00",
-      "antal": 1,
-      "prisPerBiljett": 158,
-      "totalKostnad": 158,
-      "datum": "2025-11-12T10:26:14.378Z"
-    },
-    {
-      "id": "2eb6",
-      "eventId": "43ac",
-      "eventNamn": "New Orleans-bandet 2025-11-05 19:00",
-      "antal": 1,
-      "prisPerBiljett": 259,
-      "totalKostnad": 259,
-      "datum": "2025-11-12T10:26:17.601Z"
-    },
-    {
-      "id": "8b20",
-      "eventId": "43ac",
-      "eventNamn": "New Orleans-bandet 2025-11-05 19:00",
-      "antal": 1,
-      "prisPerBiljett": 320,
-      "totalKostnad": 320,
-      "datum": "2025-11-12T10:28:40.712Z"
-    },
-    {
-      "id": "bbcc",
-      "eventId": "43ac",
-      "eventNamn": "New Orleans-bandet 2025-11-05 19:00",
-      "antal": 1,
-      "prisPerBiljett": 237,
-      "totalKostnad": 237,
-      "datum": "2025-11-12T10:28:58.051Z"
-    },
-    {
-      "id": "11bc",
-      "eventId": "h05",
-      "eventNamn": "Deep Frequency Night",
-      "antal": 1,
-      "prisPerBiljett": 186,
-      "totalKostnad": 186,
-      "datum": "2025-11-12T10:32:28.817Z"
-    },
-    {
-      "id": "f648",
-      "eventId": "43ac",
-      "eventNamn": "New Orleans-bandet",
-      "antal": 1,
-      "prisPerBiljett": 272,
-      "totalKostnad": 272,
-      "datum": "2025-11-12T11:56:50.042Z"
-    },
-    {
-      "id": "5359",
-      "eventId": "43ad",
-      "eventNamn": "Fusion-jazzarna Corea's Disciples",
-      "antal": 1,
-      "prisPerBiljett": 294,
-      "totalKostnad": 294,
-      "datum": "2025-11-12T12:06:54.385Z"
-    },
-    {
-      "id": "fa7e",
-      "eventId": "43ad",
-      "eventNamn": "Fusion-jazzarna Corea's Disciples",
-      "antal": 2,
-      "prisPerBiljett": 184,
-      "totalKostnad": 368,
-      "datum": "2025-11-12T12:07:42.502Z"
-    },
-    {
-      "id": "7f7f",
-      "eventId": "43ad",
-      "eventNamn": "Fusion-jazzarna Corea's Disciples",
-      "antal": 1,
-      "prisPerBiljett": 323,
-      "totalKostnad": 323,
-      "datum": "2025-11-12T12:08:16.780Z"
-    },
-    {
-      "id": "250f",
-      "eventId": "89d1",
-      "eventNamn": "Laughter Night med Magnus & Lisa",
-      "antal": 5,
-      "prisPerBiljett": 348,
-      "totalKostnad": 1740,
-      "datum": "2025-11-12T12:42:56.404Z"
-    },
-    {
-      "id": "8ec0",
-      "eventId": "74f7",
-      "eventNamn": "Internationell Comedy Night",
-      "antal": 2,
-      "prisPerBiljett": 239,
-      "totalKostnad": 478,
-      "datum": "2025-11-12T12:43:20.930Z"
-    },
-    {
-      "id": "bd09",
-      "eventId": "92e4",
-      "eventNamn": "Open Mic Comedy",
-      "antal": 1,
-      "prisPerBiljett": 198,
-      "totalKostnad": 198,
-      "datum": "2025-11-12T12:49:06.814Z"
+      "prisPerBiljett": 282,
+      "totalKostnad": 282,
+      "datum": "2025-11-13T08:53:30.813Z"
     }
   ]
 }

@@ -7,6 +7,27 @@ export default async function metalClub() {
   setTimeout(() => {
     let slideIndex = 1;
 
+
+    //För att kunna klicka på ett event och boka det på min sida
+    const eventEls = document.querySelectorAll(".event");
+    eventEls.forEach((eventEl) => {
+      eventEl.style.cursor = "pointer";
+
+      // När ett event klickas, gå direkt till bokningssidan och visa priser
+      eventEl.addEventListener("click", () => {
+        const title = eventEl.querySelector("h3")?.textContent || "";
+        // Förifyll bokningssidan via sessionStorage så den kan visa priser direkt
+        const clubId = 'fg5i'; // jazz-klubbens id
+        const eventId = eventEl.dataset.eventId || null;
+        // Generera ett pris (samma logik som bokningssidan använder)
+        const price = Math.floor(Math.random() * 200) + 150;
+        const prefill = { clubId, eventId, eventName: title, price };
+        sessionStorage.setItem('prefillBooking', JSON.stringify(prefill));
+        // Navigera till bokningssidan (hash)
+        location.hash = 'eventbokare';
+      });
+    });
+
     // Lägg till event listeners på knapparna
     const prevButton = document.querySelector('.prev');
     const nextButton = document.querySelector('.next');
