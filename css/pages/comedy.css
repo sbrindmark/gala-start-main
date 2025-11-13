@@ -1,45 +1,33 @@
-/* 🎭 COMEDY PAGE STYLING */
+/* COMEDY PAGE STYLING */
 body.standup-comedy {
     background:
         linear-gradient(rgba(10, 10, 10, 0.8), #0a0a0acc),
-        url('../../images/lightshow.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
+        url('../../images/lightshow.jpg') center/cover fixed no-repeat;
     color: #f4f4f4;
     min-height: 100vh;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* 🎭 HEADER & NAVIGATION STYLING */
-body.standup-comedy header {
-    background: rgba(0, 0, 0, 0.9);
-    padding: 20px;
-    border-bottom: 2px solid #d32f2f;
-    box-shadow: 0 5px 20px rgba(211, 47, 47, 0.3);
-}
+/* HEADER & NAVIGATION STYLING */
 
 body.standup-comedy header h1 {
     color: #d32f2f;
-    text-align: center;
     font-size: 2rem;
-    margin: 0 0 15px 0;
+    margin: 0 0 15px;
     text-shadow: 0 0 15px rgba(211, 47, 47, 0.6);
     text-transform: uppercase;
     letter-spacing: 3px;
 }
 
+
 body.standup-comedy header p {
     color: #ddd;
-    text-align: center;
     font-size: 1.1rem;
-    margin: 0 0 20px 0;
     max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto 20px;
 }
 
+/* navigation styling */
 body.standup-comedy nav {
     text-align: center;
 }
@@ -67,24 +55,35 @@ body.standup-comedy nav a:hover {
     transform: translateY(-2px);
 }
 
-/* 🎭 STYLE DATABASE CONTENT */
+/* STYLE Main CONTENT */
+body.standup-comedy main {
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 800px;
+    text-align: center;
+    position: relative;
+    left: 70px;
+    /* flyttad åt höger */
+}
 
-/* Klubbnamn från db.json */
+/* Rubriker & text */
 body.standup-comedy main h1 {
     color: #d32f2f;
-    text-align: center;
     font-size: 3rem;
     margin: 30px 0;
     text-shadow: 0 0 20px rgba(211, 47, 47, 0.7);
     text-transform: uppercase;
-    letter-spacing: 2px;
 }
 
-/* Klubbbeskrivning från db.json */
-body.standup-comedy .comedy-page>p:first-of-type,
+body.standup-comedy main h2 {
+    color: #d32f2f;
+    font-size: 2.5rem;
+    margin: 40px 0 30px;
+    text-shadow: 0 0 15px rgba(211, 47, 47, 0.5);
+}
+
 body.standup-comedy main>p {
     color: #ddd;
-    text-align: center;
     font-size: 1.3rem;
     margin: 20px auto 40px;
     max-width: 800px;
@@ -93,15 +92,6 @@ body.standup-comedy main>p {
     padding: 20px;
     border-radius: 10px;
     border-left: 4px solid #d32f2f;
-}
-
-/* Events rubrik från db.json */
-body.standup-comedy main h2 {
-    color: #d32f2f;
-    text-align: center;
-    font-size: 2.5rem;
-    margin: 40px 0 30px;
-    text-shadow: 0 0 15px rgba(211, 47, 47, 0.5);
 }
 
 /* Event-kort från db.json */
@@ -113,7 +103,7 @@ body.standup-comedy .event {
     margin: 20px 0;
     transition: all 0.3s ease;
     box-shadow: 0 5px 20px rgba(211, 47, 47, 0.3);
-    cursor: pointer;
+    text-align: center;
 }
 
 body.standup-comedy .event:hover {
@@ -122,8 +112,7 @@ body.standup-comedy .event:hover {
     border-left-width: 10px;
 }
 
-
-/* Event namn från db.json */
+/* Event titel från db.json */
 body.standup-comedy .event h3 {
     color: #d32f2f;
     font-size: 1.4rem;
@@ -139,35 +128,56 @@ body.standup-comedy .event p {
     margin: 0;
 }
 
-/* SKRATT BILD PÅ HÖGER SIDA */
-body.standup-comedy::after {
-    content: '';
-    position: fixed;
-    right: 20px;
-    top: 250px;
-    width: 200px;
-    height: 300px;
-    background: url('../../images/skratt.jpg') center/cover;
+
+/* 🎭 FLEXBOX LAYOUT */
+.comedy-page-flex {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    margin: 40px auto;
+    max-width: 1200px;
+    width: 100%;
+    position: relative;
+    left: 50px;
+    /* flyttad åt höger */
+}
+
+.comedy-events {
+    flex: 2;
+}
+
+.comedy-image {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 400px;
+}
+
+.comedy-image img {
+    width: 100%;
+    max-width: 350px;
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(211, 47, 47, 0.4);
     border: 3px solid #d32f2f;
-    z-index: 10;
-    opacity: 0.8;
-    transition: opacity 0.3s ease;
+    opacity: 0.9;
+    transition: opacity 0.3s ease, transform 0.3s ease;
     animation: floatImage 5s ease-in-out infinite;
 }
 
-body.standup-comedy::after:hover {
+.comedy-image img:hover {
     opacity: 1;
+    transform: scale(1.04);
     animation-play-state: paused;
 }
 
-/* Animation för bilden */
+
 @keyframes floatImage {
 
     0%,
     100% {
-        transform: translateY(0px);
+        transform: translateY(0);
     }
 
     50% {
@@ -175,131 +185,73 @@ body.standup-comedy::after:hover {
     }
 }
 
-/* Anpassa main för att ge plats åt bilden */
-body.standup-comedy main {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    margin-right: 240px;
+/* 🎭 FOOTER */
+footer.contact {
+    background: rgba(0, 0, 0, 0.85);
+    border-top: 3px solid #d32f2f;
+    padding: 40px 20px;
+    margin-top: 60px;
+    text-align: center;
+    box-shadow: 0 -5px 20px rgba(211, 47, 47, 0.3);
 }
 
-/* 📱 MOBILE & TABLET OPTIMIZATION */
-@media (max-width: 992px) {
+footer.contact h2 {
+    color: #d32f2f;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(211, 47, 47, 0.5);
+    margin-bottom: 20px;
+}
 
-    /* Header */
-    body.standup-comedy header {
-        padding: 15px;
+footer.contact p {
+    color: #ddd;
+    margin: 5px 0;
+    transition: color 0.3s;
+}
+
+footer.contact p:hover {
+    color: #fff;
+}
+
+/* 📱 RESPONSIV DESIGN */
+@media (max-width: 1200px) {
+    .comedy-page-flex {
+        flex-direction: column;
+        align-items: center;
+        left: 0;
     }
 
-    body.standup-comedy header h1 {
-        font-size: 1.6rem;
-        letter-spacing: 2px;
-    }
-
-    body.standup-comedy header p {
-        font-size: 1rem;
-        padding: 0 10px;
-    }
-
-    /* Navigation */
-    body.standup-comedy nav a {
-        display: block;
-        margin: 8px auto;
-        width: 80%;
-        font-size: 0.95rem;
-    }
-
-    /* Main area */
-    body.standup-comedy main {
-        margin: 0 auto;
-        padding: 15px;
-        max-width: 100%;
-    }
-
-    /* Klubbrubrik & beskrivning */
-    body.standup-comedy main h1 {
-        font-size: 2rem;
-        margin: 20px 0;
-    }
-
-    body.standup-comedy .comedy-page>p:first-of-type,
-    body.standup-comedy main>p {
-        font-size: 1rem;
-        margin: 15px auto 30px;
-        padding: 15px;
-    }
-
-    /* Event-section */
-    body.standup-comedy main h2 {
-        font-size: 1.8rem;
-        margin: 30px 0 20px;
-    }
-
-    body.standup-comedy .event {
-        padding: 15px;
-        margin: 15px 0;
-    }
-
-    body.standup-comedy .event h3 {
-        font-size: 1.2rem;
-    }
-
-    body.standup-comedy .event p {
-        font-size: 0.95rem;
-    }
-
-    /* Remove background attachment for performance */
-    body.standup-comedy {
-        background-attachment: scroll;
+    .comedy-image {
+        max-width: 220px;
+        margin-bottom: 20px;
     }
 }
 
 @media (max-width: 600px) {
-
-    /* Tighter layout for phones */
-    body.standup-comedy header h1 {
+    header h1 {
         font-size: 1.4rem;
     }
 
-    body.standup-comedy header p {
-        font-size: 0.9rem;
-    }
-
-    body.standup-comedy nav a {
-        width: 90%;
-        padding: 10px;
-        font-size: 0.85rem;
-    }
-
-    body.standup-comedy main h1 {
+    main h1 {
         font-size: 1.6rem;
     }
 
-    body.standup-comedy main h2 {
+    main h2 {
         font-size: 1.4rem;
     }
 
-    body.standup-comedy .event {
+    .event {
         border-left-width: 4px;
-        border-radius: 8px;
     }
 
-    body.standup-comedy .event:hover {
-        transform: none;
-        box-shadow: 0 5px 15px rgba(255, 46, 46, 0.4);
-    }
-}
-
-/* På mindre skärmar, dölj bilden */
-@media (max-width: 1200px) {
-    body.standup-comedy::after {
-        display: none;
+    footer.contact {
+        padding: 25px 15px;
     }
 
-    body.standup-comedy main {
-        margin-right: auto;
-        max-width: 1000px;
+    footer.contact h2 {
+        font-size: 1.4rem;
     }
 }
 
-/* --- END OF COMEDY PAGE STYLING --- */
+/* END OF COMEDY PAGE STYLING */
