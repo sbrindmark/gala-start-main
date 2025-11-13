@@ -608,6 +608,15 @@
       "prisPerBiljett": 264,
       "totalKostnad": 264,
       "datum": "2025-11-13T13:43:14.491Z"
+    },
+    {
+      "id": "3e20",
+      "eventId": "hh02",
+      "eventNamn": "Breakdance Battle",
+      "antal": 1,
+      "prisPerBiljett": 168,
+      "totalKostnad": 168,
+      "datum": "2025-11-13T15:56:22.576Z"
     }
   ]
 }

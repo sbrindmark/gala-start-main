@@ -1,11 +1,11 @@
-import { getClubEvents } from "../utils/club-info-and-events.js";
+import clubInfoAndEvents from "../utils/club-info-and-events.js";
 
 export default async function hiphopClub() {
   // Lägg till klass på body för bakgrund + tema
   document.body.classList.add('hiphop-club');
 
   // Hämta events för Hip-Hop klubben (clubId: h9p2)
-  const eventsHTML = await getClubEvents("h9p2");
+  const eventsHTML = await clubInfoAndEvents("h9p2");
 
   const html = `
     <div class="hiphop-club">

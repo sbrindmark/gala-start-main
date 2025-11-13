@@ -94,23 +94,7 @@ export function attachChangeButtonListeners() {
   }, 100);
 }
 
-export async function getClubEvents(clubId) {
-  const url = `http://localhost:3000/events?clubId=${clubId}`;
-  const events = await (await fetch(url)).json();
 
-  return events
-    .toSorted((a, b) => a.date > b.date ? 1 : -1)
-    .map(({ date, name, description, id }) => `
-      <div class="event-wrapper">
-        <article class="event" data-event-id="${id}">
-          <h3>${name}</h3>
-          <p><strong>${date}</strong></p>
-          <p>${description}</p>
-        </article>
-      </div>
-    `)
-    .join('');
-}
 
 export default async function clubInfoAndEvents(clubId) {
   let name = '', description = '', id = '';
