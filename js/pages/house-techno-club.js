@@ -22,7 +22,7 @@ export default async function houseTechnoClub() {
     const body = document.body;
     body.className = "house-techno-klubben";
 
-    const technoSection = document.querySelector("body.house-techno-klubben");
+    const technoSection = document.querySelector("section.wrapper");
     if (!technoSection) return;
 
     const bgVideo = document.createElement("video");

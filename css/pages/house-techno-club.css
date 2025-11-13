@@ -21,7 +21,6 @@ body.house-techno-klubben {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background: none;
   background-color: var(--bg-dark);
   /*background-image:
     linear-gradient(rgba(10, 0, 20, 0.75), rgba(0, 0, 0, 0.9)),
