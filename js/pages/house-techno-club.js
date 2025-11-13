@@ -48,21 +48,15 @@ export default async function houseTechnoClub() {
 
       eventEl.addEventListener("click", () => {
         const title = eventEl.querySelector("h3")?.textContent || "";
-        const desc = eventEl.querySelector("p")?.textContent || "";
-
-        const infoBox = document.createElement("div");
-        infoBox.className = "event-info";
-        infoBox.innerHTML = `
-          <div class="event-info-content">
-            <h2>${title}</h2>
-            <p>${desc}</p>
-            <a href="#eventbokare" class="boka-btn">🎟️ Boka event</a>
-            <button class="close-btn">Stäng</button>
-          </div>
-        `;
-
-        document.body.appendChild(infoBox);
-        infoBox.querySelector(".close-btn").addEventListener("click", () => infoBox.remove());
+        // Förifyll bokningssidan via sessionStorage så den kan visa priser direkt
+        const clubId = 'k23o'; // House-Techno klubbens id
+        const eventId = eventEl.dataset.eventId || null;
+        // Generera ett pris (samma logik som bokningssidan använder)
+        const price = Math.floor(Math.random() * 200) + 150;
+        const prefill = { clubId, eventId, eventName: title, price };
+        sessionStorage.setItem('prefillBooking', JSON.stringify(prefill));
+        // Navigera till bokningssidan (hash)
+        location.hash = 'eventbokare';
       });
     });
 
