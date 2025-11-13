@@ -1,52 +1,55 @@
+/* Importera Metal Mania font från Google Fonts för metal-temat */
 @import url('https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap');
 
+/* Huvudstyling för Metal-klubbens sida */
 body.metal-klubben {
   margin: 0;
   padding: 0;
-  /*background: url('../../images/metal.jpeg') no-repeat;
-  background-size: cover;
-  min-height: 100vh;
-  background-color: rgba(87, 30, 30, 0.774);
-  color: white;
-  */
+  background: none;
+  background-color: rgb(24, 23, 24);
 
+  /* Container för bakgrundsbild */
   .image-background {
     background-image: url('../../images/metal.jpeg');
-    background-position-x: 50%;
-    background-position-y: 0%;
+    background-position: 50% 0%;
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 100vh;
     width: 100%;
   }
 
+  /* Huvudinnehållsområdet */
   main {
-    padding: 0%;
+    padding: 0px;
     background-color: rgb(24, 23, 24);
     box-sizing: border-box;
     color: rgb(70, 70, 70);
+    /* Duplicerad display (display: block ignoreras pga flex) */
     display: block;
+    /* Flexbox för att centrera innehåll */
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    /* Minsta höjd: hela skärmhöjden minus 100px för header */
     min-height: calc(100vh - 100px);
   }
 
-
-
-  /*Gör bakgrunden vid header mörk istället för lila-gradient */
+  /* Överskriver standardgradient med mörk solid färg */
   header {
     background: #181718;
   }
 
+  /* Huvudrubrik i header med Metal Mania font */
   header h1 {
     font-family: "Metal Mania", system-ui;
     font-weight: 400;
     font-style: normal;
-    font-size: 4vh;
+    /* Responsiv fontstorlek: min 24px, max 48px, optimal 4vh */
+    font-size: clamp(24px, 4vh, 48px);
   }
 
+  /* Alla h1 och h2 i main får Metal Mania font och vit färg */
   main h1,
   h2 {
     font-family: "Metal Mania", system-ui;
@@ -55,96 +58,118 @@ body.metal-klubben {
     color: white;
   }
 
+  /* Huvudcontainer för innehåll */
   .container {
     position: relative;
     box-sizing: border-box;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 80px;
+    /* Centrerad med 80px top-margin */
+    margin: 80px auto 0;
+    /* Max bredd för stora skärmar */
     max-width: 1440px;
-    overflow-x: 0px;
-    padding-bottom: 100%;
-    padding-top: 32px;
+    padding: 32px 20px;
+    width: 100%;
   }
 
+  /* Huvudtext-sektion */
   .main-text {
-    margin-bottom: 30vh;
+    margin-bottom: 100px;
+    padding: 20px;
   }
 
+  /* Stor huvudrubrik med responsiv storlek */
   .main-text h1 {
-    font-size: 120px;
-    font-stretch: 100%;
+    /* Responsiv: min 32px, max 120px, optimal 8% av viewport width */
+    font-size: clamp(32px, 8vw, 120px);
     text-align: center;
     font-family: "Metal Mania", system-ui;
     font-weight: 400;
     font-style: normal;
     color: white;
+    margin-bottom: 20px;
   }
 
+  /* Brödtext i main-text */
   .main-text p {
     color: white;
-    font-size: 1.5vh;
+    /* Responsiv fontstorlek för läsbarhet */
+    font-size: clamp(14px, 1.5vh, 18px);
+    line-height: 1.6;
   }
 
+  /* Stora rubriker för sektioner */
   .listen-now,
   .live-shows {
-    font-size: 120px;
-    font-stretch: 100%;
+    font-size: clamp(32px, 8vw, 120px);
     text-align: center;
   }
 
-  /* Slidshow main page*/
 
+  /* Säkerställer box-sizing för alla element */
   * {
-    box-sizing: border-box
+    box-sizing: border-box;
   }
 
-  /* Slideshow container */
+  /* Styling för slideshow*/
+
+  /* Huvudcontainer för bildspelet */
   .slideshow-container {
+    /* Max bredd 1000px, full width på mindre skärmar */
     max-width: 1000px;
+    width: 100%;
     position: relative;
-    margin: auto;
+    /* Centrerad med margin */
+    margin: 40px auto;
+    /* Flexbox för att centrera innehåll */
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10vh;
-
+    padding: 20px;
   }
 
+  /* Text inuti slideshow */
   .slideshow-container .text {
     font-family: "Metal Mania", system-ui;
     font-weight: 400;
     font-style: normal;
-    font-size: 5vh;
+    /* Responsiv textstorlek */
+    font-size: clamp(20px, 4vw, 40px);
   }
 
-  /* Hide the images by default */
+  /* Dölj alla slides som standard */
   .mySlides {
     display: none;
-    flex-direction: row;
+    /* Vertikal layout: bild ovanför text */
+    flex-direction: column;
     align-items: center;
-    gap: 30px;
+    /* Mellanrum mellan bild och text */
+    gap: 20px;
+    width: 100%;
   }
 
-  /* När slide är aktiv, visa som flex */
+  /* När JavaScript sätter display: block, visa som flex istället */
   .mySlides[style*="display: block"] {
     display: flex !important;
   }
 
-  /* Max size på bilderna i slideshowen */
+  /* Fast storlek på alla bilder så texten inte hoppar vid byte */
   .mySlides img {
-    height: 800px;
+    /* Exakt 600x600px */
     width: 600px;
+    height: 600px;
+    /* Beskär bilden för att passa kvadraten utan att förvränga */
     object-fit: cover;
+    /* Förhindra att bilden krymper i flex-container */
     flex-shrink: 0;
   }
 
-  /* Next & previous buttons */
+  /* Gemensam styling för prev/next-knappar */
   .prev,
   .next {
     cursor: pointer;
+    /* Absolut positionering relativt slideshow-container */
     position: absolute;
+    /* Vertikalt centrerad */
     top: 50%;
     width: auto;
     margin-top: -22px;
@@ -154,89 +179,99 @@ body.metal-klubben {
     font-size: 18px;
     transition: 0.6s ease;
     border-radius: 3px;
-    -webkit-user-select: none;
+    /* Förhindra textmarkering */
     user-select: none;
     background-color: rgba(0, 0, 0, 0.5);
+    /* Ligger ovanför andra element */
+    z-index: 10;
   }
 
-  /* Position the "previous button" to the left OUTSIDE */
+  /* Föregående-knapp till vänster */
   .prev {
-    left: -200px;
-    /* Flyttar pilen utanför till vänster */
+    left: 10px;
   }
 
-  /* Position the "next button" to the right OUTSIDE */
+  /* Nästa-knapp till höger */
   .next {
-    right: -200px;
-    /* Flyttar pilen utanför till höger */
+    right: 10px;
   }
 
-  /* On hover, add a black background color with a little bit see-through */
+  /* Mörkare bakgrund vid hover */
   .prev:hover,
   .next:hover {
     background-color: rgba(0, 0, 0, 0.8);
   }
 
-
-  /* Caption text */
+  /* Bildtext/beskrivning under bilden */
   .text {
     color: #f2f2f2;
-    font-size: 24px;
+    /* Responsiv textstorlek */
+    font-size: clamp(18px, 3vw, 24px);
     font-weight: bold;
     padding: 20px;
-    position: relative;
-    bottom: auto;
-    width: auto;
-    text-align: left;
-    flex: 1;
+    text-align: center;
+    width: 100%;
   }
 
-  /* The dots/bullets/indicators */
+  /* Indikator-prickar under slideshowen */
   .dot {
     cursor: pointer;
+    /* Cirkelform */
     height: 15px;
     width: 15px;
     margin: 0 2px;
+    /* Ljusgrå standardfärg */
     background-color: #bbb;
     border-radius: 50%;
     display: inline-block;
+    /* Mjuk färgövergång */
     transition: background-color 0.6s ease;
   }
 
+  /* Aktiv eller hovrad prick blir mörkare */
   .active,
   .dot:hover {
     background-color: #717171;
   }
 
-  /* Fading animation */
+  /* Fade-in animation för slide-övergångar */
   .fade {
     animation-name: fade;
     animation-duration: 1.5s;
   }
 
+  /* Keyframes för fade-animationen */
   @keyframes fade {
     from {
-      opacity: .4
+      /* Börja halvgenomskinlig */
+      opacity: 0.4;
     }
 
     to {
-      opacity: 1
+      /* Sluta helt synlig */
+      opacity: 1;
     }
   }
 
+  /* Innehållsruta */
+
+  /* Container för events och text */
   .wrapper {
+    /* Transparent, ingen bakgrund eller kant */
     background: none;
     border: none;
-    /*backdrop-filter: blur(20px);*/
     box-shadow: none;
     color: white;
-    padding: 30px 40px;
-    margin: 10px auto;
-    /* Auto på höger/vänster för att centrera */
+    padding: 30px 20px;
+    /* Centrerad */
+    margin: 20px auto;
+    /* Max bredd för läsbarhet */
     max-width: 720px;
+    width: 100%;
     line-height: 1.6;
   }
 
+  /* Rubriker i wrapper får skugga för läsbarhet */
   .wrapper h1,
   .wrapper h2,
   .wrapper h3 {
@@ -245,57 +280,135 @@ body.metal-klubben {
     margin-bottom: 15px;
   }
 
-  /* Dölj klubbnamn och beskrivning */
+  /* Dölj klubbnamn och allmän beskrivning (visas i slideshow istället) */
   .wrapper h1:first-of-type,
+  .wrapper h2,
   .wrapper p:not(article.event p) {
     display: none;
   }
 
+  /* Standardstyling för paragrafer */
   .wrapper p {
     font-size: 16px;
     line-height: 1.8;
     margin-bottom: 15px;
   }
 
+  .contact {
+    margin-top: 20vh;
+    color: white;
+  }
+
+  /* Länkar i main får vit färg och understreck */
   main a {
     color: rgb(255, 255, 255);
     text-decoration: underline;
   }
 
+  /* Eventkort */
+
+  /* Varje event-artikel får mörk genomskinlig bakgrund */
   article.event {
-    background: rgba(0, 0, 0, 0.5);
-    margin: 15px 0;
-    padding: 20px;
-    border-radius: 8px;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    background: none;
+    border: none;
+    /* Mjuk övergång för hover-effekt */
+    transition: transform 0.2s ease;
   }
 
+  /* Lyfter event-kortet vid hover */
+  article.event:hover {
+    transform: translateY(-20px);
+  }
+
+  /* Event-rubrik */
   article.event h3 {
     font-size: 18px;
     margin-bottom: 10px;
     color: white;
   }
 
+  /* Event-beskrivning */
   article.event p {
     line-height: 1.7;
     font-size: 15px;
   }
 
-
-
-  /* Döljer ikonen vid "Gala emporium*/
+  /* Döljer Gala Emporium-ikonen i header */
   .header-icon {
     display: none;
   }
 
-  /* Rutan för att skapa event*/
-  .create-event {
-    display: flex;
-    flex-direction: column;
+
+  /* Footer får margin */
+  footer {
+    margin: 20px 0;
   }
 
-  footer {
-    margin: 0%;
+  /* Mobilanpassning */
+
+  /* För skärmar mindre än 768px */
+  @media (max-width: 768px) {
+
+    /* Mindre padding på main */
+    main {
+      padding: 10px;
+    }
+
+    /* Mindre margin och padding på container */
+    .container {
+      margin-top: 40px;
+      padding: 16px 10px;
+    }
+
+    /* Mindre margin och padding på slideshow */
+    .slideshow-container {
+      margin: 20px auto;
+      padding: 10px;
+    }
+
+    /* Mindre gap mellan slide-element */
+    .mySlides {
+      gap: 15px;
+    }
+
+    /* Mindre prev/next-knappar */
+    .prev,
+    .next {
+      padding: 12px;
+      font-size: 16px;
+    }
+
+    /* Mindre padding på wrapper */
+    .wrapper {
+      padding: 20px 15px;
+      margin: 15px auto;
+    }
+
+    /* Mindre margin och padding på events */
+    article.event {
+      margin: 15px 0;
+      padding: 15px;
+    }
+  }
+
+  /* Desktop-anpassning */
+
+  /* För skärmar större än 768px */
+  @media (min-width: 769px) {
+
+    /* Pilarna flyttas utanför slideshowen på desktop */
+    .prev {
+      left: -80px;
+    }
+
+    .next {
+      right: -80px;
+    }
+
+    /* Bibehåller fast bildstorlek */
+    .mySlides img {
+      width: 600px;
+      height: 600px;
+    }
   }
 }
