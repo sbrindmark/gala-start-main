@@ -54,7 +54,7 @@ export default async function houseTechnoClub() {
     };
 
     // Lägger videon bakom innehållet
-   document.body.prepend(bgVideo);  // Fullscreen video – påverkar ingen annan sida
+    document.body.prepend(bgVideo);  // Fullscreen video – påverkar ingen annan sida
 
 
     // Event-kort blir klickbara (för bokning)
@@ -68,9 +68,8 @@ export default async function houseTechnoClub() {
         const clubId = 'k23o';
         const eventId = eventEl.dataset.eventId || null;
 
-        const price = Math.floor(Math.random() * 200) + 150;
-
-        const prefill = { clubId, eventId, eventName: title, price };
+        const pris = sessionStorage.getItem('eventPris');
+        const prefill = { clubId, eventId, eventName: title, pris };
         sessionStorage.setItem('prefillBooking', JSON.stringify(prefill));
 
         location.hash = 'eventbokare';
