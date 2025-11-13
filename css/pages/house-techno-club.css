@@ -1,8 +1,7 @@
 /* Stil för House Techno Klubben */
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Rajdhani:wght@400;600&display=swap');
 
-/* :root innehåller variabler för färger, typsnitt och stil – lättare att ändra hela temat */
-
+/* Variabler för färger och typsnitt */
 :root {
   --bg-dark: #0b0b10;
   --text-main: #f4f4f4;
@@ -12,9 +11,10 @@
   --font-title: 'Audiowide', sans-serif;
   --font-body: 'Rajdhani', sans-serif;
 }
-
-/* Bakgrund och layout */
+/*Ska inte påverka*/
+/* Bakgrund för endast denna klubb */
 body.house-techno-klubben {
+  background: none;
   margin: 0;
   font-family: var(--font-body);
   color: var(--text-main);
@@ -22,23 +22,27 @@ body.house-techno-klubben {
   display: flex;
   flex-direction: column;
   background-color: var(--bg-dark);
-  /*background-image:
-    linear-gradient(rgba(10, 0, 20, 0.75), rgba(0, 0, 0, 0.9)),
-    url("../../images/djtech.jpg"); /* ny bild */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
 }
 
+/* Gör så att videon syns bakom innehållet */
+body.house-techno-klubben main,
+body.house-techno-klubben section.wrapper {
+  background: none !important; /* Endast här – andra klubbar påverkas inte */
+}
+
+/* Videobakgrund */
 body.house-techno-klubben video.bg-video {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  z-index: -1;
+  object-fit: cover; /* Fyll hela sidan */
+  z-index: -1;       /* Bakom allt */
   opacity: 0.4;
   pointer-events: none;
 }
@@ -101,7 +105,7 @@ body.house-techno-klubben main {
   gap: 2rem;
 }
 
-/* Event */
+/* Eventkort */
 body.house-techno-klubben .event {
   background: rgba(26, 26, 34, 0.85);
   border: 1px solid var(--accent-secondary);
@@ -118,7 +122,7 @@ body.house-techno-klubben .event:hover {
   box-shadow: 0 4px 20px rgba(0, 180, 216, 0.25);
 }
 
-/* Info-ruta för event – bara på House Techno sidan */
+/* Event-info modal */
 body.house-techno-klubben .event-info {
   position: fixed;
   top: 0;
@@ -148,6 +152,7 @@ body.house-techno-klubben .event-info-content h2 {
   font-family: var(--font-title);
 }
 
+/* Bokningsknappar */
 body.house-techno-klubben .boka-btn {
   display: inline-block;
   margin-top: 1rem;
@@ -174,47 +179,12 @@ body.house-techno-klubben .close-btn {
   cursor: pointer;
 }
 
-body.house-techno-klubben .close-btn:hover {
-  color: white;
-  border-color: white;
-}
-
 /* Kontaktsektion */
 body.house-techno-klubben .contact-section {
   background: rgba(18, 18, 30, 0.9);
   border-top: 1px solid rgba(100, 100, 255, 0.2);
   padding: 2rem 7rem;
-  /* mer utrymme runt innehållet */
   text-align: center;
-}
-
-body.house-techno-klubben .contact-section h2 {
-  color: var(--accent);
-  font-family: var(--font-title);
-  margin-bottom: 1.2rem;
-  letter-spacing: 1px;
-  font-size: 1.8rem;
-  /* något större rubrik */
-}
-
-body.house-techno-klubben .contact-section p {
-  color: #ddd;
-  font-size: 1.05rem;
-  line-height: 1.8;
-  max-width: 700px;
-  /* bredare textyta */
-  margin: 0.5rem auto;
-  /* centrerad layout */
-}
-
-body.house-techno-klubben .contact-section a {
-  color: var(--accent-secondary);
-  text-decoration: none;
-  font-weight: 500;
-}
-
-body.house-techno-klubben .contact-section a:hover {
-  text-decoration: underline;
 }
 
 /* Footer */
@@ -227,7 +197,7 @@ body.house-techno-klubben footer {
   border-top: 1px solid #222;
 }
 
-/* Placera play-knappen i övre högra hörnet */
+/* Play-knapp */
 body.house-techno-klubben .event {
   position: relative;
 }
@@ -250,19 +220,11 @@ body.house-techno-klubben .play-btn {
   justify-content: center;
 }
 
-body.house-techno-klubben .play-btn:hover {
-  background: var(--accent-secondary);
-  color: #000;
-  box-shadow: 0 0 10px var(--accent-secondary);
-  transform: scale(1.1);
-}
-
-/* Responsiv */
+/* Responsivitet */
 @media (max-width: 700px) {
   body.house-techno-klubben header h1 {
     font-size: 1.7rem;
   }
-
   body.house-techno-klubben nav a {
     padding: 0.5rem 0.8rem;
     font-size: 0.9rem;

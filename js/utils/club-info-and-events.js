@@ -94,6 +94,8 @@ export function attachChangeButtonListeners() {
   }, 100);
 }
 
+
+
 export default async function clubInfoAndEvents(clubId) {
   let name = '', description = '', id = '';
   // if there is a clubId -> fetch the info about the club

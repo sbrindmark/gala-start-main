@@ -20,8 +20,8 @@ export default async function metalClub() {
         const clubId = 'fg5i'; // jazz-klubbens id
         const eventId = eventEl.dataset.eventId || null;
         // Generera ett pris (samma logik som bokningssidan använder)
-        const price = Math.floor(Math.random() * 200) + 150;
-        const prefill = { clubId, eventId, eventName: title, price };
+        const pris = sessionStorage.getItem('eventPris');
+        const prefill = { clubId, eventId, eventName: title, pris };
         sessionStorage.setItem('prefillBooking', JSON.stringify(prefill));
         // Navigera till bokningssidan (hash)
         location.hash = 'eventbokare';
