@@ -115,8 +115,22 @@
       "id": "2413",
       "clubId": "fg5i",
       "name": "Sleep Token",
-      "date": "2025-11-10 22:00",
+      "date": "2025-11-14 22:00",
       "description": "Take me back to eden"
+    },
+    {
+      "id": "0f26",
+      "clubId": "fg5i",
+      "name": "Black Sabbath",
+      "date": "2025-11-22 23:00",
+      "description": "Brittiskt Heavy metalband bildat 1968 i Birmingham i England"
+    },
+    {
+      "id": "b32c",
+      "clubId": "fg5i",
+      "name": "Iron Maiden",
+      "date": "2025-11-29 22:00",
+      "description": "Iron Maiden är ett engelskt heavy metal/hårdrocksband"
     }
   ],
   "bookings": [
