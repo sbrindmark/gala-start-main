@@ -19,6 +19,11 @@
       "id": "c8m3",
       "name": "Standup Comedy Club",
       "description": "Skratta tills du får ont i magen! Våra komiker levererar de bästa skämten och mest underhållande berättelserna varje vecka."
+    },
+    {
+      "id": "h9p2",
+      "name": "Hip-Hop Klubben",
+      "description": "Beats, battles & street energy – varje helg, hela natten. Kom och upplev den äkta hip-hop kulturen med rappare, breakdancers och graffiti-artister."
     }
   ],
   "events": [
