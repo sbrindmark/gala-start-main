@@ -3,13 +3,9 @@ import clubInfoAndEvents, { attachDeleteButtonListeners } from "../utils/club-in
 export default async function comedy() {
   const eventsHtml = await clubInfoAndEvents('c8m3');
 
-  // Ta bort eventuella kvarvarande popup-rutor när sidan laddas
-  const existingPopups = document.querySelectorAll('.event-info');
-  existingPopups.forEach(popup => popup.remove());
 
-  // Lägg till event listeners för klickbara events
+  // gör varje event klickbar
   setTimeout(() => {
-    // Gör varje event klickbar
     const eventEls = document.querySelectorAll(".event");
     eventEls.forEach((eventEl) => {
       eventEl.style.cursor = "pointer";
@@ -30,16 +26,20 @@ export default async function comedy() {
     });
   }, 300);
 
-  //html för comedy club
+  //html för comedy club med flexbox layout
   return `
-    <div class="comedy-page">
-      ${eventsHtml}
- 
-      <footer class="contact">
-        <h2>Kontakta oss</h2>
-        <p>Email: info@standupcomedy.se</p>
-        <p>Telefon: 08-555 12 678</p>
-      </footer>
+    <div class="comedy-page-flex">
+      <div class="comedy-events">
+        ${eventsHtml}
+        <footer class="contact">
+          <h2>Kontakta oss</h2>
+          <p>Email: info@standupcomedy.se</p>
+          <p>Telefon: 08-555 12 678</p>
+        </footer>
+      </div>
+      <div class="comedy-image">
+        <img src="images/skratt.jpg" alt="Skratt" />
+      </div>
     </div>
   `;
 }
