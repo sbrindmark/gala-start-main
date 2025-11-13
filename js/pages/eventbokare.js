@@ -108,6 +108,7 @@ export default async function eventbokare() {
         events
           .map(e => {
             const pris = Math.floor(Math.random() * 200) + 150; // pris mellan 150–350 kr
+            sessionStorage.setItem('eventPris', pris);
             return `
               <div>
                 <input type="radio" name="event" value="${e.id}" id="event-${e.id}" data-namn="${e.name}" data-pris="${pris}">
