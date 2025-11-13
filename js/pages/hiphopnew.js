@@ -2,19 +2,22 @@ export default function hiphopClub() {
   // Lägg till klass på body för bakgrund + tema
   document.body.classList.add('hiphop-club');
 
+  // Evenemangsdata, olika evenemang kan läggas till här.
   const events = [
     { title: "Ken Ring", date: "2025-11-15", description: "En natt med tunga bars, beats och energi på scenen." },
     { title: "Breakdance battle", date: "2025-11-28", description: "Dansare från hela landet möts i en episk battle." },
     { title: "DJ Night  Old School Edition", date: "2025-12-10", description: "Back to the roots vinyl, scratch och groove hela kvällen." },
   ];
 
+
+  // Huvud HTML struktur
   const html = `
     <div class="hiphop-club">
       <header>
         <h1>Hip-Hop Klubben</h1>
         <p>Beats, battles & street energy – varje helg, hela natten.</p>
-      </header>
-
+      </header> 
+  
       <nav>
         <a href="#intro">Hem</a>
         <a href="#kalender">Evenemang</a>
@@ -22,6 +25,7 @@ export default function hiphopClub() {
         <a href="#boka">Boka</a>
       </nav>
 
+      //Huvudinnehåll
       <main>
         <div class="wrapper">
           <section id="intro">
@@ -41,7 +45,7 @@ export default function hiphopClub() {
               `).join('')}
             </div>
           </section>
-
+          
           <section id="om" class="wrapper">
             <h2>Om Oss</h2>
             <p>När natten faller över staden finns det bara ett ställe där musiken, energin och atmosfären möts – Hip-Hop Klubben.</p>
@@ -59,13 +63,14 @@ export default function hiphopClub() {
         </div>
       </main>
 
+
       <footer>
         <p>&copy; 2025 Hip-Hop Klubben – Där rytmen aldrig slutar.</p>
       </footer>
     </div>
   `;
 
-  // Lägg på klick-hanterare efter att HTML hunnit monteras
+  // event info popup
   setTimeout(() => {
     const eventEls = document.querySelectorAll(".hiphop-club .event-card");
     eventEls.forEach((eventEl) => {
