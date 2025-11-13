@@ -32,7 +32,7 @@ export default function hiphopClub() {
             <h2>Välkommen till Hip-Hop Klubben</h2>
             <p>Välkommen till Sveriges mest pulserande nattklubb där beatsen aldrig dör och scenen vibrerar av energi.</p>
           </section>
-
+          
           <section id="kalender">
             <h2>🎤 Kommande Evenemang</h2>
             <div class="event-grid">
