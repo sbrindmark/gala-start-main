@@ -131,6 +131,27 @@
       "name": "Iron Maiden",
       "date": "2025-11-29 22:00",
       "description": "Iron Maiden är ett engelskt heavy metal/hårdrocksband"
+    },
+    {
+      "id": "hh01",
+      "date": "2025-11-15 22:00",
+      "name": "Ken Ring",
+      "description": "En natt med tunga bars, beats och energi på scenen.",
+      "clubId": "h9p2"
+    },
+    {
+      "id": "hh02",
+      "date": "2025-11-28 21:00",
+      "name": "Breakdance Battle",
+      "description": "Dansare från hela landet möts i en episk battle.",
+      "clubId": "h9p2"
+    },
+    {
+      "id": "hh03",
+      "date": "2025-12-10 22:30",
+      "name": "DJ Night - Old School Edition",
+      "description": "Back to the roots vinyl, scratch och groove hela kvällen.",
+      "clubId": "h9p2"
     }
   ],
   "bookings": [
@@ -569,6 +590,24 @@
       "prisPerBiljett": 282,
       "totalKostnad": 282,
       "datum": "2025-11-13T08:53:30.813Z"
+    },
+    {
+      "id": "0497",
+      "eventId": "hh01",
+      "eventNamn": "Ken Ring",
+      "antal": 1,
+      "prisPerBiljett": 337,
+      "totalKostnad": 337,
+      "datum": "2025-11-13T12:49:04.426Z"
+    },
+    {
+      "id": "4ea1",
+      "eventId": "hh01",
+      "eventNamn": "Ken Ring",
+      "antal": 1,
+      "prisPerBiljett": 264,
+      "totalKostnad": 264,
+      "datum": "2025-11-13T13:43:14.491Z"
     }
   ]
 }

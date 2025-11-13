@@ -1,12 +1,11 @@
-export default function hiphopClub() {
+import { getClubEvents } from "../utils/club-info-and-events.js";
+
+export default async function hiphopClub() {
   // Lägg till klass på body för bakgrund + tema
   document.body.classList.add('hiphop-club');
 
-  const events = [
-    { title: "Ken Ring", date: "2025-11-15", description: "En natt med tunga bars, beats och energi på scenen." },
-    { title: "Breakdance battle", date: "2025-11-28", description: "Dansare från hela landet möts i en episk battle." },
-    { title: "DJ Night  Old School Edition", date: "2025-12-10", description: "Back to the roots vinyl, scratch och groove hela kvällen." },
-  ];
+  // Hämta events för Hip-Hop klubben (clubId: h9p2)
+  const eventsHTML = await getClubEvents("h9p2");
 
   const html = `
     <div class="hiphop-club">
@@ -32,13 +31,7 @@ export default function hiphopClub() {
           <section id="kalender">
             <h2>🎤 Kommande Evenemang</h2>
             <div class="event-grid">
-              ${events.map(ev => `
-                <div class="event-card">
-                  <h3>${ev.title}</h3>
-                  <p><strong>${ev.date}</strong></p>
-                  <p>${ev.description}</p>
-                </div>
-              `).join('')}
+              ${eventsHTML}
             </div>
           </section>
 
@@ -54,53 +47,30 @@ export default function hiphopClub() {
             <p>📍 Stockholm, Sweden</p>
             <p>📧 <a href="mailto:info@hiphop.se">info@hiphop.se</a></p>
             <p>📞 +46 70 123 57 80</p>
-        
           </section>
         </div>
       </main>
 
-      <footer>
-        <p>&copy; 2025 Hip-Hop Klubben – Där rytmen aldrig slutar.</p>
-      </footer>
+
     </div>
   `;
 
-  // Lägg på klick-hanterare efter att HTML hunnit monteras
+  // När ett event klickas, gå direkt till bokningssidan och visa priser
   setTimeout(() => {
-    const eventEls = document.querySelectorAll(".hiphop-club .event-card");
+    const eventEls = document.querySelectorAll(".hiphop-club .event, .hiphop-club .event-card");
     eventEls.forEach((eventEl) => {
       eventEl.style.cursor = "pointer";
-
       eventEl.addEventListener("click", () => {
         const title = eventEl.querySelector("h3")?.textContent || "";
-        // Hämta första p som inte är datumet (andra p-taggen)
-        const ps = [...eventEl.querySelectorAll("p")];
-        const desc = (ps[1]?.textContent || ps[0]?.textContent || "").trim();
-
-        // Ta bort ev. befintlig overlay innan ny skapas
-        document.querySelectorAll(".event-info").forEach(n => n.remove());
-
-        const infoBox = document.createElement("div");
-        infoBox.className = "event-info";
-        infoBox.innerHTML = `
-          <div class="event-info-content">
-            <h2>${title}</h2>
-            <p>${desc}</p>
-            <a href="#eventbokare" class="boka-btn">🎟️ Boka event</a>
-            <button class="close-btn" aria-label="Stäng">Stäng</button>
-          </div>
-        `;
-
-        document.body.appendChild(infoBox);
-
-        const close = () => infoBox.remove();
-        infoBox.querySelector(".close-btn")?.addEventListener("click", close);
-        infoBox.addEventListener("click", (e) => {
-          if (e.target === infoBox) close();
-        });
-        document.addEventListener("keydown", function onKey(e){
-          if (e.key === "Escape") { close(); document.removeEventListener("keydown", onKey); }
-        });
+        // Förifyll bokningssidan via sessionStorage så den kan visa priser direkt
+        const clubId = 'h9p2'; // hip-hop klubbens id
+        const eventId = eventEl.dataset.eventId || null;
+        // Generera ett pris (samma logik som bokningssidan använder)
+        const price = Math.floor(Math.random() * 200) + 150;
+        const prefill = { clubId, eventId, eventName: title, price };
+        sessionStorage.setItem('prefillBooking', JSON.stringify(prefill));
+        // Navigera till bokningssidan (hash)
+        location.hash = 'eventbokare';
       });
     });
   }, 100);
