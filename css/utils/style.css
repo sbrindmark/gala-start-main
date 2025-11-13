@@ -213,3 +213,18 @@ article.event p {
   line-height: 1.7;
   font-size: 15px;
 }
+
+/* Footer styling */
+
+.admin-link {
+  display: inline-block;
+  padding: 8px 16px;
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  font-size: 12px;
+  transition: color 0.3s ease;
+}
+
+.admin-link:hover {
+  color: rgba(255, 255, 255, 0.8);
+}

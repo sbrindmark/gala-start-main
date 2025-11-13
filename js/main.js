@@ -28,6 +28,7 @@ function createMenu() {
   // then map to create a-tags (links)
   // then join everything into one big string
   return Object.entries(menu)
+    .filter(([urlHash]) => urlHash !== 'admin') // Dölj admin från menyn
     .map(([urlHash, { label }]) => `
       <a href="#${urlHash}">${label}</a>
     `)
@@ -59,6 +60,8 @@ async function loadPageContent() {
   const html = await functionToRun();
   // replace the contents of the main element
   document.querySelector('main').innerHTML = html;
+  // Scrolla till toppen av sidan
+  window.scrollTo(0, 0);
 }
 
 // call loadPageContent once on page load
