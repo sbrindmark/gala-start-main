@@ -96,17 +96,18 @@ export function attachChangeButtonListeners() {
 
 export async function getClubEvents(clubId) {
   const url = `http://localhost:3000/events?clubId=${clubId}`;
-  const response = await fetch(url);
-  const events = await response.json();
-  
+  const events = await (await fetch(url)).json();
+
   return events
     .toSorted((a, b) => a.date > b.date ? 1 : -1)
     .map(({ date, name, description, id }) => `
-      <article class="event" data-event-id="${id}">
-        <h3>${name}</h3>
-        <p><strong>${date}</strong></p>
-        <p>${description}</p>
-      </article>
+      <div class="event-wrapper">
+        <article class="event" data-event-id="${id}">
+          <h3>${name}</h3>
+          <p><strong>${date}</strong></p>
+          <p>${description}</p>
+        </article>
+      </div>
     `)
     .join('');
 }
