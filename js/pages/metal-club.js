@@ -138,12 +138,12 @@ Metal-club - där metal lever.</p>
   <div class="event-wrapper">
     ${eventsHtml}
   </div>
-    <footer class="contact">
+  </div>
+      <section class="contact">
       <h2>Kontakta oss</h2>
       <p>Email: info@metalklubben.se</p>
       <p>Telefon: 08-123 45 67</p>
-    </footer>
-  </div>
+    </section>
   </div>
 
   `;
