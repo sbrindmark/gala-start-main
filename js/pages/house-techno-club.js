@@ -1,16 +1,12 @@
-// House Techno klubbens sida
-
-// Importerar funktion för att hämta klubbinfo och events
+// Import för att hämta klubbens data
 import clubInfoAndEvents from "../utils/club-info-and-events.js";
 
-
-// Huvudfunktion för House Techno klubben-sidan
 export default async function houseTechnoClub() {
 
-  // Hämtar HTML för klubbens event och info
+  // Hämtar HTML för klubbens event
   const html = await clubInfoAndEvents("k23o");
 
-  // Bygger sidans HTML
+  // Bygger sidans innehåll
   const pageHtml = `
     <section class="wrapper">
       ${html}
@@ -25,66 +21,39 @@ export default async function houseTechnoClub() {
     </section>
   `;
 
-  // Väntar tills DOM är klar
+  // Väntar tills DOM finns
   setTimeout(() => {
 
-    // Sätter klass på body (endast denna klubb)
-    const body = document.body;
-    body.className = "house-techno-klubben";
+    // Unik klass så att bara denna klubb påverkas
+    document.body.className = "house-techno-klubben";
 
-    // Hittar wrapper-sektionen
     const technoSection = document.querySelector("section.wrapper");
     if (!technoSection) return;
 
-    // Skapar videobakgrund (endast denna klubb)
+    // Skapar bakgrundsvideo
     const bgVideo = document.createElement("video");
-    bgVideo.src = "././videos/housedanceslow.mp4";
+    bgVideo.src = "./videos/housedanceslow.mp4";
     bgVideo.autoplay = true;
     bgVideo.loop = true;
     bgVideo.muted = true;
     bgVideo.playsInline = true;
     bgVideo.className = "bg-video";
 
-    // Om video inte kan spelas – visa fallback-bild
-    bgVideo.onerror = () => {
-      console.warn("Videon kunde inte spelas — fallback aktiverad.");
-      technoSection.style.backgroundImage = 'url("../../images/djtech.jpg")';
-      technoSection.style.backgroundSize = "cover";
-      technoSection.style.backgroundPosition = "center";
-    };
+    // Lägger videon längst bak
+    document.body.prepend(bgVideo);
 
-    // Lägger videon bakom innehållet
-    document.body.prepend(bgVideo);  // Fullscreen video – påverkar ingen annan sida
+    // ------------------- MUSIKSYSTEM -------------------
 
-
-    // Event-kort blir klickbara (för bokning)
-    document.querySelectorAll(".event").forEach((eventEl) => {
-      eventEl.style.cursor = "pointer";
-
-      eventEl.addEventListener("click", () => {
-
-        const title = eventEl.querySelector("h3")?.textContent || "";
-
-        const clubId = 'k23o';
-        const eventId = eventEl.dataset.eventId || null;
-
-        const pris = sessionStorage.getItem('eventPris');
-        const prefill = { clubId, eventId, eventName: title, pris };
-        sessionStorage.setItem('prefillBooking', JSON.stringify(prefill));
-
-        location.hash = 'eventbokare';
-      });
-    });
-
-    // Ljudspår kopplade till event
     const events = document.querySelectorAll(".event");
+
+    // Lista med ljudspår
     const tracks = [
-      "././sounds/djAgge1.mp3",
-      "././sounds/djAgge2.mp3",
-      "././sounds/djAgge3.mp3",
-      "././sounds/djAgge4.mp3",
-      "././sounds/djAggeecho.mp3",
-      "././sounds/djAgge6.mp3"
+      "./sounds/djAgge1.mp3",
+      "./sounds/djAgge2.mp3",
+      "./sounds/djAgge3.mp3",
+      "./sounds/djAgge4.mp3",
+      "./sounds/djAggeecho.mp3",
+      "./sounds/djAgge6.mp3"
     ];
 
     let activeAudio = null;
@@ -92,64 +61,73 @@ export default async function houseTechnoClub() {
 
     events.forEach((eventEl, i) => {
 
-      // Skippa om knappen redan finns
-      if (eventEl.querySelector(".play-btn")) return;
+      // Skapa knapp om den inte finns
+      if (!eventEl.querySelector(".play-btn")) {
 
-      // Skapar play-knapp
-      const btn = document.createElement("button");
-      btn.className = "play-btn";
-      btn.textContent = "▶";
-      btn.dataset.sound = tracks[i] || "././sounds/default.mp3";
+        const btn = document.createElement("button");
+        btn.className = "play-btn";
+        btn.textContent = "▶";
+        btn.dataset.sound = tracks[i] || "./sounds/default.mp3";
 
-      const h3 = eventEl.querySelector("h3");
-      if (h3) h3.insertAdjacentElement("afterend", btn);
+        const h3 = eventEl.querySelector("h3");
+        if (h3) h3.appendChild(btn);
 
-      const audio = new Audio(btn.dataset.sound);
+        // Skapa ljudobjekt
+        const audio = new Audio(btn.dataset.sound);
 
-      // Hanterar play/pause
-      btn.addEventListener("click", (e) => {
-        e.stopPropagation();
+        // OBS! Spara audio-objektet i elementet så vi kan stoppa det senare
+        eventEl.audioObj = audio;
 
-        // Stoppa annat ljud
-        if (activeAudio && activeAudio !== audio) {
-          activeAudio.pause();
-          activeAudio.currentTime = 0;
-          if (activeButton) activeButton.textContent = "▶";
-        }
+        // Klick på play-knappen
+        btn.addEventListener("click", (e) => {
+          e.stopPropagation(); // gör att eventet fortfarande är klickbart
 
-        // Stoppa ljud om det redan spelas
-        if (!audio.paused) {
-          audio.pause();
-          audio.currentTime = 0;
-          btn.textContent = "▶";
-          activeAudio = null;
-          activeButton = null;
-          return;
-        }
+          // Stoppa annat ljud
+          if (activeAudio && activeAudio !== audio) {
+            activeAudio.pause();
+            activeAudio.currentTime = 0;
+            if (activeButton) activeButton.textContent = "▶";
+          }
 
-        // Starta ljud
-        audio.play();
-        btn.textContent = "⏸";
-        activeAudio = audio;
-        activeButton = btn;
-
-        // Stoppar efter 70 sekunder
-        setTimeout(() => {
+          // Stoppa om samma ljud spelas
           if (!audio.paused) {
             audio.pause();
             audio.currentTime = 0;
             btn.textContent = "▶";
             activeAudio = null;
             activeButton = null;
+            return;
           }
-        }, 70000);
 
-        // När ljudet slutar
-        audio.addEventListener("ended", () => {
-          btn.textContent = "▶";
-          activeAudio = null;
-          activeButton = null;
+          // Spela ljud
+          audio.play();
+          btn.textContent = "⏸";
+          activeAudio = audio;
+          activeButton = btn;
+
+          audio.addEventListener("ended", () => {
+            btn.textContent = "▶";
+            activeAudio = null;
+            activeButton = null;
+          });
         });
+      }
+
+      // Öppna eventbokningen när man klickar på eventkort
+      eventEl.addEventListener("click", () => {
+
+        const title = eventEl.querySelector("h3")?.textContent || "";
+
+        const prefill = {
+          clubId: "k23o",
+          eventId: eventEl.dataset.eventId || null,
+          eventName: title,
+          pris: sessionStorage.getItem("eventPris")
+        };
+
+        sessionStorage.setItem("prefillBooking", JSON.stringify(prefill));
+
+        location.hash = "eventbokare";
       });
     });
 
@@ -159,21 +137,25 @@ export default async function houseTechnoClub() {
 }
 
 
-// Stoppar ljud och tar bort video vid sidbyte
-window.addEventListener('hashchange', () => {
+// ----------------   STOPPA LJUD & VIDEO VID SIDBYTE   ----------------
 
-  // Stoppa ljud
-  const audio = document.querySelector('audio');
-  if (audio) {
-    audio.pause();
-    audio.currentTime = 0;
-  }
+window.addEventListener("hashchange", () => {
 
-  // Stoppa och ta bort video helt
-  const video = document.querySelector('video.bg-video');
+  // Hitta alla event som har spelare
+  const events = document.querySelectorAll(".event");
+
+  events.forEach(ev => {
+    if (ev.audioObj) {
+      ev.audioObj.pause();
+      ev.audioObj.currentTime = 0;
+    }
+  });
+
+  // Stoppa och ta bort video
+  const video = document.querySelector("video.bg-video");
   if (video) {
     video.pause();
     video.currentTime = 0;
-    video.remove(); // Viktigt: annars ligger videon kvar på andra sidor
+    video.remove();
   }
 });
