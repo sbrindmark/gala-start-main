@@ -185,6 +185,8 @@ body.house-techno-klubben .contact-section {
   border-top: 1px solid rgba(100, 100, 255, 0.2);
   padding: 2rem 7rem;
   text-align: center;
+  font-size: 1.3rem; 
+  
 }
 
 /* Footer */
@@ -200,6 +202,7 @@ body.house-techno-klubben footer {
 /* Play-knapp */
 body.house-techno-klubben .event {
   position: relative;
+  cursor: pointer;
 }
 
 body.house-techno-klubben .play-btn {
