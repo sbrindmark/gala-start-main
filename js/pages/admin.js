@@ -138,7 +138,7 @@ export default async function admin() {
               <label for="metal">Metal-klubben</label>
             </div>
             <div class="radio-option">
-              <input type="radio" name="klubb" id="house" value="house-techno">
+              <input type="radio" name="klubb" id="house" value="k23o">
               <label for="house">House/Techno</label>
             </div>
             <div class="radio-option">
@@ -146,7 +146,7 @@ export default async function admin() {
               <label for="standup">Stand-up Comedy</label>
             </div>
             <div class="radio-option">
-              <input type="radio" name="klubb" id="hiphop" value="hiphop">
+              <input type="radio" name="klubb" id="hiphop" value="h9p2">
               <label for="hiphop">Hip-hop</label>
             </div>
           </div>
